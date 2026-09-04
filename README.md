@@ -1,4 +1,4 @@
-# El cajón de Mafer
+# El cajón de Mafer.
 
 Veinte hojas de trabajo imprimibles para un grupo de **tercero de secundaria** en México, más las
 guías para quien las aplica. Todas cumplen las mismas cuatro condiciones:
