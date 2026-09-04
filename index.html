@@ -951,9 +951,50 @@ table.sopa.chica{ width: 92mm; }
   .pila .papel .hoja{page-break-after:auto!important;break-after:auto!important}
   .pila .marco:not(:last-child) .papel{page-break-after:always;break-after:page}
 }
+
+/* ---------- corazoncito secreto 💜 ---------- */
+.corazon-btn{position:fixed;top:18px;right:20px;z-index:90;background:none;border:none;cursor:pointer;
+  font-size:26px;line-height:1;padding:8px;border-radius:50%;transition:transform .25s,filter .25s;
+  filter:drop-shadow(0 2px 6px rgba(122,104,176,.25));animation:latido 2.5s ease-in-out infinite}
+.corazon-btn:hover{transform:scale(1.18);filter:drop-shadow(0 3px 10px rgba(122,104,176,.4))}
+@keyframes latido{0%,100%{transform:scale(1)}14%{transform:scale(1.13)}28%{transform:scale(1)}}
+
+.carta-overlay{position:fixed;inset:0;z-index:100;background:rgba(64,60,72,.35);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.carta-overlay.on{opacity:1;visibility:visible}
+
+.carta{background:#fff;border-radius:20px;padding:36px 34px 30px;max-width:380px;width:90%;text-align:center;
+  box-shadow:0 12px 48px rgba(64,60,72,.18);transform:scale(.88);transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.carta-overlay.on .carta{transform:scale(1)}
+.carta .icono-corazon{font-size:52px;line-height:1;margin-bottom:12px;display:block;
+  animation:pulso 1.6s ease-in-out infinite}
+@keyframes pulso{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.carta h2{font-family:Quicksand,sans-serif;font-weight:700;font-size:22px;color:var(--lavanda);margin:0 0 14px}
+.carta p{font-size:15px;color:var(--tinta-2);line-height:1.6;margin:0 0 10px}
+.carta .firma{font-family:Quicksand,sans-serif;font-weight:600;font-size:13.5px;color:var(--lavanda);
+  margin-top:18px;letter-spacing:.02em}
+.carta .cerrar-carta{margin-top:20px;background:var(--lavanda);color:#fff;border:none;border-radius:100px;
+  padding:10px 28px;font-family:Quicksand,sans-serif;font-weight:700;font-size:14px;cursor:pointer;
+  transition:filter .15s}
+.carta .cerrar-carta:hover{filter:brightness(1.1)}
+@media print{.corazon-btn,.carta-overlay{display:none!important}}
 </style>
 </head>
 <body>
+
+<!-- 💜 corazoncito secreto -->
+<button class="corazon-btn" id="corazon" type="button" aria-label="Un mensaje especial" title="💜">💜</button>
+<div class="carta-overlay" id="carta-overlay" aria-hidden="true">
+  <div class="carta" role="dialog" aria-label="Mensaje especial">
+    <span class="icono-corazon">💜</span>
+    <h2 id="carta-titulo">Oye, Mafer…</h2>
+    <p id="carta-msg">Recuerda que tu novio te ama con todo su corazón y siempre va a estar ahí para apoyarte en todo lo que te propongas. 💪</p>
+    <p id="carta-extra" style="font-size:13.5px;color:var(--tinta-3)">Eres increíblemente capaz, inteligente y dedicada. Cada hoja que preparas para tus alumnos demuestra lo mucho que te importa hacer las cosas bien. No lo olvides nunca. 🌻</p>
+    <div class="firma">— Con amor, tu novio 💜</div>
+    <button class="cerrar-carta" id="cerrar-carta" type="button">Ya lo sé 🥰</button>
+  </div>
+</div>
+
 <header>
   <div class="env hd">
     <div class="fecha" id="fecha">—</div>
@@ -6062,6 +6103,33 @@ window.addEventListener("resize", () => { if (estado.abierta) escalar(); });
 
 saludar(); pinta();
 $("#c-act").textContent = ACTIVIDADES.length;
+
+/* ---- corazoncito secreto 💜 ---- */
+const MENSAJES_AMOR = [
+  {t:"Oye, Mafer…", m:"Recuerda que tu novio te ama con todo su corazón y siempre va a estar ahí para apoyarte en todo lo que te propongas. 💪", e:"Eres increíblemente capaz, inteligente y dedicada. Cada hoja que preparas para tus alumnos demuestra lo mucho que te importa hacer las cosas bien. No lo olvides nunca. 🌻"},
+  {t:"¡Hola, bonita! 🌸", m:"Solo pasaba a recordarte que eres la mejor maestra del mundo mundial y que estoy muy orgulloso de ti.", e:"Todo el esfuerzo que pones en tus clases vale muchísimo. Tus alumnos tienen mucha suerte de tenerte. Y yo, más. 💜"},
+  {t:"Psst… un secreto:", m:"Hay alguien que piensa en ti todo el día y que te admira un montón. Pista: es tu novio. 😏", e:"Sigue brillando, Mafer. Cada día te vuelves más fuerte, más sabia y más increíble. Yo solo te echo porras desde aquí. 📣"},
+  {t:"Recordatorio importante 📌", m:"Hoy, mañana y siempre: tu novio te ama, te apoya y cree en ti más que nadie en el mundo.", e:"Cuando sientas que algo se pone difícil, respira hondo y recuerda que no estás sola. Yo estoy contigo en cada paso. 💜"},
+  {t:"Dato curioso 🧪", m:"Estudios confirman que Mafer es la persona más maravillosa del universo conocido. Fuente: su novio.", e:"También se descubrió que su dedicación y su corazón gigante la hacen imparable. Ningún lunes puede contra ella. 🚀"},
+  {t:"Parte meteorológico ☀️", m:"Pronóstico para hoy: lluvia de besos, cielos despejados de problemas, y un 100% de probabilidad de que te amo.", e:"Temperatura emocional: cálida. Recomendación: seguir siendo la persona tan chida que eres. 🌈"},
+  {t:"Mafer, mi amor 🌙", m:"Si estás leyendo esto en un día pesado: ya casi acabas, lo estás haciendo genial y al rato descansas.", e:"Y si estás leyendo esto en un día bueno: ¡qué bueno! Te mereces puros días así. Te quiero mucho. 💛"},
+  {t:"Noticia de último minuto 📰", m:"Se reporta que cierta maestra increíble está haciendo un trabajo extraordinario. Vecinos aplauden. Su novio llora de orgullo.", e:"La afectada declaró: \"solo estoy haciendo mi trabajo\". Los expertos responden: \"ese es exactamente el punto\". 😂💜"},
+];
+(function(){
+  const btn = $("#corazon"), ov = $("#carta-overlay"), cerrar = $("#cerrar-carta");
+  const tit = $("#carta-titulo"), msg = $("#carta-msg"), ext = $("#carta-extra");
+  function abrir(){
+    const m = MENSAJES_AMOR[Math.floor(Math.random()*MENSAJES_AMOR.length)];
+    tit.textContent = m.t; msg.textContent = m.m; ext.textContent = m.e;
+    ov.classList.add("on"); ov.setAttribute("aria-hidden","false");
+    cerrar.focus();
+  }
+  function cerrarModal(){ ov.classList.remove("on"); ov.setAttribute("aria-hidden","true"); btn.focus(); }
+  btn.addEventListener("click", abrir);
+  cerrar.addEventListener("click", cerrarModal);
+  ov.addEventListener("click", e=>{ if(e.target===ov) cerrarModal(); });
+  document.addEventListener("keydown", e=>{ if(e.key==="Escape" && ov.classList.contains("on")){ e.stopPropagation(); cerrarModal(); }});
+})();
 
 </script>
 </body>
