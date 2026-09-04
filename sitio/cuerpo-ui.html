@@ -1,0 +1,59 @@
+<header>
+  <div class="env hd">
+    <div class="fecha" id="fecha">—</div>
+    <h1 class="saludo" id="saludo">Hola, <em>Mafer</em></h1>
+    <p class="sub-h">Todas tus hojas listas para imprimir. Marca las que ya hayas aplicado para no repetirlas.</p>
+    <div class="cuenta">
+      <div><b id="c-act">50</b><span>hojas listas</span></div>
+      <div class="hecho"><b id="c-usadas">0</b><span>ya aplicadas</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="env">
+  <div class="barra grados" role="group" aria-label="Filtrar por grado">
+    <span class="lab">Grado</span>
+    <button class="chip gr" data-g="todos" aria-pressed="true" type="button">Todos</button>
+    <button class="chip gr" data-g="1" aria-pressed="false" type="button">1º de secundaria</button>
+    <button class="chip gr" data-g="2" aria-pressed="false" type="button">2º de secundaria</button>
+    <button class="chip gr" data-g="3" aria-pressed="false" type="button">3º de secundaria</button>
+  </div>
+
+  <div class="barra" role="group" aria-label="Filtros">
+    <span class="lab">Ver</span>
+    <button class="chip" data-f="todo" aria-pressed="true" type="button">Todas</button>
+    <button class="chip" data-f="pendiente" aria-pressed="false" type="button">Sin aplicar</button>
+    <button class="chip" data-f="g-pasa" aria-pressed="false" type="button">Pasatiempos</button>
+    <button class="chip" data-f="g-dib" aria-pressed="false" type="button">Dibujo y diseño</button>
+    <button class="chip" data-f="g-esc" aria-pressed="false" type="button">Escritura</button>
+    <button class="chip" data-f="Matemáticas" aria-pressed="false" type="button">Matemáticas</button>
+    <button class="chip" data-f="Español" aria-pressed="false" type="button">Español</button>
+    <input class="busca" id="busca" type="search" placeholder="Buscar…" aria-label="Buscar actividad">
+  </div>
+
+  <div id="grid"></div>
+  <div class="vacio" id="vacio" hidden>No hay nada con ese filtro. Quita alguno y vuelve a intentar.</div>
+
+  <div class="seccion">Para ti, no para el grupo</div>
+  <div class="grid" id="grid-apoyo"></div>
+</main>
+
+<footer class="env">
+  Cincuenta actividades individuales para secundaria, divididas por grado: 1º, 2º y 3º. Ninguna necesita celular, equipos ni material extra:
+  lápiz, colores si hay, y la hoja. Cada una cabe en una cara y está pensada para fotocopiarse en blanco y negro.
+  Las marcas de «ya la apliqué» se guardan solo en este navegador.
+</footer>
+
+<section class="visor" id="visor" aria-label="Hoja para imprimir">
+  <div class="vbar"><div class="env">
+    <button class="btn" id="volver" type="button">&larr; Volver</button>
+    <div class="tit"><b id="v-t">—</b><span id="v-s">—</span></div>
+    <button class="btn act" id="usada" type="button" aria-pressed="false">Ya la apliqué</button>
+    <a class="btn pri" id="pdf" href="#" target="_blank" rel="noopener">Imprimir esta hoja</a>
+    <div class="tip">Se abre el PDF en otra pestaña: ahí presiona <kbd>Ctrl</kbd>+<kbd>P</kbd>
+      (o <kbd>&#8984;</kbd>+<kbd>P</kbd>) y elige <b>tamaño carta, sin márgenes</b>.</div>
+  </div></div>
+  <div class="pila" id="pila"></div>
+  <div class="aviso-prev" style="padding:0 26px 50px">Esto es la <b>vista previa</b> en pantalla. Para imprimir usa el
+    botón de arriba: el PDF es el que está maquetado al milímetro.</div>
+</section>

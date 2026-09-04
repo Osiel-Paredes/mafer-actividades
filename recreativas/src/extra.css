@@ -1,0 +1,83 @@
+/* ---------- piezas de los pasatiempos ---------- */
+table.bim { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 126mm; }
+table.bim col { width: 14mm; }
+table.bim td { border: 1px solid #b8bcc2; height: 14mm; text-align: center; vertical-align: middle;
+               font-family: Montserrat,sans-serif; font-weight: 800; font-size: 11pt; padding: 0; }
+table.bim td.esq { border: none; }
+table.bim td.pc, table.bim td.pr { border: none; color: #111; }
+table.bim td.cel { background: #fff; border: 1.4px solid #111; }
+table.bim td.cel.barco { background: #111; }
+table.bim td.cel.agua { position: relative; }
+table.bim td.cel.agua::after { content: ""; position: absolute; left: 50%; top: 50%; width: 3.4mm; height: 3.4mm;
+  transform: translate(-50%,-50%); border: 1.6px solid #9aa0a8; border-radius: 50%; }
+.flota { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.flota .gr { display: flex; align-items: center; gap: 6px; }
+.flota .et { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #5b6069; }
+.barco-mini { display: inline-flex; gap: 1px; }
+.barco-mini i { width: 5mm; height: 5mm; background: #111; border: 1px solid #111; }
+
+table.sopa { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 141mm; }
+table.sopa td { width: 9.4mm; height: 9.4mm; text-align: center; vertical-align: middle; border: none;
+                font-family: 'Source Code Pro',monospace; font-weight: 600; font-size: 12pt; padding: 0; }
+.listapal { display: flex; gap: 12px; }
+.listapal ul { list-style: none; flex: 1; }
+.listapal li { display: flex; align-items: center; gap: 5px; font-size: 8.6pt; margin-bottom: 3.5px; }
+.listapal .cb { width: 10px; height: 10px; margin: 0; flex: none; }
+
+.crip-linea { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 9px; }
+.crip-pal { display: flex; gap: 1.5px; }
+.crip-ch { display: flex; flex-direction: column; align-items: center; width: 6.4mm; }
+.crip-ch b { display: block; height: 7mm; border: 1.4px solid #111; border-radius: 2px; width: 100%;
+             font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10.5pt; line-height: 7mm; text-align: center; }
+.crip-ch i { font-family: 'Source Code Pro',monospace; font-style: normal; font-size: 8pt; color: #6b7078;
+             margin-top: 1.5px; letter-spacing: 0; }
+table.abc-trab { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.abc-trab td { border: 1px solid #c9ced6; height: 6.6mm; text-align: center; padding: 0;
+                    font-family: 'Source Code Pro',monospace; font-size: 8.4pt; }
+table.abc-trab td.l { background: #eceef2; font-weight: 600; color: #5b6069; height: 5.2mm; font-size: 7.6pt; }
+table.abc-trab td.v { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10pt; }
+table.frec { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.frec th, table.frec td { border: 1px solid #c9ced6; text-align: center; padding: 2px 0; font-size: 7.6pt; }
+table.frec th { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.4pt; }
+table.frec td { font-family: 'Source Code Pro',monospace; color: #4a4f57; }
+
+.lab { border: 2.2px solid #111; border-radius: 4px; padding: 3px; background: #fff; }
+.lab svg { display: block; }
+.leyenda-lab { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-size: 8.4pt; align-items: center; }
+.leyenda-lab span { display: flex; align-items: center; gap: 5px; }
+.leyenda-lab b { width: 6mm; height: 6mm; border: 1.6px solid #111; border-radius: 50%; display: flex;
+                 align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+                 font-weight: 800; font-size: 7.6pt; flex: none; }
+.leyenda-lab b.n { background: #111; color: #fff; }
+.lb { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.6pt; text-transform: uppercase;
+      letter-spacing: .3px; color: #5b6069; line-height: 1.2; }
+.campos { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px 11px; }
+.campos.c1 { grid-template-columns: 1fr; }
+.campos .ln { border-bottom: 1.1px dashed #9aa0a8; height: 19px; }
+.dibujo { position: relative; border: 1.8px dashed #a9aeb6; border-radius: 7px; overflow: hidden; background: #fff; }
+.dibujo .et { position: absolute; bottom: 4px; right: 8px; font-size: 7.6pt; color: #b8bcc2;
+              font-family: Montserrat,sans-serif; font-weight: 600; }
+.reticula { background: repeating-linear-gradient(0deg,#e9ebef 0 .5px,transparent .5px 5mm),
+                        repeating-linear-gradient(90deg,#e9ebef 0 .5px,transparent .5px 5mm); }
+.hoja.densa { font-size: 10pt; padding: 7mm 11mm 5mm; }
+.hoja.densa .instr { font-size: 8.9pt; padding: 6px 10px; }
+.hoja.densa .mini { font-size: 7.6pt; }
+.hoja.densa .extra { font-size: 7.7pt; padding: 4px 9px; }
+.hoja.densa .pie { padding-top: 5px; }
+/* el relato va impreso de cabeza, como las soluciones de las revistas */
+.decabeza { transform: rotate(180deg); }
+.decabeza .texto { column-count: 2; column-gap: 9mm; font-size: 8.8pt; line-height: 1.55; text-align: justify; }
+.hueco { display: inline-block; min-width: 17mm; border-bottom: 1.2px solid #111; text-align: center;
+         font-family: Montserrat,sans-serif; font-weight: 800; font-size: 7.4pt; vertical-align: 1px; }
+.sello-oct { width: 15mm; height: 15mm; background: #111; color: #fff; clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);
+             display: flex; align-items: center; justify-content: center; text-align: center;
+             font-family: Montserrat,sans-serif; font-weight: 800; font-size: 5pt; line-height: 1.1; padding: 2px; }
+.sellos-fila { display: flex; gap: 7px; }
+.sellos-fila .vacio-oct { width: 15mm; height: 15mm; border: 1.6px dashed #a9aeb6;
+  clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%); background: #f3f4f6; }
+table.bim.sol { width: 84mm; }
+table.bim.sol col { width: 9.3mm; }
+table.bim.sol td { height: 9.3mm; font-size: 8.4pt; }
+table.bim.sol td.cel.agua::after { width: 2.2mm; height: 2.2mm; }
+table.sopa.chica td { width: 6.6mm; height: 6.6mm; font-size: 8.4pt; }

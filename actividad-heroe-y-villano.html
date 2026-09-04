@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es-MX"><head><meta charset="utf-8">
+<title>El heroe y el villano - proyecto de 3o de secundaria</title>
+<style>
+@page { size: letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Roboto','Open Sans',sans-serif; color: #111; background: #fff; font-size: 10.5pt; line-height: 1.45; }
+
+.hoja { width: 216mm; height: 279mm; padding: 11mm 12mm 9mm; page-break-after: always;
+        position: relative; display: flex; flex-direction: column; overflow: hidden; }
+.hoja:last-child { page-break-after: auto; }
+
+/* ---------- encabezado de actividad ---------- */
+.tira { flex: none; display: flex; align-items: stretch; border: 2.2px solid #111; border-radius: 7px; overflow: hidden; }
+.tira .num { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800;
+             font-size: 21pt; letter-spacing: -.5px; padding: 6px 11px 4px; display: flex; align-items: center; }
+.tira .tit { flex: 1; padding: 6px 12px 5px; }
+.tira h1 { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 16.5pt; line-height: 1.05;
+           letter-spacing: -.35px; text-transform: uppercase; }
+.tira .sub { font-size: 8.6pt; color: #4a4f57; margin-top: 2px; }
+.tira .tiempo { background: #eceef2; border-left: 2.2px solid #111; font-family: Montserrat,sans-serif;
+                font-weight: 700; font-size: 8.5pt; padding: 0 10px; display: flex; flex-direction: column;
+                align-items: center; justify-content: center; text-align: center; min-width: 74px; line-height: 1.15; }
+.tira .tiempo b { font-size: 13pt; font-weight: 800; }
+
+.meta { flex: none; display: flex; gap: 14px; margin: 6px 0 8px; font-size: 8.4pt; color: #5b6069;
+        font-family: Montserrat,sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+.meta span { display: flex; align-items: flex-end; gap: 5px; }
+.meta i { font-style: normal; border-bottom: 1.2px solid #9aa0a8; flex: 1; min-width: 40px; height: 13px; }
+.meta .g1 { flex: 3 } .meta .g2 { flex: 1 } .meta .g3 { flex: 1.4 }
+
+/* ---------- bloques ---------- */
+.instr { background: #f3f4f6; border-left: 4px solid #1f4ea8; border-radius: 0 5px 5px 0;
+         padding: 7px 11px; font-size: 9.4pt; margin-bottom: 9px; }
+.instr b { font-family: Montserrat,sans-serif; font-weight: 800; }
+.caja { border: 1.8px solid #111; border-radius: 6px; padding: 9px 11px; }
+.caja.punt { border: 1.6px dashed #a9aeb6; }
+.rot { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.6pt; text-transform: uppercase;
+       letter-spacing: .7px; color: #111; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.rot::before { content: ""; width: 13px; height: 3px; background: #1f4ea8; border-radius: 2px; flex: none; }
+.rot.s::before { display: none; }
+.mini { font-size: 8pt; color: #6b7078; line-height: 1.3; }
+.fila { display: flex; gap: 9px; }
+.col { flex: 1; min-width: 0; }
+.mt { margin-top: 9px; } .mt6 { margin-top: 6px; } .mb { margin-bottom: 9px; }
+.crece { flex: 1; min-height: 0; }
+
+/* renglones para escribir */
+.reng { border-bottom: 1.1px dashed #9aa0a8; height: 22px; }
+.reng.a { height: 26px; }
+.linea { border-bottom: 1.1px solid #9aa0a8; display: inline-block; min-width: 60px; }
+
+/* checkbox */
+.cb { display: inline-block; width: 12px; height: 12px; border: 1.5px solid #111; border-radius: 2.5px;
+      vertical-align: -2px; margin-right: 6px; flex: none; }
+ul.chk { list-style: none; } ul.chk li { display: flex; gap: 0; margin-bottom: 5.5px; font-size: 9pt; line-height: 1.3; }
+
+/* pie */
+.pie { margin-top: auto; padding-top: 7px; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+.extra { flex: 1; border: 1.6px solid #111; border-radius: 6px; padding: 6px 10px; font-size: 8.6pt; background: #fff; }
+.extra b { font-family: Montserrat,sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
+           font-size: 8pt; background: #111; color: #fff; padding: 1.5px 6px; border-radius: 3px; margin-right: 6px; }
+.folio { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; color: #9aa0a8; white-space: nowrap; padding-bottom: 2px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+th, td { border: 1.2px solid #111; padding: 4px 6px; text-align: left; }
+th { background: #eceef2; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.2pt;
+     text-transform: uppercase; letter-spacing: .3px; }
+td.v { height: 25px; }
+.mono { font-family: 'Source Code Pro',monospace; }
+
+/* ---------- piezas propias de la actividad héroe / villano ---------- */
+.dibujo { position: relative; border: 1.8px dashed #a9aeb6; border-radius: 7px; overflow: hidden; background: #fff; }
+.dibujo .et { position: absolute; bottom: 4px; right: 8px; font-size: 7.6pt; color: #b8bcc2;
+              font-family: Montserrat,sans-serif; font-weight: 600; z-index: 2; }
+.dibujo .nota { position: absolute; top: 5px; left: 8px; font-size: 7.4pt; color: #b8bcc2; z-index: 2; }
+.dibujo.solido { border-style: solid; border-color: #111; border-width: 2.2px; }
+
+/* cartel de película, proporción 2:3 */
+.cartel { position: relative; border: 2.4px solid #111; border-radius: 4px; overflow: hidden; background: #fff; }
+.cartel .franja { position: absolute; left: 0; right: 0; bottom: 0; border-top: 1.4px dashed #c9ced6;
+                  height: 22mm; z-index: 2; padding: 3px 7px; }
+.cartel .franja .l { border-bottom: 1.1px dashed #b8bcc2; height: 16px; margin-top: 2px; }
+.cartel .franja .mini { font-size: 6.8pt; }
+
+/* storyboard */
+.sb { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; }
+.sb .cuadro { display: flex; flex-direction: column; }
+.sb .marco { border: 2px solid #111; border-radius: 4px; aspect-ratio: 16/9; position: relative; background: #fff; }
+.sb .marco span { position: absolute; top: 3px; left: 5px; font-family: Montserrat,sans-serif; font-weight: 800;
+                  font-size: 8pt; color: #c9ced6; }
+.sb .plano { display: flex; gap: 4px; align-items: baseline; margin-top: 4px; font-size: 7.2pt;
+             font-family: Montserrat,sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; color: #6b7078; }
+.sb .plano i { font-style: normal; flex: 1; border-bottom: 1.1px dashed #9aa0a8; }
+.sb .guion { border-bottom: 1.1px dashed #9aa0a8; height: 15px; margin-top: 3px; }
+.sb .guion.b { margin-top: 2px; }
+
+/* cartas enfrentadas */
+.duelo { display: flex; align-items: stretch; gap: 8px; }
+.duelo .carta { flex: 1; border: 2.2px solid #111; border-radius: 8px; padding: 8px 10px; }
+.duelo .carta.mal { background: #f6f7f8; }
+.duelo .vs { display: flex; align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+             font-weight: 800; font-size: 15pt; color: #111; width: 12mm; flex: none; }
+.duelo .vs span { border: 2.2px solid #111; border-radius: 50%; width: 12mm; height: 12mm;
+                  display: flex; align-items: center; justify-content: center; font-size: 10pt; }
+
+/* presupuesto de puntos */
+.puntos { display: flex; align-items: center; gap: 8px; border: 1.8px solid #111; border-radius: 6px;
+          padding: 5px 10px; font-size: 8.6pt; }
+.puntos b { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 13pt; }
+.puntos .caj { width: 14mm; height: 8mm; border: 1.6px solid #111; border-radius: 4px; flex: none; }
+
+/* barras de atributos */
+.stat { display: flex; align-items: center; gap: 7px; margin-bottom: 4.5px; }
+.stat .nm { width: 26mm; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.2pt;
+            text-transform: uppercase; letter-spacing: .3px; flex: none; }
+.stat .bar { display: flex; gap: 2px; flex: 1; }
+.stat .bar i { flex: 1; height: 4.8mm; border: 1.3px solid #111; border-radius: 2px; }
+.stat .tot { width: 9mm; height: 4.8mm; border: 1.6px solid #111; border-radius: 3px; flex: none; }
+
+/* ficha de datos en dos columnas de etiqueta + línea */
+.campos { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px 11px; }
+.campos.c1 { grid-template-columns: 1fr; }
+.campos.c3 { grid-template-columns: repeat(3,1fr); }
+.campos div { min-width: 0; }
+.lb { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.6pt; text-transform: uppercase;
+      letter-spacing: .3px; color: #5b6069; line-height: 1.2; }
+.campos .ln { border-bottom: 1.1px dashed #9aa0a8; height: 19px; }
+
+/* banco de problemas */
+table.banco td, table.banco th { padding: 3px 5px; font-size: 7.9pt; line-height: 1.25; }
+table.banco td.n { text-align: center; font-family: Montserrat,sans-serif; font-weight: 800; color: #1f4ea8; width: 7mm; }
+table.banco td.pb { font-family: Montserrat,sans-serif; font-weight: 700; }
+table.banco td.sel { text-align: center; width: 9mm; }
+
+/* aviso de regla */
+.regla { border: 2.2px solid #111; border-radius: 7px; padding: 8px 11px; background: #111; color: #fff; font-size: 8.8pt; }
+.regla b { font-family: Montserrat,sans-serif; font-weight: 800; }
+.regla .rot { color: #fff; } .regla .rot::before { background: #7fa3e0; }
+
+/* dos hojas llevan mas contenido que el resto: se densifican en bloque en vez de
+   recortarles material, que es lo que las hace buenas */
+.hoja.densa { font-size: 10pt; padding: 7mm 11mm 5mm; }
+.hoja.densa .instr { font-size: 8.9pt; padding: 6px 10px; }
+.hoja.densa .reng { height: 20px; }
+.hoja.densa .mini { font-size: 7.6pt; }
+.hoja.densa .extra { font-size: 7.7pt; padding: 4px 9px; }
+.hoja.densa .pie { padding-top: 5px; }
+</style></head><body>
+<section class="hoja">
+  <div class="tira"><div class="num">14</div>
+    <div class="tit"><h1>Tu héroe y tu villano</h1>
+      <div class="sub">El villano no puede ser un señor malo que quiere destruir el mundo. Tiene que ser un problema que existe donde tú vives.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Vas a inventar la película. <b>Primero el villano, y tu villano encarna un problema real:</b> la basura que
+    se junta en la esquina donde nadie tiene la culpa, el agua que se fuga mientras a otras casas les toca tandeo, el aire de la
+    avenida a las siete, la cuota que hay que dar para que un trámite camine, la banqueta sin rampa, el que deja la escuela
+    porque hoy se necesita ese dinero. <b>Después el héroe, hecho a la medida de ese villano</b> y no al revés: si tu héroe
+    también podría salvar una ciudad de dinosaurios, no está hecho a la medida.</div>
+
+  <div class="regla mb" style="padding:7px 11px">
+    <b>La regla que no se negocia.</b> El villano es inventado y encarna <b>una costumbre o un acomodo</b>, no una persona. No
+    es un político real, ni una empresa con nombre, ni «los ricos», ni «los políticos», ni gente de ningún país, religión,
+    oficio o barrio: eso no es un villano, es gente. Si al terminar puedes señalar a alguien en la calle y decir «ese es mi
+    villano», está mal hecho, y se arregla cambiándolo por <b>la regla que esa persona sigue</b>.
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:8px 10px">
+      <div class="rot">El villano</div>
+      <div class="mini" style="margin:-2px 0 4px">Cuerpo completo. <b>La forma tiene que explicar cómo funciona:</b> si su
+        negocio es que nadie sepa a quién reclamarle, dibújalo sin cara. Aquí se califican las etiquetas, no el trazo.</div>
+      <div class="dibujo" style="height:70mm"><svg viewBox="0 0 240 640" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+<line x1="8" y1="0.7" x2="232" y2="0.7" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="80.0" x2="232" y2="80.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="120.0" x2="232" y2="120.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="256.0" x2="232" y2="256.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="320.0" x2="232" y2="320.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="480.0" x2="232" y2="480.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="640.0" x2="232" y2="640.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="133" y1="0" x2="133" y2="640" stroke="#eaedf1" stroke-width="1.1" stroke-dasharray="3 6"/>
+</svg><span class="et">dibújalo aquí</span></div>
+      <div class="campos c1" style="margin-top:6px;gap:2px">
+        <div><div class="lb">Se llama</div><div class="ln"></div></div>
+      </div>
+    </div>
+    <div class="col caja" style="padding:8px 10px">
+      <div class="rot">El héroe</div>
+      <div class="mini" style="margin:-2px 0 4px">Cuerpo completo, y <b>en el lugar donde está el problema</b>: el fondo pueden
+        ser tres líneas, pero tiene que estar. Nada de capa, nada de antifaz, nada de logo en el pecho.</div>
+      <div class="dibujo" style="height:70mm"><svg viewBox="0 0 240 640" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+<line x1="8" y1="0.7" x2="232" y2="0.7" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="80.0" x2="232" y2="80.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="120.0" x2="232" y2="120.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="256.0" x2="232" y2="256.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="320.0" x2="232" y2="320.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="480.0" x2="232" y2="480.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="8" y1="640.0" x2="232" y2="640.0" stroke="#dfe3e8" stroke-width="1.1" stroke-dasharray="5 5"/>
+<line x1="133" y1="0" x2="133" y2="640" stroke="#eaedf1" stroke-width="1.1" stroke-dasharray="3 6"/>
+</svg><span class="et">dibújalo aquí</span></div>
+      <div class="campos c1" style="margin-top:6px;gap:2px">
+        <div><div class="lb">Se llama</div><div class="ln"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:8px 10px">
+      <div class="rot">Explica a tu villano</div>
+      <div class="lb">¿Qué problema real encarna? Uno que hayas visto tú, con su lugar</div>
+      <div class="reng"></div>
+      <div class="lb" style="margin-top:3px">¿A quién le conviene que siga ahí, y qué se ahorra?</div>
+      <div class="mini" style="font-size:7pt;margin:1px 0 0">Contesta con el papel, no con el nombre: el que firma, el que
+        barre, el que cruza a las 7. Prohibido «la sociedad», «el gobierno» y «todos».</div>
+      <div class="reng"></div>
+    </div>
+    <div class="col caja" style="padding:8px 10px">
+      <div class="rot">Explica a tu héroe</div>
+      <div class="lb">¿Cuál es su poder, y qué le cuesta cada vez que lo usa?</div>
+      <div class="mini" style="font-size:7pt;margin:1px 0 0">El costo lleva unidad que se pueda contar: horas, pesos, días de
+        escuela, favores. No vale «se cansa».</div>
+      <div class="reng"></div>
+      <div class="lb" style="margin-top:3px">¿Por qué ese poder le pega justo a <i>ese</i> villano y no a cualquier otro?</div>
+      <div class="reng"></div>
+    </div>
+  </div>
+
+  <div class="caja" style="padding:8px 10px;border-color:#1f4ea8;border-width:2.2px">
+    <div class="rot">El final · las dos casillas se llenan</div>
+    <div class="mini" style="margin:-2px 0 4px">Tu villano no se muere, porque es una costumbre: lo que se desarma es el
+      negocio. <b>Un final donde todo se arregla queda rechazado.</b></div>
+    <div class="fila">
+      <div class="col"><div class="lb">Qué sí se resolvió, y quién lo nota primero</div><div class="reng"></div></div>
+      <div class="col"><div class="lb">Qué sigue igual, y a qué otro lado se movió</div><div class="reng"></div></div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escríbele a tu villano <b>la frase que diría en voz alta</b>, máximo 15
+    palabras, y que suene razonable dicha en voz alta. Sirve: «yo no lo tiré, yo nomás no lo levanté». No sirve: «soy malo y
+    quiero destruir el mundo».</div><div class="folio">14</div></div>
+</section>
+
+</body></html>

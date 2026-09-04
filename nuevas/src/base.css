@@ -1,0 +1,68 @@
+
+@page { size: letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Roboto','Open Sans',sans-serif; color: #111; background: #fff; font-size: 10.5pt; line-height: 1.45; }
+
+.hoja { width: 216mm; height: 279mm; padding: 11mm 12mm 9mm; page-break-after: always;
+        position: relative; display: flex; flex-direction: column; overflow: hidden; }
+.hoja:last-child { page-break-after: auto; }
+
+/* ---------- encabezado de actividad ---------- */
+.tira { flex: none; display: flex; align-items: stretch; border: 2.2px solid #111; border-radius: 7px; overflow: hidden; }
+.tira .num { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800;
+             font-size: 21pt; letter-spacing: -.5px; padding: 6px 11px 4px; display: flex; align-items: center; }
+.tira .tit { flex: 1; padding: 6px 12px 5px; }
+.tira h1 { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 16.5pt; line-height: 1.05;
+           letter-spacing: -.35px; text-transform: uppercase; }
+.tira .sub { font-size: 8.6pt; color: #4a4f57; margin-top: 2px; }
+.tira .tiempo { background: #eceef2; border-left: 2.2px solid #111; font-family: Montserrat,sans-serif;
+                font-weight: 700; font-size: 8.5pt; padding: 0 10px; display: flex; flex-direction: column;
+                align-items: center; justify-content: center; text-align: center; min-width: 74px; line-height: 1.15; }
+.tira .tiempo b { font-size: 13pt; font-weight: 800; }
+
+.meta { flex: none; display: flex; gap: 14px; margin: 6px 0 8px; font-size: 8.4pt; color: #5b6069;
+        font-family: Montserrat,sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+.meta span { display: flex; align-items: flex-end; gap: 5px; }
+.meta i { font-style: normal; border-bottom: 1.2px solid #9aa0a8; flex: 1; min-width: 40px; height: 13px; }
+.meta .g1 { flex: 3 } .meta .g2 { flex: 1 } .meta .g3 { flex: 1.4 }
+
+/* ---------- bloques ---------- */
+.instr { background: #f3f4f6; border-left: 4px solid #1f4ea8; border-radius: 0 5px 5px 0;
+         padding: 7px 11px; font-size: 9.4pt; margin-bottom: 9px; }
+.instr b { font-family: Montserrat,sans-serif; font-weight: 800; }
+.caja { border: 1.8px solid #111; border-radius: 6px; padding: 9px 11px; }
+.caja.punt { border: 1.6px dashed #a9aeb6; }
+.rot { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.6pt; text-transform: uppercase;
+       letter-spacing: .7px; color: #111; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.rot::before { content: ""; width: 13px; height: 3px; background: #1f4ea8; border-radius: 2px; flex: none; }
+.rot.s::before { display: none; }
+.mini { font-size: 8pt; color: #6b7078; line-height: 1.3; }
+.fila { display: flex; gap: 9px; }
+.col { flex: 1; min-width: 0; }
+.mt { margin-top: 9px; } .mt6 { margin-top: 6px; } .mb { margin-bottom: 9px; }
+.crece { flex: 1; min-height: 0; }
+
+/* renglones para escribir */
+.reng { border-bottom: 1.1px dashed #9aa0a8; height: 22px; }
+.reng.a { height: 26px; }
+.linea { border-bottom: 1.1px solid #9aa0a8; display: inline-block; min-width: 60px; }
+
+/* checkbox */
+.cb { display: inline-block; width: 12px; height: 12px; border: 1.5px solid #111; border-radius: 2.5px;
+      vertical-align: -2px; margin-right: 6px; flex: none; }
+ul.chk { list-style: none; } ul.chk li { display: flex; gap: 0; margin-bottom: 5.5px; font-size: 9pt; line-height: 1.3; }
+
+/* pie */
+.pie { margin-top: auto; padding-top: 7px; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+.extra { flex: 1; border: 1.6px solid #111; border-radius: 6px; padding: 6px 10px; font-size: 8.6pt; background: #fff; }
+.extra b { font-family: Montserrat,sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
+           font-size: 8pt; background: #111; color: #fff; padding: 1.5px 6px; border-radius: 3px; margin-right: 6px; }
+.folio { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; color: #9aa0a8; white-space: nowrap; padding-bottom: 2px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+th, td { border: 1.2px solid #111; padding: 4px 6px; text-align: left; }
+th { background: #eceef2; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.2pt;
+     text-transform: uppercase; letter-spacing: .3px; }
+td.v { height: 25px; }
+.mono { font-family: 'Source Code Pro',monospace; }

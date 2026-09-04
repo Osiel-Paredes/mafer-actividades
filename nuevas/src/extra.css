@@ -1,0 +1,202 @@
+/* ---------- piezas de los pasatiempos ---------- */
+table.bim { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 126mm; }
+table.bim col { width: 14mm; }
+table.bim td { border: 1px solid #b8bcc2; height: 14mm; text-align: center; vertical-align: middle;
+               font-family: Montserrat,sans-serif; font-weight: 800; font-size: 11pt; padding: 0; }
+table.bim td.esq { border: none; }
+table.bim td.pc, table.bim td.pr { border: none; color: #111; }
+table.bim td.cel { background: #fff; border: 1.4px solid #111; }
+table.bim td.cel.barco { background: #111; }
+table.bim td.cel.agua { position: relative; }
+table.bim td.cel.agua::after { content: ""; position: absolute; left: 50%; top: 50%; width: 3.4mm; height: 3.4mm;
+  transform: translate(-50%,-50%); border: 1.6px solid #9aa0a8; border-radius: 50%; }
+.flota { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.flota .gr { display: flex; align-items: center; gap: 6px; }
+.flota .et { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #5b6069; }
+.barco-mini { display: inline-flex; gap: 1px; }
+.barco-mini i { width: 5mm; height: 5mm; background: #111; border: 1px solid #111; }
+
+table.sopa { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 141mm; }
+table.sopa td { width: 9.4mm; height: 9.4mm; text-align: center; vertical-align: middle; border: none;
+                font-family: 'Source Code Pro',monospace; font-weight: 600; font-size: 12pt; padding: 0; }
+.listapal { display: flex; gap: 12px; }
+.listapal ul { list-style: none; flex: 1; }
+.listapal li { display: flex; align-items: center; gap: 5px; font-size: 8.6pt; margin-bottom: 3.5px; }
+.listapal .cb { width: 10px; height: 10px; margin: 0; flex: none; }
+
+.crip-linea { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 9px; }
+.crip-pal { display: flex; gap: 1.5px; }
+.crip-ch { display: flex; flex-direction: column; align-items: center; width: 6.4mm; }
+.crip-ch b { display: block; height: 7mm; border: 1.4px solid #111; border-radius: 2px; width: 100%;
+             font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10.5pt; line-height: 7mm; text-align: center; }
+.crip-ch i { font-family: 'Source Code Pro',monospace; font-style: normal; font-size: 8pt; color: #6b7078;
+             margin-top: 1.5px; letter-spacing: 0; }
+table.abc-trab { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.abc-trab td { border: 1px solid #c9ced6; height: 6.6mm; text-align: center; padding: 0;
+                    font-family: 'Source Code Pro',monospace; font-size: 8.4pt; }
+table.abc-trab td.l { background: #eceef2; font-weight: 600; color: #5b6069; height: 5.2mm; font-size: 7.6pt; }
+table.abc-trab td.v { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10pt; }
+table.frec { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.frec th, table.frec td { border: 1px solid #c9ced6; text-align: center; padding: 2px 0; font-size: 7.6pt; }
+table.frec th { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.4pt; }
+table.frec td { font-family: 'Source Code Pro',monospace; color: #4a4f57; }
+
+.lab { border: 2.2px solid #111; border-radius: 4px; padding: 3px; background: #fff; }
+.lab svg { display: block; }
+.leyenda-lab { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-size: 8.4pt; align-items: center; }
+.leyenda-lab span { display: flex; align-items: center; gap: 5px; }
+.leyenda-lab b { width: 6mm; height: 6mm; border: 1.6px solid #111; border-radius: 50%; display: flex;
+                 align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+                 font-weight: 800; font-size: 7.6pt; flex: none; }
+.leyenda-lab b.n { background: #111; color: #fff; }
+.lb { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.6pt; text-transform: uppercase;
+      letter-spacing: .3px; color: #5b6069; line-height: 1.2; }
+.campos { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px 11px; }
+.campos.c1 { grid-template-columns: 1fr; }
+.campos .ln { border-bottom: 1.1px dashed #9aa0a8; height: 19px; }
+.dibujo { position: relative; border: 1.8px dashed #a9aeb6; border-radius: 7px; overflow: hidden; background: #fff; }
+.dibujo .et { position: absolute; bottom: 4px; right: 8px; font-size: 7.6pt; color: #b8bcc2;
+              font-family: Montserrat,sans-serif; font-weight: 600; }
+.reticula { background: repeating-linear-gradient(0deg,#e9ebef 0 .5px,transparent .5px 5mm),
+                        repeating-linear-gradient(90deg,#e9ebef 0 .5px,transparent .5px 5mm); }
+.hoja.densa { font-size: 10pt; padding: 7mm 11mm 5mm; }
+.hoja.densa .instr { font-size: 8.9pt; padding: 6px 10px; }
+.hoja.densa .mini { font-size: 7.6pt; }
+.hoja.densa .extra { font-size: 7.7pt; padding: 4px 9px; }
+.hoja.densa .pie { padding-top: 5px; }
+/* el relato va impreso de cabeza, como las soluciones de las revistas */
+.decabeza { transform: rotate(180deg); }
+.decabeza .texto { column-count: 2; column-gap: 9mm; font-size: 8.8pt; line-height: 1.55; text-align: justify; }
+.hueco { display: inline-block; min-width: 17mm; border-bottom: 1.2px solid #111; text-align: center;
+         font-family: Montserrat,sans-serif; font-weight: 800; font-size: 7.4pt; vertical-align: 1px; }
+.sello-oct { width: 15mm; height: 15mm; background: #111; color: #fff; clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);
+             display: flex; align-items: center; justify-content: center; text-align: center;
+             font-family: Montserrat,sans-serif; font-weight: 800; font-size: 5pt; line-height: 1.1; padding: 2px; }
+.sellos-fila { display: flex; gap: 7px; }
+.sellos-fila .vacio-oct { width: 15mm; height: 15mm; border: 1.6px dashed #a9aeb6;
+  clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%); background: #f3f4f6; }
+table.bim.sol { width: 84mm; }
+table.bim.sol col { width: 9.3mm; }
+table.bim.sol td { height: 9.3mm; font-size: 8.4pt; }
+table.bim.sol td.cel.agua::after { width: 2.2mm; height: 2.2mm; }
+table.sopa.chica td { width: 6.6mm; height: 6.6mm; font-size: 8.4pt; }
+
+/* ============ piezas de las hojas nuevas (1o, 2o y 3o) ============ */
+
+/* noticiero: pantalla con cintillo, como el de la tele */
+.tele { border: 2.2px solid #111; border-radius: 6px 6px 0 0; position: relative; overflow: hidden;
+        background: #fff; }
+.tele .toma { border-bottom: none; position: relative; }
+.tele .et { position: absolute; bottom: 4px; right: 8px; font-size: 7.6pt; color: #b8bcc2;
+            font-family: Montserrat,sans-serif; font-weight: 600; }
+.cintillo { background: #111; color: #fff; display: flex; align-items: stretch; border: 2.2px solid #111;
+            border-radius: 0 0 6px 6px; }
+.cintillo .viv { background: #fff; color: #111; font-family: Montserrat,sans-serif; font-weight: 800;
+                 font-size: 7.4pt; letter-spacing: .6px; padding: 0 7px; display: flex; align-items: center;
+                 text-transform: uppercase; flex: none; }
+.cintillo .tx { flex: 1; padding: 4px 9px 5px; }
+.cintillo .tx .r1 { border-bottom: 1.1px dashed #7d838c; height: 17px; }
+.cintillo .tx .r2 { border-bottom: 1.1px dashed #7d838c; height: 15px; margin-top: 3px; }
+.cintillo .hora { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 11pt; padding: 0 9px;
+                  display: flex; align-items: center; border-left: 1.4px solid #4a4f57; flex: none; }
+
+/* pasos numerados con renglon para escribir */
+ol.pasos { list-style: none; counter-reset: p; }
+ol.pasos li { counter-increment: p; display: flex; align-items: flex-end; gap: 7px; margin-bottom: 4px; }
+ol.pasos li::before { content: counter(p); font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.4pt;
+  width: 5.6mm; height: 5.6mm; border: 1.5px solid #111; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; flex: none; margin-bottom: 1px; }
+ol.pasos li i { font-style: normal; flex: 1; border-bottom: 1.1px dashed #9aa0a8; height: 19px; }
+ol.pasos.corta li i { height: 17px; }
+
+/* cadena de causas: tres eslabones con flecha */
+.cadena { display: flex; align-items: stretch; gap: 0; }
+.cadena .esl { flex: 1; border: 1.6px solid #111; border-radius: 5px; padding: 4px 7px; min-width: 0; }
+.cadena .esl .lb { margin-bottom: 2px; }
+.cadena .esl .ln { border-bottom: 1.1px dashed #9aa0a8; height: 18px; }
+.cadena .fl { flex: none; width: 7mm; display: flex; align-items: center; justify-content: center;
+              font-family: Montserrat,sans-serif; font-weight: 800; font-size: 13pt; color: #1f4ea8; }
+
+/* barra de 24 horas */
+table.h24 { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.h24 td { border: 1px solid #111; height: 15mm; padding: 0; }
+table.h24 td.h { border: none; height: 4.4mm; text-align: center; font-family: 'Source Code Pro',monospace;
+                 font-size: 6.8pt; color: #6b7078; }
+.leyenda-h24 { display: flex; gap: 10px; flex-wrap: wrap; font-size: 8pt; align-items: center; }
+.leyenda-h24 span { display: flex; align-items: center; gap: 4px; }
+.leyenda-h24 b { width: 5.4mm; height: 5.4mm; border: 1.5px solid #111; border-radius: 2.5px; flex: none;
+  display: flex; align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+  font-weight: 800; font-size: 8pt; }
+
+/* boletos de la rifa */
+.boletos { display: flex; flex-wrap: wrap; gap: 3.5px; }
+.boletos b { width: 9.6mm; height: 8.4mm; border: 1.4px solid #111; border-radius: 3px; display: flex;
+             align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+             font-weight: 700; font-size: 8.4pt; color: #4a4f57; }
+
+/* rosa de los vientos chica */
+.brujula { width: 17mm; height: 17mm; flex: none; }
+.brujula text { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 5.4px; fill: #111; }
+
+/* dos columnas enfrentadas, con banda de titulo negra */
+.versus { display: flex; gap: 9px; }
+.versus .lado { flex: 1; min-width: 0; border: 1.8px solid #111; border-radius: 6px; overflow: hidden; }
+.versus .lado > .cab { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800;
+                       font-size: 8pt; text-transform: uppercase; letter-spacing: .5px; padding: 3px 8px; }
+.versus .lado > .cu { padding: 6px 9px; }
+
+/* recuadro de la cuenta, con renglones anchos */
+.cuentas { font-size: 8.8pt; line-height: 2.05; }
+.cuentas .linea { min-width: 15mm; }
+
+/* sello de "asi no" para los anti-ejemplos impresos */
+.noesto { border: 1.5px dashed #9aa0a8; border-radius: 5px; padding: 5px 8px; font-size: 8pt; color: #4a4f57;
+          background: #f7f8f9; }
+.noesto b { font-family: Montserrat,sans-serif; font-weight: 800; text-transform: uppercase; font-size: 7.4pt;
+            letter-spacing: .5px; color: #111; }
+
+/* esquemas geometricos impresos */
+.esquema { border: 1.6px solid #111; border-radius: 5px; padding: 5px 6px; background: #fff; }
+.esquema svg { display: block; width: 100%; height: auto; }
+.esquema text { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7px; fill: #111; }
+.esquema text.ch { font-size: 6px; fill: #4a4f57; }
+/* respuesta impresa de la ingenieria inversa */
+.resp { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800; font-size: 9.6pt;
+        padding: 3px 10px; border-radius: 4px; display: inline-block; }
+
+/* ---------- nonogramas (10x10 de 1o, 12x12 de 2o) ---------- */
+table.nono { border-collapse: collapse; margin: 0 auto; table-layout: fixed; }
+table.nono td { border: .7px solid #c9ced6; padding: 0; text-align: center;
+  font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.6pt; color: #4a4f57; }
+table.nono td.esq { border: none; }
+table.nono td.pc { vertical-align: bottom; padding-bottom: 1px; color: #111; }
+table.nono td.pr { text-align: right; padding-right: 2.5px; color: #111; }
+table.nono td.g { border-left: 1.7px solid #111; }
+table.nono tr.g td { border-top: 1.7px solid #111; }
+table.nono tr td:last-child { border-right: 1.7px solid #111; }
+table.nono tr:last-child td { border-bottom: 1.7px solid #111; }
+table.nono td.on { background: #111; }
+table.nono.n10 { width: 146mm; } table.nono.n10 td { height: 11.4mm; }
+table.nono.n10 col.cp { width: 7.4mm; } table.nono.n10 col.cc { width: 11.4mm; }
+table.nono.n12 { width: 152mm; } table.nono.n12 td { height: 9.4mm; font-size: 8pt; }
+table.nono.n12 col.cp { width: 6.2mm; } table.nono.n12 col.cc { width: 9.4mm; }
+table.nono.chica td { height: 4.6mm; font-size: 5.6pt; }
+table.nono.chica col.cp { width: 3.6mm; } table.nono.chica col.cc { width: 4.6mm; }
+table.bim.b6 { width: 112mm; } table.bim.b6 col { width: 16mm; } table.bim.b6 td { height: 16mm; }
+table.bim.b7 { width: 120mm; } table.bim.b7 col { width: 15mm; } table.bim.b7 td { height: 15mm; }
+table.bim.solc { width: 66mm; } table.bim.solc col { width: 8.2mm; } table.bim.solc td { height: 8.2mm; font-size: 7.4pt; }
+table.bim.solc td.cel.agua::after { width: 2mm; height: 2mm; }
+table.sopa.s12 { width: 126mm; } table.sopa.s12 td { width: 10.5mm; height: 10.5mm; font-size: 13pt; }
+table.sopa.s13 { width: 130mm; } table.sopa.s13 td { width: 10mm; height: 10mm; font-size: 12.4pt; }
+.lab-num text { font-family: Montserrat,sans-serif; font-weight: 700; }
+/* las rejillas chicas de las hojas de soluciones mandan sobre el tamano normal */
+table.sopa.chica { width: 92mm; } table.sopa.chica td { width: 7mm; height: 7mm; font-size: 8.4pt; }
+
+/* casillas de cifrado grandes, para las hojas de clave */
+.crip-linea.g { gap: 7px 9px; }
+.crip-linea.g .crip-ch { width: 8.4mm; }
+.crip-linea.g .crip-ch b { height: 8.6mm; line-height: 8.6mm; font-size: 12pt; }
+.crip-linea.g .crip-ch i { font-size: 8.6pt; margin-top: 2px; }
+table.abc-trab.alta td { height: 8.6mm; }
+table.abc-trab.alta td.l { height: 6mm; font-size: 8pt; }

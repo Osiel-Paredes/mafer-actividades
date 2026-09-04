@@ -1,0 +1,77 @@
+/* ---------- piezas propias de la actividad héroe / villano ---------- */
+.dibujo { position: relative; border: 1.8px dashed #a9aeb6; border-radius: 7px; overflow: hidden; background: #fff; }
+.dibujo .et { position: absolute; bottom: 4px; right: 8px; font-size: 7.6pt; color: #b8bcc2;
+              font-family: Montserrat,sans-serif; font-weight: 600; z-index: 2; }
+.dibujo .nota { position: absolute; top: 5px; left: 8px; font-size: 7.4pt; color: #b8bcc2; z-index: 2; }
+.dibujo.solido { border-style: solid; border-color: #111; border-width: 2.2px; }
+
+/* cartel de película, proporción 2:3 */
+.cartel { position: relative; border: 2.4px solid #111; border-radius: 4px; overflow: hidden; background: #fff; }
+.cartel .franja { position: absolute; left: 0; right: 0; bottom: 0; border-top: 1.4px dashed #c9ced6;
+                  height: 22mm; z-index: 2; padding: 3px 7px; }
+.cartel .franja .l { border-bottom: 1.1px dashed #b8bcc2; height: 16px; margin-top: 2px; }
+.cartel .franja .mini { font-size: 6.8pt; }
+
+/* storyboard */
+.sb { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; }
+.sb .cuadro { display: flex; flex-direction: column; }
+.sb .marco { border: 2px solid #111; border-radius: 4px; aspect-ratio: 16/9; position: relative; background: #fff; }
+.sb .marco span { position: absolute; top: 3px; left: 5px; font-family: Montserrat,sans-serif; font-weight: 800;
+                  font-size: 8pt; color: #c9ced6; }
+.sb .plano { display: flex; gap: 4px; align-items: baseline; margin-top: 4px; font-size: 7.2pt;
+             font-family: Montserrat,sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; color: #6b7078; }
+.sb .plano i { font-style: normal; flex: 1; border-bottom: 1.1px dashed #9aa0a8; }
+.sb .guion { border-bottom: 1.1px dashed #9aa0a8; height: 15px; margin-top: 3px; }
+.sb .guion.b { margin-top: 2px; }
+
+/* cartas enfrentadas */
+.duelo { display: flex; align-items: stretch; gap: 8px; }
+.duelo .carta { flex: 1; border: 2.2px solid #111; border-radius: 8px; padding: 8px 10px; }
+.duelo .carta.mal { background: #f6f7f8; }
+.duelo .vs { display: flex; align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+             font-weight: 800; font-size: 15pt; color: #111; width: 12mm; flex: none; }
+.duelo .vs span { border: 2.2px solid #111; border-radius: 50%; width: 12mm; height: 12mm;
+                  display: flex; align-items: center; justify-content: center; font-size: 10pt; }
+
+/* presupuesto de puntos */
+.puntos { display: flex; align-items: center; gap: 8px; border: 1.8px solid #111; border-radius: 6px;
+          padding: 5px 10px; font-size: 8.6pt; }
+.puntos b { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 13pt; }
+.puntos .caj { width: 14mm; height: 8mm; border: 1.6px solid #111; border-radius: 4px; flex: none; }
+
+/* barras de atributos */
+.stat { display: flex; align-items: center; gap: 7px; margin-bottom: 4.5px; }
+.stat .nm { width: 26mm; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.2pt;
+            text-transform: uppercase; letter-spacing: .3px; flex: none; }
+.stat .bar { display: flex; gap: 2px; flex: 1; }
+.stat .bar i { flex: 1; height: 4.8mm; border: 1.3px solid #111; border-radius: 2px; }
+.stat .tot { width: 9mm; height: 4.8mm; border: 1.6px solid #111; border-radius: 3px; flex: none; }
+
+/* ficha de datos en dos columnas de etiqueta + línea */
+.campos { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px 11px; }
+.campos.c1 { grid-template-columns: 1fr; }
+.campos.c3 { grid-template-columns: repeat(3,1fr); }
+.campos div { min-width: 0; }
+.lb { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.6pt; text-transform: uppercase;
+      letter-spacing: .3px; color: #5b6069; line-height: 1.2; }
+.campos .ln { border-bottom: 1.1px dashed #9aa0a8; height: 19px; }
+
+/* banco de problemas */
+table.banco td, table.banco th { padding: 3px 5px; font-size: 7.9pt; line-height: 1.25; }
+table.banco td.n { text-align: center; font-family: Montserrat,sans-serif; font-weight: 800; color: #1f4ea8; width: 7mm; }
+table.banco td.pb { font-family: Montserrat,sans-serif; font-weight: 700; }
+table.banco td.sel { text-align: center; width: 9mm; }
+
+/* aviso de regla */
+.regla { border: 2.2px solid #111; border-radius: 7px; padding: 8px 11px; background: #111; color: #fff; font-size: 8.8pt; }
+.regla b { font-family: Montserrat,sans-serif; font-weight: 800; }
+.regla .rot { color: #fff; } .regla .rot::before { background: #7fa3e0; }
+
+/* dos hojas llevan mas contenido que el resto: se densifican en bloque en vez de
+   recortarles material, que es lo que las hace buenas */
+.hoja.densa { font-size: 10pt; padding: 7mm 11mm 5mm; }
+.hoja.densa .instr { font-size: 8.9pt; padding: 6px 10px; }
+.hoja.densa .reng { height: 20px; }
+.hoja.densa .mini { font-size: 7.6pt; }
+.hoja.densa .extra { font-size: 7.7pt; padding: 4px 9px; }
+.hoja.densa .pie { padding-top: 5px; }

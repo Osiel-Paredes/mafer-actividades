@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="es-MX"><head><meta charset="utf-8">
+<title>Cuadernillo de actividades - 3o de secundaria</title>
+<style>
+@page { size: letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Roboto','Open Sans',sans-serif; color: #111; background: #fff; font-size: 10.5pt; line-height: 1.45; }
+
+.hoja { width: 216mm; height: 279mm; padding: 11mm 12mm 9mm; page-break-after: always;
+        position: relative; display: flex; flex-direction: column; overflow: hidden; }
+.hoja:last-child { page-break-after: auto; }
+
+/* ---------- encabezado de actividad ---------- */
+.tira { flex: none; display: flex; align-items: stretch; border: 2.2px solid #111; border-radius: 7px; overflow: hidden; }
+.tira .num { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800;
+             font-size: 21pt; letter-spacing: -.5px; padding: 6px 11px 4px; display: flex; align-items: center; }
+.tira .tit { flex: 1; padding: 6px 12px 5px; }
+.tira h1 { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 16.5pt; line-height: 1.05;
+           letter-spacing: -.35px; text-transform: uppercase; }
+.tira .sub { font-size: 8.6pt; color: #4a4f57; margin-top: 2px; }
+.tira .tiempo { background: #eceef2; border-left: 2.2px solid #111; font-family: Montserrat,sans-serif;
+                font-weight: 700; font-size: 8.5pt; padding: 0 10px; display: flex; flex-direction: column;
+                align-items: center; justify-content: center; text-align: center; min-width: 74px; line-height: 1.15; }
+.tira .tiempo b { font-size: 13pt; font-weight: 800; }
+
+.meta { flex: none; display: flex; gap: 14px; margin: 6px 0 8px; font-size: 8.4pt; color: #5b6069;
+        font-family: Montserrat,sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+.meta span { display: flex; align-items: flex-end; gap: 5px; }
+.meta i { font-style: normal; border-bottom: 1.2px solid #9aa0a8; flex: 1; min-width: 40px; height: 13px; }
+.meta .g1 { flex: 3 } .meta .g2 { flex: 1 } .meta .g3 { flex: 1.4 }
+
+/* ---------- bloques ---------- */
+.instr { background: #f3f4f6; border-left: 4px solid #1f4ea8; border-radius: 0 5px 5px 0;
+         padding: 7px 11px; font-size: 9.4pt; margin-bottom: 9px; }
+.instr b { font-family: Montserrat,sans-serif; font-weight: 800; }
+.caja { border: 1.8px solid #111; border-radius: 6px; padding: 9px 11px; }
+.caja.punt { border: 1.6px dashed #a9aeb6; }
+.rot { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.6pt; text-transform: uppercase;
+       letter-spacing: .7px; color: #111; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.rot::before { content: ""; width: 13px; height: 3px; background: #1f4ea8; border-radius: 2px; flex: none; }
+.rot.s::before { display: none; }
+.mini { font-size: 8pt; color: #6b7078; line-height: 1.3; }
+.fila { display: flex; gap: 9px; }
+.col { flex: 1; min-width: 0; }
+.mt { margin-top: 9px; } .mt6 { margin-top: 6px; } .mb { margin-bottom: 9px; }
+.crece { flex: 1; min-height: 0; }
+
+/* renglones para escribir */
+.reng { border-bottom: 1.1px dashed #9aa0a8; height: 22px; }
+.reng.a { height: 26px; }
+.linea { border-bottom: 1.1px solid #9aa0a8; display: inline-block; min-width: 60px; }
+
+/* checkbox */
+.cb { display: inline-block; width: 12px; height: 12px; border: 1.5px solid #111; border-radius: 2.5px;
+      vertical-align: -2px; margin-right: 6px; flex: none; }
+ul.chk { list-style: none; } ul.chk li { display: flex; gap: 0; margin-bottom: 5.5px; font-size: 9pt; line-height: 1.3; }
+
+/* pie */
+.pie { margin-top: auto; padding-top: 7px; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+.extra { flex: 1; border: 1.6px solid #111; border-radius: 6px; padding: 6px 10px; font-size: 8.6pt; background: #fff; }
+.extra b { font-family: Montserrat,sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
+           font-size: 8pt; background: #111; color: #fff; padding: 1.5px 6px; border-radius: 3px; margin-right: 6px; }
+.folio { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; color: #9aa0a8; white-space: nowrap; padding-bottom: 2px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+th, td { border: 1.2px solid #111; padding: 4px 6px; text-align: left; }
+th { background: #eceef2; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.2pt;
+     text-transform: uppercase; letter-spacing: .3px; }
+td.v { height: 25px; }
+.mono { font-family: 'Source Code Pro',monospace; }
+</style></head><body>
+<style>
+.port { background: #111; color: #fff; border-radius: 10px; padding: 20px 22px 18px; }
+.port .kick { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 9pt; letter-spacing: 3px;
+              text-transform: uppercase; color: #9db4dd; }
+.port h1 { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 33pt; line-height: .98;
+           letter-spacing: -1.4px; margin: 9px 0 8px; text-transform: uppercase; }
+.port p { font-size: 10pt; color: #d2d6dd; max-width: 155mm; }
+.tags { display: flex; gap: 7px; margin-top: 14px; flex-wrap: wrap; }
+.tags span { border: 1.4px solid #5c636e; border-radius: 20px; padding: 3px 11px; font-size: 8.4pt;
+             font-family: Montserrat,sans-serif; font-weight: 600; }
+.idx { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; margin-top: 12px; }
+.idx a { border: 1.6px solid #111; border-radius: 6px; padding: 7px 9px 8px; text-decoration: none; color: #111; display: block; }
+.idx .n { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 15pt; color: #1f4ea8; line-height: 1; }
+.idx .t { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 9pt; line-height: 1.15; margin: 3px 0 2px; }
+.idx .d { font-size: 7.6pt; color: #6b7078; line-height: 1.25; }
+.leyenda { display: flex; gap: 8px; margin-top: 11px; }
+.leyenda div { flex: 1; border-top: 3px solid #111; padding-top: 6px; font-size: 8.4pt; line-height: 1.35; }
+.leyenda b { font-family: Montserrat,sans-serif; font-weight: 800; display: block; font-size: 9pt; margin-bottom: 2px; }
+</style>
+
+<!-- ============ PORTADA ============ -->
+<section class="hoja">
+  <div class="port">
+    <div class="kick">Cuadernillo imprimible &middot; Tercero de secundaria</div>
+    <h1>Trabajo<br>individual<br>que no aburre</h1>
+    <p>Trece hojas para resolver en la banca: sin equipos, sin levantarse y sin nada que se resuelva
+       preguntándole al celular. Varias usan la tecnología como el tema, no como el atajo.</p>
+    <div class="tags"><span>13 actividades</span><span>Trabajo individual</span><span>Se imprime en blanco y negro</span><span>45 a 60 min c/u</span><span>Solucionario al final</span></div>
+  </div>
+
+  <div class="idx">
+    <a><div class="n">01</div><div class="t">Auditoría de mi vida digital</div><div class="d">Reloj de 24 h, tabla de apps y gráfica de barras hecha a mano.</div></a>
+    <a><div class="n">02</div><div class="t">Diseña tu app</div><div class="d">Tres pantallas dibujadas, ícono, usuario meta y lado oscuro.</div></a>
+    <a><div class="n">03</div><div class="t">Cazafakes</div><div class="d">Checklist de verificación sobre una noticia falsa incluida.</div></a>
+    <a><div class="n">04</div><div class="t">Corrige a la IA</div><div class="d">Texto con cinco errores plantados: hay que cazarlos.</div></a>
+    <a><div class="n">05</div><div class="t">Ficha de personaje</div><div class="d">Su avatar con atributos, inventario, misión y debilidad.</div></a>
+    <a><div class="n">06</div><div class="t">Cómic de 6 viñetas</div><div class="d">Marco listo, arranque dado, final libre.</div></a>
+    <a><div class="n">07</div><div class="t">Poema tachado</div><div class="d">Blackout poetry sobre un texto ya impreso en la hoja.</div></a>
+    <a><div class="n">08</div><div class="t">El objeto de 2050</div><div class="d">Ficha de patente con dibujo y llamadas numeradas.</div></a>
+    <a><div class="n">09</div><div class="t">Pixel lógica</div><div class="d">Nonograma de 15x15 con solución única verificada.</div></a>
+    <a><div class="n">10</div><div class="t">La tarea perdida</div><div class="d">Acertijo de rejilla: cinco alumnos, cinco excusas.</div></a>
+    <a><div class="n">11</div><div class="t">Escape room de papel</div><div class="d">Cuatro acertijos que abren un candado de 4 dígitos.</div></a>
+    <a><div class="n">12</div><div class="t">Arma tu setup</div><div class="d">Presupuesto real con IVA, porcentajes y decisiones.</div></a>
+    <a><div class="n">13</div><div class="t">Mandala geométrico</div><div class="d">136 zonas para rellenar con patrones distintos.</div></a>
+    <a style="border-style:dashed;border-color:#9aa0a8"><div class="n" style="color:#9aa0a8">+</div><div class="t">Guía de aplicación</div><div class="d">Tiempos, materia con la que empata y cómo estirar la sesión.</div></a>
+    <a style="border-style:dashed;border-color:#9aa0a8"><div class="n" style="color:#9aa0a8">&#10003;</div><div class="t">Solucionario</div><div class="d">Última hoja. Esa no se fotocopia.</div></a>
+  </div>
+
+  <div class="leyenda">
+    <div><b>Se imprime y ya</b>Todo cabe en una hoja carta por actividad. Sin color obligatorio: diseñado para fotocopia en blanco y negro.</div>
+    <div><b>A prueba de atajos</b>Casi ninguna se resuelve buscando en internet: piden datos propios, criterio o deducción.</div>
+    <div><b>Nadie se para</b>Cero equipos, cero material extra. Lápiz, colores si hay, y la hoja.</div>
+  </div>
+  <div class="pie"><div class="folio" style="margin-left:auto">Cuadernillo de actividades &middot; 3º de secundaria</div></div>
+</section>
+<style>
+.gtit { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 19pt; letter-spacing: -.5px;
+        text-transform: uppercase; border-bottom: 3px solid #111; padding-bottom: 5px; margin-bottom: 10px; }
+.gtit small { display: block; font-family: Roboto,sans-serif; font-weight: 400; font-size: 9pt;
+              text-transform: none; letter-spacing: 0; color: #5b6069; margin-top: 3px; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+p.tx { font-size: 9.4pt; margin-bottom: 7px; }
+.tabla-guia td { font-size: 8.5pt; padding: 3.5px 6px; }
+.tabla-guia td.n { font-family: Montserrat,sans-serif; font-weight: 800; text-align: center; width: 26px; color: #1f4ea8; }
+.tabla-guia td.a { font-family: Montserrat,sans-serif; font-weight: 700; width: 41mm; }
+.nota { border: 1.8px solid #111; border-radius: 6px; padding: 9px 11px; font-size: 9pt; }
+.nota.osc { background: #111; color: #fff; }
+.nota.osc .rot { color: #fff; } .nota.osc .rot::before { background: #7fa3e0; }
+</style>
+
+<!-- ============ GUÍA 1 ============ -->
+<section class="hoja">
+  <div class="gtit">Guía de aplicación<small>Léela una vez y ya no la necesitas. Las hojas de los alumnos empiezan en la página 4.</small></div>
+
+  <div class="g2 mb">
+    <div class="nota"><div class="rot">Cómo está armada cada hoja</div>
+      <p class="tx" style="margin:0">Arriba va el número, el título y el <b>tiempo estimado</b>. Luego un recuadro gris con la
+      consigna: eso es lo único que hay que leer en voz alta. Abajo del todo, siempre, un
+      <b>Reto extra</b> para el que termina antes de tiempo. Ese recuadro es lo que evita el clásico
+      «maestra, ya acabé» a los quince minutos.</p></div>
+    <div class="nota osc"><div class="rot">La regla que hace que duren</div>
+      <p class="tx" style="margin:0;color:#d2d6dd">Antes de repartir, escribe en el pizarrón los cuatro requisitos de entrega:
+      <b style="color:#fff">1)</b> todo relleno, <b style="color:#fff">2)</b> con color o sombreado,
+      <b style="color:#fff">3)</b> letra legible, <b style="color:#fff">4)</b> el reto extra resuelto.
+      Una hoja «terminada» sin los cuatro se regresa. Con eso, una actividad de 25 minutos se convierte en una de 50.</p></div>
+  </div>
+
+  <table class="tabla-guia">
+    <tr><th style="width:26px">#</th><th style="width:41mm">Actividad</th><th style="width:17mm">Tiempo</th><th style="width:34mm">Empata con</th><th>Qué produce el alumno y por qué no puede copiarla</th></tr>
+    <tr><td class="n">01</td><td class="a">Auditoría de mi vida digital</td><td>50 min</td><td>Matemáticas / Tutoría</td><td>Datos propios de uso de pantalla, gráfica de barras trazada a mano y conclusión. Los datos salen de su celular: nadie más los tiene.</td></tr>
+    <tr><td class="n">02</td><td class="a">Diseña tu app</td><td>55 min</td><td>Tecnología / Español</td><td>Tres pantallas dibujadas, propuesta de valor y un riesgo ético. Es diseño, no búsqueda.</td></tr>
+    <tr><td class="n">03</td><td class="a">Cazafakes</td><td>45 min</td><td>Español / Cívica</td><td>Verificación guiada de una noticia falsa que ya viene impresa. Se evalúa el criterio, no el dato.</td></tr>
+    <tr><td class="n">04</td><td class="a">Corrige a la IA</td><td>45 min</td><td>Historia / Español</td><td>Caza cinco errores plantados en un texto «generado por IA». Aquí sí pueden usar el celular: esa es la gracia.</td></tr>
+    <tr><td class="n">05</td><td class="a">Ficha de personaje</td><td>50 min</td><td>Español / Artes</td><td>Un avatar propio con atributos, inventario y debilidad. Escritura creativa disfrazada de videojuego.</td></tr>
+    <tr><td class="n">06</td><td class="a">Cómic de 6 viñetas</td><td>55 min</td><td>Español / Artes</td><td>Narrativa con inicio dado y final libre, con requisitos formales de encuadre.</td></tr>
+    <tr><td class="n">07</td><td class="a">Poema tachado</td><td>40 min</td><td>Español</td><td>Un poema construido tachando palabras del texto impreso. Cada resultado es distinto.</td></tr>
+    <tr><td class="n">08</td><td class="a">El objeto de 2050</td><td>50 min</td><td>Ciencias / Tecnología</td><td>Ficha de patente con dibujo, llamadas numeradas, materiales y riesgos.</td></tr>
+    <tr><td class="n">09</td><td class="a">Pixel lógica (nonograma)</td><td>50 min</td><td>Matemáticas</td><td>Deducción pura sobre una rejilla de 15x15. Tiene una sola solución y se llega a ella sin adivinar.</td></tr>
+    <tr><td class="n">10</td><td class="a">La tarea perdida</td><td>40 min</td><td>Matemáticas / Lógica</td><td>Acertijo de rejilla con nueve pistas. Solución única comprobada.</td></tr>
+    <tr><td class="n">11</td><td class="a">Escape room de papel</td><td>45 min</td><td>Matemáticas</td><td>Cuatro acertijos encadenados que abren un candado de cuatro dígitos.</td></tr>
+    <tr><td class="n">12</td><td class="a">Arma tu setup</td><td>50 min</td><td>Matemáticas</td><td>Presupuesto con IVA y porcentajes, más la defensa escrita de dos decisiones.</td></tr>
+    <tr><td class="n">13</td><td class="a">Mandala geométrico</td><td>Abierta</td><td>Artes / cierre</td><td>136 zonas con patrones distintos. Sirve de comodín para los días en que nada más funciona.</td></tr>
+  </table>
+
+  <div class="g3 mt">
+    <div class="nota"><div class="rot">Si te sobra tiempo</div><p class="tx" style="margin:0">Pide que le pongan
+    título, marco y firma de autor a la hoja. Suena tonto y son quince minutos más de trabajo concentrado.</p></div>
+    <div class="nota"><div class="rot">Si te falta tiempo</div><p class="tx" style="margin:0">Corta la hoja por la mitad:
+    la parte de arriba en clase y el reto extra de tarea. Ninguna actividad pierde sentido partida en dos.</p></div>
+    <div class="nota"><div class="rot">Si el grupo está imposible</div><p class="tx" style="margin:0">La 09, la 11 y la 13
+    son las que más silencio producen. La 13 no requiere ni explicación: se reparte y se apaga la luz del salón.</p></div>
+  </div>
+  <div class="pie"><div class="folio" style="margin-left:auto">Guía · 1 de 2</div></div>
+</section>
+
+<!-- ============ GUÍA 2 ============ -->
+<section class="hoja">
+  <div class="gtit">Rúbrica, celulares y trampas<small>Lo que necesitas para calificar rápido y para decidir cuándo el teléfono ayuda y cuándo estorba.</small></div>
+
+  <div class="rot">Rúbrica única para las 13 actividades (10 puntos)</div>
+  <table class="mb">
+    <tr><th style="width:38mm">Criterio</th><th style="width:15mm">Puntos</th><th>Qué se ve en la hoja</th></tr>
+    <tr><td><b>Completo</b></td><td style="text-align:center"><b>3</b></td><td>Todos los espacios llenos, incluido el reto extra. Ningún recuadro en blanco.</td></tr>
+    <tr><td><b>Bien hecho</b></td><td style="text-align:center"><b>3</b></td><td>Las respuestas son correctas o, si son de opinión, están argumentadas y no son de una línea.</td></tr>
+    <tr><td><b>Cuidado visual</b></td><td style="text-align:center"><b>2</b></td><td>Se entiende, está sombreado o coloreado, se nota que le dedicó tiempo.</td></tr>
+    <tr><td><b>Original</b></td><td style="text-align:center"><b>2</b></td><td>No es la misma respuesta que la del compañero de junto. Aporta algo propio.</td></tr>
+  </table>
+
+  <div class="g2 mb">
+    <div class="nota"><div class="rot">Celular permitido</div>
+      <p class="tx"><b>Actividad 04 (Corrige a la IA).</b> Es la única donde el celular es la herramienta central:
+      necesitan verificar los datos del texto. Justo ahí descubren que la IA afirma cosas falsas con total seguridad.</p>
+      <p class="tx" style="margin:0"><b>Actividad 01 (Auditoría digital).</b> Solo para consultar la pantalla de
+      «tiempo de uso» al inicio (Ajustes → Tiempo en pantalla / Bienestar digital). Cinco minutos y se guarda.</p></div>
+    <div class="nota"><div class="rot">Celular guardado</div>
+      <p class="tx" style="margin:0">En las otras once no sirve de nada, y eso es intencional: piden dibujar, deducir,
+      inventar o calcular. Si alguien intenta pedirle a una IA que le resuelva el nonograma, déjalo: se equivoca casi siempre.
+      Es la mejor demostración de que hay cosas que todavía tiene que hacer su cabeza.</p></div>
+  </div>
+
+  <div class="g2 mb">
+    <div class="nota"><div class="rot">Cómo cachar una hoja hecha con IA</div>
+      <p class="tx" style="margin:0">En las de escritura (05, 06, 08) el texto de IA se nota porque es genérico, sin nombres
+      propios, sin lugares reconocibles y sin errores. Pide siempre <b>un detalle local</b>: el nombre de una calle de su
+      colonia, una marca que se venda en la tiendita, algo que solo alguien de aquí escribiría. La IA no lo tiene y el alumno sí.</p></div>
+    <div class="nota"><div class="rot">Adaptaciones</div>
+      <p class="tx" style="margin:0">Para quien va más lento: acepta la mitad de los espacios llenos y el dibujo terminado.
+      Para quien va muy rápido: el reto extra es obligatorio y además se convierte en «explícaselo a la clase en tres
+      renglones, por escrito». Nadie se levanta y nadie se queda sin hacer nada.</p></div>
+  </div>
+
+  <div class="nota osc">
+    <div class="rot">Una advertencia sobre la actividad 04</div>
+    <p class="tx" style="margin:0;color:#d2d6dd">El texto de esa hoja contiene <b style="color:#fff">cinco errores
+    históricos puestos a propósito</b> y está marcado como tal en la propia hoja. No lo uses como material de repaso ni lo
+    dejes circular sin la corrección: la actividad no termina hasta que los cinco quedan tachados y corregidos en la misma hoja.
+    El solucionario de la última página trae los cinco.</p>
+  </div>
+  <div class="pie"><div class="folio" style="margin-left:auto">Guía · 2 de 2</div></div>
+</section>
+<style>
+/* patrones para colorear */
+.pat { width: 15px; height: 15px; border: 1.3px solid #111; border-radius: 3px; flex: none; }
+.p1 { background: #fff; }
+.p2 { background: repeating-linear-gradient(90deg,#111 0 1.6px,#fff 1.6px 4.2px); }
+.p3 { background: repeating-linear-gradient(45deg,#111 0 1.6px,#fff 1.6px 4.6px); }
+.p4 { background: radial-gradient(#111 1px, #fff 1.1px) 0 0/4px 4px; }
+.p5 { background: repeating-linear-gradient(0deg,#111 0 1.4px,#fff 1.4px 4px),
+                  repeating-linear-gradient(90deg,#111 0 1.4px,transparent 1.4px 4px); }
+.p6 { background: #111; }
+.leg { display: flex; align-items: center; gap: 7px; font-size: 8.7pt; margin-bottom: 4.5px; }
+.leg .lbl { flex: 1; }
+.leg .hrs { border-bottom: 1.1px solid #9aa0a8; width: 15mm; text-align: center; font-size: 8pt; color: #9aa0a8; }
+.calc { display: flex; align-items: center; gap: 6px; font-size: 9pt; margin-bottom: 6px; }
+.calc .hueco { border: 1.4px solid #111; border-radius: 4px; width: 20mm; height: 8mm; flex: none; background: #fdfdfd; }
+.calc .op { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 11pt; }
+</style>
+
+<!-- ============ 01 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">01</div>
+    <div class="tit"><h1>Auditoría de mi vida digital</h1>
+      <div class="sub">Cuánto de tu día se lo lleva una pantalla, con tus números reales. Nadie más puede hacer esta hoja por ti.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr"><b>1.</b> Abre en tu celular <i>Ajustes → Tiempo en pantalla</i> (iPhone) o <i>Bienestar digital</i> (Android)
+    y anota tus datos de ayer. Luego guarda el celular. <b>2.</b> Pinta cada una de las 24 horas del reloj con el patrón de la
+    categoría que le corresponda. <b>3.</b> Haz las cuentas de abajo. No hay respuesta correcta, hay respuesta tuya.</div>
+
+  <div class="fila">
+    <div class="col caja" style="flex:1.05;padding:6px 8px">
+      <div class="rot">Pinta tu día, hora por hora</div>
+      <svg viewBox="0 0 520 520" style="width:100%;height:auto" fill="none" stroke="#111" stroke-width="1.6">
+<path d="M260.0,186.0 L260.0,55.0 A205,205 0 0 1 313.1,62.0 L279.2,188.5 A74,74 0 0 0 260.0,186.0 Z" fill="#fff"/>
+<text x="289.2" y="37.9" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">0</text>
+<path d="M279.2,188.5 L313.1,62.0 A205,205 0 0 1 362.5,82.5 L297.0,195.9 A74,74 0 0 0 279.2,188.5 Z" fill="#fff"/>
+<text x="345.7" y="53.1" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">1</text>
+<path d="M297.0,195.9 L362.5,82.5 A205,205 0 0 1 405.0,115.0 L312.3,207.7 A74,74 0 0 0 297.0,195.9 Z" fill="#fff"/>
+<text x="396.4" y="82.3" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">2</text>
+<path d="M312.3,207.7 L405.0,115.0 A205,205 0 0 1 437.5,157.5 L324.1,223.0 A74,74 0 0 0 312.3,207.7 Z" fill="#fff"/>
+<text x="437.7" y="123.6" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">3</text>
+<path d="M324.1,223.0 L437.5,157.5 A205,205 0 0 1 458.0,206.9 L331.5,240.8 A74,74 0 0 0 324.1,223.0 Z" fill="#fff"/>
+<text x="466.9" y="174.3" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">4</text>
+<path d="M331.5,240.8 L458.0,206.9 A205,205 0 0 1 465.0,260.0 L334.0,260.0 A74,74 0 0 0 331.5,240.8 Z" fill="#fff"/>
+<text x="482.1" y="230.8" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">5</text>
+<path d="M334.0,260.0 L465.0,260.0 A205,205 0 0 1 458.0,313.1 L331.5,279.2 A74,74 0 0 0 334.0,260.0 Z" fill="#fff"/>
+<text x="482.1" y="289.2" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">6</text>
+<path d="M331.5,279.2 L458.0,313.1 A205,205 0 0 1 437.5,362.5 L324.1,297.0 A74,74 0 0 0 331.5,279.2 Z" fill="#fff"/>
+<text x="466.9" y="345.7" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">7</text>
+<path d="M324.1,297.0 L437.5,362.5 A205,205 0 0 1 405.0,405.0 L312.3,312.3 A74,74 0 0 0 324.1,297.0 Z" fill="#fff"/>
+<text x="437.7" y="396.4" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">8</text>
+<path d="M312.3,312.3 L405.0,405.0 A205,205 0 0 1 362.5,437.5 L297.0,324.1 A74,74 0 0 0 312.3,312.3 Z" fill="#fff"/>
+<text x="396.4" y="437.7" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">9</text>
+<path d="M297.0,324.1 L362.5,437.5 A205,205 0 0 1 313.1,458.0 L279.2,331.5 A74,74 0 0 0 297.0,324.1 Z" fill="#fff"/>
+<text x="345.7" y="466.9" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">10</text>
+<path d="M279.2,331.5 L313.1,458.0 A205,205 0 0 1 260.0,465.0 L260.0,334.0 A74,74 0 0 0 279.2,331.5 Z" fill="#fff"/>
+<text x="289.2" y="482.1" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">11</text>
+<path d="M260.0,334.0 L260.0,465.0 A205,205 0 0 1 206.9,458.0 L240.8,331.5 A74,74 0 0 0 260.0,334.0 Z" fill="#fff"/>
+<text x="230.8" y="482.1" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">12</text>
+<path d="M240.8,331.5 L206.9,458.0 A205,205 0 0 1 157.5,437.5 L223.0,324.1 A74,74 0 0 0 240.8,331.5 Z" fill="#fff"/>
+<text x="174.3" y="466.9" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">13</text>
+<path d="M223.0,324.1 L157.5,437.5 A205,205 0 0 1 115.0,405.0 L207.7,312.3 A74,74 0 0 0 223.0,324.1 Z" fill="#fff"/>
+<text x="123.6" y="437.7" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">14</text>
+<path d="M207.7,312.3 L115.0,405.0 A205,205 0 0 1 82.5,362.5 L195.9,297.0 A74,74 0 0 0 207.7,312.3 Z" fill="#fff"/>
+<text x="82.3" y="396.4" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">15</text>
+<path d="M195.9,297.0 L82.5,362.5 A205,205 0 0 1 62.0,313.1 L188.5,279.2 A74,74 0 0 0 195.9,297.0 Z" fill="#fff"/>
+<text x="53.1" y="345.7" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">16</text>
+<path d="M188.5,279.2 L62.0,313.1 A205,205 0 0 1 55.0,260.0 L186.0,260.0 A74,74 0 0 0 188.5,279.2 Z" fill="#fff"/>
+<text x="37.9" y="289.2" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">17</text>
+<path d="M186.0,260.0 L55.0,260.0 A205,205 0 0 1 62.0,206.9 L188.5,240.8 A74,74 0 0 0 186.0,260.0 Z" fill="#fff"/>
+<text x="37.9" y="230.8" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">18</text>
+<path d="M188.5,240.8 L62.0,206.9 A205,205 0 0 1 82.5,157.5 L195.9,223.0 A74,74 0 0 0 188.5,240.8 Z" fill="#fff"/>
+<text x="53.1" y="174.3" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">19</text>
+<path d="M195.9,223.0 L82.5,157.5 A205,205 0 0 1 115.0,115.0 L207.7,207.7 A74,74 0 0 0 195.9,223.0 Z" fill="#fff"/>
+<text x="82.3" y="123.6" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">20</text>
+<path d="M207.7,207.7 L115.0,115.0 A205,205 0 0 1 157.5,82.5 L223.0,195.9 A74,74 0 0 0 207.7,207.7 Z" fill="#fff"/>
+<text x="123.6" y="82.3" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">21</text>
+<path d="M223.0,195.9 L157.5,82.5 A205,205 0 0 1 206.9,62.0 L240.8,188.5 A74,74 0 0 0 223.0,195.9 Z" fill="#fff"/>
+<text x="174.3" y="53.1" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">22</text>
+<path d="M240.8,188.5 L206.9,62.0 A205,205 0 0 1 260.0,55.0 L260.0,186.0 A74,74 0 0 0 240.8,188.5 Z" fill="#fff"/>
+<text x="230.8" y="37.9" font-family="Montserrat,sans-serif" font-size="15" font-weight="700" fill="#5b6069" stroke="none" text-anchor="middle" dominant-baseline="central">23</text>
+<circle cx="260" cy="260" r="74" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="260" y="246" font-family="Montserrat,sans-serif" font-size="30" font-weight="800" fill="#111" stroke="none" text-anchor="middle">24 h</text>
+<text x="260" y="272" font-family="Roboto,sans-serif" font-size="14" fill="#6b7078" stroke="none" text-anchor="middle">de un día</text>
+<text x="260" y="294" font-family="Roboto,sans-serif" font-size="13" fill="#6b7078" stroke="none" text-anchor="middle">entre semana</text>
+</svg>
+    </div>
+    <div class="col" style="flex:1">
+      <div class="caja" style="padding:8px 10px">
+        <div class="rot">Categorías y patrones</div>
+        <div class="leg"><span class="pat p1"></span><span class="lbl">Dormir</span><span class="hrs">h</span></div>
+        <div class="leg"><span class="pat p2"></span><span class="lbl">Escuela</span><span class="hrs">h</span></div>
+        <div class="leg"><span class="pat p6"></span><span class="lbl">Pantalla por gusto (redes, videos, juegos)</span><span class="hrs">h</span></div>
+        <div class="leg"><span class="pat p3"></span><span class="lbl">Tarea o estudio</span><span class="hrs">h</span></div>
+        <div class="leg"><span class="pat p4"></span><span class="lbl">Comer, bañarme, transporte</span><span class="hrs">h</span></div>
+        <div class="leg"><span class="pat p5"></span><span class="lbl">Con gente, sin pantalla de por medio</span><span class="hrs">h</span></div>
+        <div class="mini" style="margin-top:3px">Las seis casillas de la derecha deben sumar 24.</div>
+      </div>
+      <div class="caja mt6" style="padding:8px 10px">
+        <div class="rot">Mi top 5 de aplicaciones</div>
+        <table>
+          <tr><th style="width:8mm">#</th><th>Aplicación</th><th style="width:19mm">Min/día</th><th style="width:30mm">Cómo me siento al cerrarla</th></tr>
+          <tr><td style="text-align:center">1</td><td class="v"></td><td></td><td></td></tr>
+          <tr><td style="text-align:center">2</td><td class="v"></td><td></td><td></td></tr>
+          <tr><td style="text-align:center">3</td><td class="v"></td><td></td><td></td></tr>
+          <tr><td style="text-align:center">4</td><td class="v"></td><td></td><td></td></tr>
+          <tr><td style="text-align:center">5</td><td class="v"></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="caja mt" style="padding:8px 11px">
+    <div class="rot">La cuenta que duele</div>
+    <div class="fila">
+      <div class="col">
+        <div class="calc"><span style="width:52mm">Minutos de pantalla al día</span><span class="hueco"></span></div>
+        <div class="calc"><span style="width:52mm"><span class="op">×</span> 7 = minutos por semana</span><span class="hueco"></span></div>
+        <div class="calc" style="margin:0"><span style="width:52mm"><span class="op">÷</span> 60 = <b>horas por semana</b></span><span class="hueco"></span></div>
+      </div>
+      <div class="col">
+        <div class="calc"><span style="width:52mm">Horas por semana <span class="op">×</span> 52</span><span class="hueco"></span></div>
+        <div class="calc"><span style="width:52mm"><span class="op">÷</span> 24 = <b>días completos al año</b></span><span class="hueco"></span></div>
+        <div class="calc" style="margin:0;font-size:8.4pt;color:#5b6069">Días de 24 horas seguidas viendo una pantalla, en un año.</div>
+      </div>
+    </div>
+    <div class="mt6" style="font-size:9pt">Con ese mismo tiempo, en un año, yo habría podido:</div>
+    <div class="reng"></div><div class="reng"></div>
+  </div>
+
+  <div class="caja mt" style="padding:8px 11px">
+    <div class="rot">Una última pregunta, y contéstala en serio</div>
+    <div style="font-size:9pt">De las cinco aplicaciones de tu lista, ¿cuál <b>quitarías</b> si te obligaran a borrar una, y qué es exactamente lo que perderías?</div>
+    <div class="reng"></div><div class="reng"></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Voltea la pregunta: diseña el día que <i>sí</i> querrías tener. Dibuja un
+    segundo reloj de 24 horas al reverso de la hoja, píntalo con las mismas seis categorías y escribe abajo las tres cosas que
+    tendrías que cambiar mañana para que ese día se parezca al de hoy.</div><div class="folio">01</div></div>
+</section>
+<style>
+.fono { border: 2.2px solid #111; border-radius: 13px; padding: 4px 4px 3px; display: flex; flex-direction: column; height: 100%; }
+.fono .notch { width: 21mm; height: 3.2mm; background: #111; border-radius: 0 0 6px 6px; margin: 0 auto 4px; flex: none; }
+.fono .pant { flex: 1; border: 1.4px dashed #b8bcc2; border-radius: 8px; }
+.fono .cap { text-align: center; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.6pt;
+             padding-top: 3px; text-transform: uppercase; letter-spacing: .3px; flex: none; }
+.icono { width: 26mm; height: 26mm; border: 2.2px solid #111; border-radius: 7mm; flex: none;
+         display: flex; align-items: flex-end; justify-content: center; padding-bottom: 2px; }
+.icono span { font-size: 7pt; color: #b8bcc2; }
+/* captura falsa de navegador */
+.nav { border: 2px solid #111; border-radius: 7px; overflow: hidden; }
+.nav .barra { background: #111; display: flex; align-items: center; gap: 5px; padding: 4px 8px; }
+.nav .barra .pt { width: 7px; height: 7px; border-radius: 50%; background: #6b7078; flex: none; }
+.nav .barra .url { flex: 1; background: #3a3f47; color: #c9ced6; border-radius: 3px; padding: 1.5px 8px;
+                   font-family: 'Source Code Pro',monospace; font-size: 7.8pt; margin-left: 5px; }
+.nav .cuerpo { padding: 9px 12px 10px; }
+.nav h2 { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 14pt; line-height: 1.12; letter-spacing: -.3px; }
+.nav .firma { font-size: 8pt; color: #6b7078; margin: 5px 0 6px; border-bottom: 1px solid #d8dbe0; padding-bottom: 5px; }
+.nav p { font-size: 8.8pt; margin-bottom: 4px; }
+.nav .social { display: flex; gap: 12px; font-size: 8pt; color: #6b7078; margin-top: 6px;
+               border-top: 1px solid #d8dbe0; padding-top: 5px; font-family: Montserrat,sans-serif; font-weight: 600; }
+.sello { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800; font-size: 7.4pt;
+         letter-spacing: 1.2px; text-transform: uppercase; text-align: center; padding: 3px; }
+.semaforo { display: flex; gap: 9px; }
+.semaforo div { flex: 1; border: 1.8px solid #111; border-radius: 6px; text-align: center; padding: 7px 4px 8px; }
+.semaforo .bola { width: 13mm; height: 13mm; border: 2px solid #111; border-radius: 50%; margin: 0 auto 4px; }
+.semaforo b { font-family: Montserrat,sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: .4px; }
+.semaforo em { display: block; font-style: normal; font-size: 7.6pt; color: #6b7078; line-height: 1.2; margin-top: 2px; }
+</style>
+
+<!-- ============ 02 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">02</div>
+    <div class="tit"><h1>Diseña tu app</h1>
+      <div class="sub">No se trata de programar nada. Se trata de resolverle un problema real a alguien real, y de dibujarlo.</div></div>
+    <div class="tiempo"><b>55</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Inventa una aplicación que hoy no existe y que a ti te haría falta. Dibuja sus tres pantallas
+    principales como si se las fueras a enseñar a alguien que va a pagar por hacerla: con sus botones, sus textos y sus listas.
+    <b>Regla: el problema tiene que ser de tu vida, no del mundo en general.</b> «Acabar con el hambre» no sirve. «Que mi mamá
+    sepa a qué hora salgo de la escuela sin llamarme diez veces» sí sirve.</div>
+
+  <div class="fila mb">
+    <div class="icono"><span>ícono</span></div>
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Se llama</div>
+      <div class="reng a"></div>
+      <div class="rot" style="margin-top:5px">Y en una sola frase, sirve para</div>
+      <div class="reng"></div>
+    </div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px"><div class="rot">El problema exacto que resuelve</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Quién la usaría (sé específico)</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="fila" style="height:76mm">
+    <div class="col"><div class="fono"><div class="notch"></div><div class="pant"></div>
+      <div class="cap">1 · Pantalla de bienvenida</div></div></div>
+    <div class="col"><div class="fono"><div class="notch"></div><div class="pant"></div>
+      <div class="cap">2 · La pantalla principal</div></div></div>
+    <div class="col"><div class="fono"><div class="notch"></div><div class="pant"></div>
+      <div class="cap">3 · El momento clave</div></div></div>
+  </div>
+
+  <div class="fila mt">
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Tres cosas que sí o sí hace</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">¿De dónde sale el dinero?</div>
+      <div class="mini" style="margin:-2px 0 3px">Alguien tiene que pagar el servidor. ¿Quién y cómo?</div>
+      <div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+      <div class="rot">El lado oscuro</div>
+      <div class="mini" style="margin:-2px 0 3px">¿Cómo podría usarse tu app para hacerle daño a alguien?</div>
+      <div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escribe el anuncio de 15 segundos de tu app: una sola frase que
+    la venda, más el dibujo del cuadro que aparecería en pantalla. Si tu frase necesita explicación, todavía no está lista.</div>
+    <div class="folio">02</div></div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">03</div>
+    <div class="tit"><h1>Cazafakes</h1>
+      <div class="sub">Ocho preguntas que hay que hacerle a cualquier cosa antes de reenviarla. Practícalas con esta.</div></div>
+    <div class="tiempo"><b>45</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="nav mb">
+    <div class="sello">Nota inventada para esta actividad · No es real · No la compartas</div>
+    <div class="barra"><span class="pt"></span><span class="pt"></span><span class="pt"></span>
+      <span class="url">https://noticias-virales-mx.info.co/salud/audifonos-memoria-47</span></div>
+    <div class="cuerpo">
+      <h2>Estudio revela que usar audífonos más de 2 horas al día aumenta un 47% la memoria de los adolescentes</h2>
+      <div class="firma">Por Redacción · Sección Salud · Actualizado recientemente</div>
+      <p>Un reciente estudio internacional habría demostrado que los jóvenes que escuchan música con audífonos durante
+         más de dos horas diarias desarrollan una memoria hasta 47% superior a la del resto de sus compañeros. Los
+         investigadores aseguran que el efecto sería «inmediato y permanente».</p>
+      <p>Según el informe, los expertos recomiendan dormir con los audífonos puestos para potenciar el efecto durante
+         la noche. Muchos profesionales de la salud no quieren que esta información se difunda, ya que afectaría
+         directamente la venta de suplementos para la concentración.</p>
+      <p>Comparte esta nota antes de que la eliminen. Ya la han compartido más de 48 mil personas.</p>
+      <div class="social"><span>48,312 compartidos</span><span>2,904 comentarios</span><span>Fuente: internet</span></div>
+    </div>
+  </div>
+
+  <div class="instr" style="margin-bottom:7px"><b>Tu trabajo:</b> pasa la nota por las ocho preguntas. Marca la casilla solo
+    cuando la nota <b>sí</b> cumpla con lo que se pide, y escribe en la última columna la prueba que encontraste en el texto.</div>
+
+  <table class="mb">
+    <tr><th style="width:8mm">#</th><th style="width:72mm">Lo que se le pregunta a cualquier noticia</th><th style="width:14mm">Cumple</th><th>La prueba que encontré en la nota</th></tr>
+    <tr><td style="text-align:center">1</td><td>¿Se sabe qué medio la publicó y ese medio existe?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">2</td><td>¿Tiene autor con nombre y apellido?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">3</td><td>¿Tiene fecha exacta de publicación?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">4</td><td>Si cita un estudio, ¿dice quién lo hizo y dónde se publicó?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">5</td><td>¿Los datos son verificables o son cifras sueltas?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">6</td><td>¿Está escrita sin exageraciones ni urgencia?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">7</td><td>¿Evita decir que «hay quienes no quieren que lo sepas»?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+    <tr><td style="text-align:center">8</td><td>¿Da un consejo que no te pondría en riesgo si lo sigues?</td><td style="text-align:center"><span class="cb" style="margin:0"></span></td><td class="v"></td></tr>
+  </table>
+
+  <div class="fila mb">
+    <div class="col" style="flex:1.25">
+      <div class="rot">Mi veredicto: rodea uno y píntalo</div>
+      <div class="semaforo">
+        <div><div class="bola"></div><b>Confiable</b><em>Pasa casi todas</em></div>
+        <div><div class="bola"></div><b>Sospechosa</b><em>Falla algunas</em></div>
+        <div><div class="bola"></div><b>Falsa</b><em>Falla casi todas</em></div>
+      </div>
+    </div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">¿Quién gana si yo la comparto?</div>
+      <div class="mini" style="margin:-2px 0 3px">Dinero, clics, votos, miedo. Siempre gana alguien.</div>
+      <div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="caja" style="padding:7px 10px">
+    <div class="rot">Reescribe el titular para que sea honesto</div>
+    <div class="reng a"></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Ahora del otro lado: inventa tú una noticia falsa que engañaría a tu
+    propia familia. Escríbela en cinco renglones al reverso y señala con flechas las cinco trampas que usaste. Entender el
+    truco desde adentro es lo que te vuelve difícil de engañar.</div><div class="folio">03</div></div>
+</section>
+<style>
+.chat { border: 2.2px solid #111; border-radius: 9px; overflow: hidden; }
+.chat .cab { background: #eceef2; border-bottom: 2.2px solid #111; padding: 5px 10px; display: flex; gap: 8px; align-items: center; }
+.chat .av { width: 20px; height: 20px; background: #111; border-radius: 6px; flex: none; position: relative; }
+.chat .av::after { content: ""; position: absolute; inset: 6px 4px; border: 1.6px solid #fff; border-radius: 2px; }
+.chat .cab b { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.6pt; }
+.chat .cab span { font-size: 7.8pt; color: #6b7078; margin-left: auto; }
+.chat .txt { padding: 11px 14px 13px; font-size: 10.5pt; line-height: 2.05; text-align: justify; }
+.stat { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.stat .nm { width: 27mm; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.3pt;
+            text-transform: uppercase; letter-spacing: .3px; flex: none; }
+.stat .bar { display: flex; gap: 2px; flex: 1; }
+.stat .bar i { flex: 1; height: 5.2mm; border: 1.3px solid #111; border-radius: 2px; }
+.inv { display: flex; gap: 7px; }
+.inv div { flex: 1; }
+.inv .sq { border: 1.6px dashed #a9aeb6; border-radius: 6px; height: 24mm; }
+.inv .nb { border-bottom: 1.1px dashed #9aa0a8; height: 16px; margin-top: 3px; }
+.vinetas { display: grid; gap: 7px; grid-template-columns: 1fr 1.55fr; }
+.vin { border: 2.2px solid #111; border-radius: 5px; position: relative; }
+.vin::after { content: attr(data-n); position: absolute; top: 3px; left: 5px; font-family: Montserrat,sans-serif;
+              font-weight: 800; font-size: 8pt; color: #c9ced6; }
+.texto-base { column-count: 2; column-gap: 11mm; column-rule: 1px solid #e2e5e9; font-size: 11pt;
+              line-height: 2.15; text-align: justify; hyphens: none; }
+</style>
+
+<!-- ============ 04 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">04</div>
+    <div class="tit"><h1>Corrige a la inteligencia artificial</h1>
+      <div class="sub">Aquí sí se vale sacar el celular. De hecho, sin él no puedes terminar esta hoja.</div></div>
+    <div class="tiempo"><b>45</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Le pedimos a una inteligencia artificial que explicara la Revolución Mexicana y esto respondió, con
+    toda seguridad y sin dudar ni una vez. <b>Tiene exactamente cinco errores.</b> Subráyalos en el texto, numéralos del 1 al 5
+    y llena la tabla. Puedes usar el celular, tu libro o lo que quieras: lo que se califica no es que te los sepas, es que los caches.</div>
+
+  <div class="chat mb">
+    <div class="cab"><span class="av"></span><b>Respuesta generada por una IA</b><span>Texto con errores puestos a propósito para esta actividad</span></div>
+    <div class="txt">La Revolución Mexicana comenzó en 1810, cuando Francisco I. Madero publicó el Plan de Ayala y llamó
+      al pueblo a levantarse contra el gobierno de Porfirio Díaz, quien llevaba más de treinta años en el poder. En el norte del
+      país, Emiliano Zapata encabezó al Ejército Libertador del Sur bajo el lema «Tierra y Libertad» y exigió la devolución de
+      las tierras a las comunidades campesinas. El movimiento armado concluyó con la promulgación de la Constitución de 1917,
+      firmada en la ciudad de Guadalajara, y sus efectos se extendieron hasta 1950.</div>
+  </div>
+
+  <table class="mb">
+    <tr><th style="width:8mm">#</th><th style="width:55mm">Lo que dice el texto</th><th style="width:55mm">Lo correcto</th><th>Dónde lo comprobé (nombre de la fuente, no «internet»)</th></tr>
+    <tr><td style="text-align:center">1</td><td class="v"></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">2</td><td class="v"></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">3</td><td class="v"></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">4</td><td class="v"></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">5</td><td class="v"></td><td></td><td></td></tr>
+  </table>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Escribe la versión corregida, en tus palabras</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Hay un error que el texto se contradice solo</div>
+      <div class="mini" style="margin:-2px 0 3px">Uno de los cinco se puede cachar sin buscar nada: el propio párrafo dice
+        una cosa y su contraria. ¿Cuál es y en qué se contradice?</div>
+      <div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+    <div class="rot">La pregunta de fondo</div>
+    <div style="font-size:9pt">La IA escribió los cinco errores con el mismo tono seguro con el que escribió lo verdadero.
+      Nada en el texto avisa cuál parte es falsa. Entonces: ¿en qué casos <b>sí</b> te conviene usarla, y qué tienes que hacer siempre después?</div>
+    <div class="reng"></div><div class="reng"></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escribe la pregunta exacta que tú le harías a una IA para que esta
+    respuesta te saliera bien a la primera. Pista: mientras más le digas para qué es, de qué nivel y qué debe incluir, menos se
+    inventa. Compárala con la de tu compañero de junto sin pararte: se pasan las hojas y ya.</div><div class="folio">04</div></div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">05</div>
+    <div class="tit"><h1>Ficha de personaje</h1>
+      <div class="sub">Si tu vida fuera un videojuego, esta sería tu pantalla de selección. Pero con reglas.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Crea un personaje jugable. Puede ser tú con superpoderes o alguien completamente inventado.
+    <b>La regla que lo vuelve difícil: tienes 30 puntos para repartir entre los seis atributos y ninguno puede quedar en cero
+    ni pasar de 10.</b> Nadie puede ser bueno en todo, y esa es justo la decisión interesante.</div>
+
+  <div class="fila mb">
+    <div class="caja punt" style="width:56mm;height:60mm;display:flex;align-items:center;justify-content:center">
+      <span class="mini" style="text-align:center">Retrato del personaje<br>de la cintura para arriba</span></div>
+    <div class="col">
+      <div class="caja" style="padding:7px 10px">
+        <div class="fila"><div class="col"><div class="rot">Nombre</div><div class="reng a"></div></div>
+          <div class="col"><div class="rot">Se le conoce como</div><div class="reng a"></div></div></div>
+        <div class="fila mt6"><div class="col"><div class="rot">Viene de</div><div class="reng a"></div></div>
+          <div class="col"><div class="rot">Se dedica a</div><div class="reng a"></div></div></div>
+      </div>
+      <div class="caja mt6" style="padding:7px 10px">
+        <div class="rot">Atributos · reparte exactamente 30 puntos</div>
+        <div class="stat"><span class="nm">Fuerza</span><span class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="stat"><span class="nm">Astucia</span><span class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="stat"><span class="nm">Carisma</span><span class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="stat"><span class="nm">Aguante</span><span class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="stat"><span class="nm">Suerte</span><span class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="stat" style="margin:0"><span class="nm">Tecnología</span><span class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot">Inventario · solo cuatro objetos, dibújalos y nómbralos</div>
+    <div class="inv">
+      <div><div class="sq"></div><div class="nb"></div></div>
+      <div><div class="sq"></div><div class="nb"></div></div>
+      <div><div class="sq"></div><div class="nb"></div></div>
+      <div><div class="sq"></div><div class="nb"></div></div>
+    </div>
+  </div>
+
+  <div class="fila">
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Habilidad especial</div>
+      <div class="mini" style="margin:-2px 0 3px">Qué hace y cuánto le cuesta usarla.</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Su debilidad</div>
+      <div class="mini" style="margin:-2px 0 3px">Un personaje sin debilidad es aburrido. Que sea una de verdad.</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Su misión</div>
+      <div class="mini" style="margin:-2px 0 3px">Qué persigue y quién se lo impide.</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escribe las dos frases que dice tu personaje: una cuando entra a
+    pelear y otra cuando pierde. Y en tres renglones, explica por qué le pusiste diez en un atributo y uno en otro: esa decisión
+    es la que cuenta la historia.</div><div class="folio">05</div></div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">06</div>
+    <div class="tit"><h1>Cómic de seis viñetas</h1>
+      <div class="sub">El principio te lo damos nosotros. El final es problema tuyo.</div></div>
+    <div class="tiempo"><b>55</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr"><b>El arranque:</b> son las 6:40 de la mañana. Al abrir tu mochila para meter el cuaderno, encuentras
+    adentro algo que no es tuyo y que no tiene forma de haber llegado ahí. Lo que pasa después lo decides tú, en seis viñetas.
+    <b>Requisitos:</b> <span class="cb"></span>una onomatopeya escrita a mano  <span class="cb"></span>una viñeta sin ningún
+    texto  <span class="cb"></span>un acercamiento a la cara de alguien  <span class="cb"></span>un final que no se veía venir.</div>
+
+  <div class="fila mb" style="align-items:flex-end">
+    <div class="col"><div class="rot">Título del cómic</div><div class="reng a"></div></div>
+    <div style="width:52mm"><div class="rot">Autor o autora</div><div class="reng a"></div></div>
+  </div>
+
+  <div class="vinetas mb" style="height:54mm"><div class="vin" data-n="1"></div><div class="vin" data-n="2"></div></div>
+  <div class="vinetas mb" style="height:49mm;grid-template-columns:1fr 1fr 1fr">
+    <div class="vin" data-n="3"></div><div class="vin" data-n="4"></div><div class="vin" data-n="5"></div></div>
+  <div class="vinetas" style="height:54mm;grid-template-columns:1fr"><div class="vin" data-n="6"></div></div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Dibuja al reverso la viñeta 7: la misma historia, pero contada
+    desde el punto de vista del objeto que apareció en la mochila. ¿Cómo llegó ahí? ¿Qué quería?</div><div class="folio">06</div></div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">07</div>
+    <div class="tit"><h1>Poema tachado</h1>
+      <div class="sub">No vas a escribir un poema: vas a encontrar el que ya estaba escondido en este texto.</div></div>
+    <div class="tiempo"><b>40</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr"><b>1.</b> Lee el texto completo una vez. <b>2.</b> Vuelve a leerlo y encierra en un círculo, con lápiz,
+    entre 15 y 30 palabras que te gusten o que juntas digan algo. <b>3.</b> Tacha todo lo demás con marcador o rayado apretado,
+    hasta que la hoja quede casi negra. <b>4.</b> Lo que sobrevive, leído en orden, es tu poema. No se pueden cambiar de lugar
+    las palabras ni agregar ninguna. <b>Esa es la única regla y es la que lo hace difícil.</b></div>
+
+  <div class="caja mb" style="padding:11px 13px">
+    <div class="texto-base">Al final del pasillo hay una puerta que nadie abre desde hace años. La madera se hinchó con la
+      lluvia de un invierno que ya nadie recuerda y ahora el marco la sostiene como un abrazo demasiado apretado. Del otro lado,
+      dicen, hay cajas: fotografías con las orillas dobladas, cartas escritas con una letra que se inclina hacia la derecha, un
+      reloj detenido a las cuatro y diez, monedas de un país que cambió de nombre. La abuela decía que ahí guardaron el ruido de
+      la casa cuando la casa todavía tenía ruido. Los niños inventaron que ahí vivía un animal manso, hecho de polvo y de
+      silencio, que solo salía de noche para caminar despacio sobre los libros. Cada quien construyó su versión y todas las
+      versiones se volvieron ciertas al mismo tiempo. Nadie busca la llave. Buscarla sería aceptar que del otro lado quizá no
+      hay nada: apenas un cuarto vacío, una ventana sucia y el rectángulo pálido que deja un mueble cuando se lo llevan.
+      Mientras la puerta siga cerrada, la casa conserva un secreto. Y una casa con un secreto todavía es un lugar donde puede
+      pasar algo.</div>
+  </div>
+
+  <div class="fila">
+    <div class="col caja" style="padding:8px 11px">
+      <div class="rot">Transcribe aquí tu poema, en los renglones que necesites</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div><div class="reng"></div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div><div class="reng"></div>
+    </div>
+    <div style="width:62mm">
+      <div class="caja" style="padding:8px 10px"><div class="rot">Título</div><div class="reng a"></div></div>
+      <div class="caja mt6" style="padding:8px 10px"><div class="rot">La palabra que más te costó dejar fuera</div>
+        <div class="reng"></div><div class="mini" style="margin-top:3px">¿Por qué la tachaste si te gustaba?</div>
+        <div class="reng"></div><div class="reng"></div></div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Convierte el tachado en dibujo: en vez de rayar parejo, tapa el texto
+    con un patrón, una silueta o una escena que tenga que ver con lo que dice tu poema. La hoja tachada es la obra, no el borrador.</div>
+    <div class="folio">07</div></div>
+</section>
+<style>
+.reticula { background: repeating-linear-gradient(0deg,#e9ebef 0 .5px,transparent .5px 5mm),
+                        repeating-linear-gradient(90deg,#e9ebef 0 .5px,transparent .5px 5mm); }
+.oficio { display: flex; align-items: center; gap: 10px; border: 2.2px solid #111; border-radius: 6px;
+          padding: 5px 11px; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.4pt;
+          text-transform: uppercase; letter-spacing: .6px; }
+.oficio .sep { flex: 1; border-bottom: 1.2px solid #9aa0a8; height: 12px; }
+/* nonograma */
+table.nono { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 168mm; }
+table.nono.mini { width: 30.6mm; }
+.solpeq table.nono { width: 76mm; }
+table.nono col.cp, table.nono col.cc { width: 8.4mm; }
+table.nono.mini col.cp, table.nono.mini col.cc { width: 5.1mm; }
+.solpeq table.nono col.cp, .solpeq table.nono col.cc { width: 3.8mm; }
+table.nono td { border: .7px solid #c9ced6; width: 8.4mm; height: 8.4mm; padding: 0; text-align: center;
+                font-family: 'Source Code Pro',monospace; font-size: 8.4pt; font-weight: 600; }
+table.nono td.esq { border: none; }
+table.nono td.pc { vertical-align: bottom; padding-bottom: 1px; color: #111; }
+table.nono td.g5 { border-left: 1.7px solid #111; }
+table.nono tr.g5 td { border-top: 1.7px solid #111; }
+table.nono tr td:last-child { border-right: 1.7px solid #111; }
+table.nono tr:last-child td { border-bottom: 1.7px solid #111; }
+table.nono td.on { background: #111; }
+table.nono.mini td { width: 5.1mm; height: 5.1mm; font-size: 6.4pt; }
+/* rejilla de lógica */
+table.lg { border-collapse: collapse; table-layout: fixed; }
+table.lg.lg15 { width: 105.5mm; } table.lg.lg10 { width: 78mm; } table.lg.lg5 { width: 50.5mm; }
+table.lg col.cl { width: 23mm; } table.lg col.cc { width: 5.5mm; }
+table.lg td.c { height: 5.5mm; border: .7px solid #b8bcc2; }
+table.lg td.hlab { border: none; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.8pt;
+                   text-align: right; padding-right: 5px; white-space: nowrap; }
+table.lg td.vlab { border: none; height: 22mm; vertical-align: bottom; padding: 0 0 2px; }
+table.lg td.vlab span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: Montserrat,sans-serif;
+                        font-weight: 600; font-size: 7.2pt; white-space: nowrap; display: block; margin: 0 auto; }
+table.lg td.gtit { border: none; background: #eceef2; font-family: Montserrat,sans-serif; font-weight: 800;
+                   font-size: 7.2pt; text-transform: uppercase; letter-spacing: .5px; text-align: center; padding: 2px 0; }
+table.lg td.hueco { border: none; }
+table.lg td.sep { border-left: 1.7px solid #111; }
+table.lg tr.sepr td.c { border-top: 1.7px solid #111; }
+table.lg tr:last-child td.c { border-bottom: 1.7px solid #111; }
+table.lg tr td.c:last-child { border-right: 1.7px solid #111; }
+/* escape room */
+.acertijo { border: 2.2px solid #111; border-radius: 7px; padding: 8px 10px 9px; display: flex; flex-direction: column; }
+.acertijo .let { position: absolute; }
+.acertijo .cab { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.acertijo .cab b { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800;
+                   font-size: 11pt; width: 8mm; height: 8mm; border-radius: 4px; display: flex;
+                   align-items: center; justify-content: center; flex: none; }
+.acertijo .cab span { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 9pt; text-transform: uppercase; letter-spacing: .4px; }
+.acertijo .res { display: flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 6px; font-size: 8pt; }
+.acertijo .res .caj { width: 11mm; height: 11mm; border: 2.2px solid #111; border-radius: 4px; flex: none; }
+.candado { display: flex; align-items: center; justify-content: center; gap: 9px; }
+.candado .d { width: 22mm; height: 27mm; border: 2.6px solid #111; border-radius: 6px; position: relative; background: #fdfdfd; }
+.candado .d span { position: absolute; top: -14px; left: 0; right: 0; text-align: center;
+                   font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.5pt; }
+.secuencia { font-family: 'Source Code Pro',monospace; font-size: 12.5pt; font-weight: 600; letter-spacing: 1.5px; text-align: center; }
+.simb { font-family: Montserrat,sans-serif; font-size: 14pt; font-weight: 800; text-align: center; line-height: 2.0; }
+.simb g { font-family: 'DejaVu Sans','Noto Sans Symbols2',sans-serif; font-size: 17pt; line-height: 1; }
+</style>
+
+<!-- ============ 08 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">08</div>
+    <div class="tit"><h1>El objeto de 2050</h1>
+      <div class="sub">Inventa el aparato que en veinticinco años va a parecer tan normal como hoy nos parece el celular.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="oficio mb"><span>Oficina de Registro de Inventos · Solicitud N.º</span><span class="sep" style="max-width:28mm"></span>
+    <span>Inventor</span><span class="sep"></span><span>Año 2050</span></div>
+
+  <div class="instr">Dibuja tu invento como si fuera un plano de patente: en grande, de lado o abierto por dentro, y con
+    <b>cinco números</b> señalando sus partes. Luego explica cada parte en la tabla. Lo que se califica no es que dibujes bonito,
+    es que se entienda cómo funciona. <b>Prohibido inventar algo que ya existe con otro nombre.</b></div>
+
+  <div class="caja reticula mb" style="height:84mm;position:relative">
+    <span class="mini" style="position:absolute;bottom:5px;right:9px">Vista del invento con sus cinco partes numeradas</span>
+  </div>
+
+  <div class="fila mb">
+    <div class="col">
+      <table>
+        <tr><th style="width:9mm">N.º</th><th style="width:46mm">Cómo se llama esa parte</th><th>Qué hace exactamente</th></tr>
+        <tr><td style="text-align:center">1</td><td class="v"></td><td></td></tr>
+        <tr><td style="text-align:center">2</td><td class="v"></td><td></td></tr>
+        <tr><td style="text-align:center">3</td><td class="v"></td><td></td></tr>
+        <tr><td style="text-align:center">4</td><td class="v"></td><td></td></tr>
+        <tr><td style="text-align:center">5</td><td class="v"></td><td></td></tr>
+      </table>
+    </div>
+    <div style="width:62mm">
+      <div class="caja" style="padding:7px 10px"><div class="rot">De qué está hecho</div>
+        <div class="reng"></div><div class="reng"></div></div>
+      <div class="caja mt6" style="padding:7px 10px"><div class="rot">Cuánto costaría</div>
+        <div class="reng"></div>
+        <div class="mini" style="margin-top:3px">¿Lo podría comprar una familia como la tuya?</div>
+        <div class="reng"></div></div>
+    </div>
+  </div>
+
+  <div class="fila">
+    <div class="col caja" style="padding:7px 10px"><div class="rot">El problema de hoy que desaparece</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+      <div class="rot">El problema nuevo que crea</div>
+      <div class="mini" style="margin:-2px 0 3px">Todo invento rompe algo. El coche trajo el tráfico. ¿Y el tuyo?</div>
+      <div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escribe el eslogan de tu invento en máximo seis palabras y diseña
+    la caja en la que se vendería. Después contesta en un renglón: ¿quién <i>no</i> debería poder comprarlo, y por qué?</div>
+    <div class="folio">08</div></div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">09</div>
+    <div class="tit"><h1>Pixel lógica</h1>
+      <div class="sub">Un dibujo escondido en una rejilla de 15 × 15. No se adivina: se deduce.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="fila mb">
+    <div class="col instr" style="margin:0">
+      <b>Cómo se juega.</b> Los números de cada fila y de cada columna dicen cuántas casillas seguidas hay que pintar, en ese
+      orden y con <b>al menos un espacio en blanco entre grupo y grupo</b>. Un «5 2» significa: cinco pintadas, hueco, dos
+      pintadas.<br><br>
+      <b>La estrategia.</b> Empieza por las líneas más llenas: si en una fila de 15 el número es 15, se pinta completa.
+      Si es 13, seguro están pintadas las del centro. Marca con un punto pequeño las casillas que ya sabes que van
+      <b>vacías</b>: valen tanto como las pintadas.<br><br>
+      Solo hay una solución posible y se llega a ella sin arriesgar. Si te trabaste, no adivines: busca otra línea.
+    </div>
+    <div style="width:52mm" class="caja" style="padding:6px">
+      <div class="rot s" style="justify-content:center">Ejemplo resuelto</div>
+      <table class="nono mini sol"><colgroup><col class="cp"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"></colgroup><tr><td class="esq" colspan="1" rowspan="1"></td><td class="pc">1</td><td class="pc">2</td><td class="pc">5</td><td class="pc">2</td><td class="pc">1</td></tr><tr><td class="pr">1</td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td></tr><tr><td class="pr">3</td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td></tr><tr><td class="pr">5</td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr><td class="pr">1</td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td></tr><tr><td class="pr">1</td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td></tr></table>
+      <div class="mini" style="text-align:center;margin-top:4px">Así se ve terminado uno chiquito.</div>
+    </div>
+  </div>
+
+  <table class="nono"><colgroup><col class="cp"><col class="cp"><col class="cp"><col class="cp"><col class="cp"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"></colgroup><tr><td class="esq" colspan="5" rowspan="3"></td><td class="pc g5"></td><td class="pc"></td><td class="pc"></td><td class="pc">4</td><td class="pc">5</td><td class="pc g5"></td><td class="pc"></td><td class="pc"></td><td class="pc"></td><td class="pc"></td><td class="pc g5">5</td><td class="pc">4</td><td class="pc"></td><td class="pc"></td><td class="pc"></td></tr><tr><td class="pc g5"></td><td class="pc"></td><td class="pc">4</td><td class="pc">2</td><td class="pc">2</td><td class="pc g5">5</td><td class="pc"></td><td class="pc"></td><td class="pc"></td><td class="pc">5</td><td class="pc g5">2</td><td class="pc">2</td><td class="pc">4</td><td class="pc"></td><td class="pc"></td></tr><tr><td class="pc g5">11</td><td class="pc">13</td><td class="pc">5</td><td class="pc">4</td><td class="pc">6</td><td class="pc g5">6</td><td class="pc">14</td><td class="pc">13</td><td class="pc">14</td><td class="pc">6</td><td class="pc g5">6</td><td class="pc">4</td><td class="pc">5</td><td class="pc">13</td><td class="pc">11</td></tr><tr class="g5"><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">7</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">11</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">13</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">13</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class="g5"><td class="pr"></td><td class="pr"></td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr">2</td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="pr">2</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr">2</td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="pr">2</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class="g5"><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr">3</td><td class="pr">3</td><td class="pr">3</td><td class="pr">3</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr">2</td><td class="pr">2</td><td class="pr">2</td><td class="pr">2</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr></table>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Diseña el tuyo: dibuja algo reconocible en una rejilla de 10 × 10 al
+    reverso, calcula los números de cada fila y columna, y luego copia <i>solo los números</i> en una rejilla vacía para que otra
+    persona lo resuelva. Vas a descubrir que hacerlo cuesta más que resolverlo.</div><div class="folio">09</div></div>
+</section>
+<style>
+.pistas { column-count: 2; column-gap: 9mm; font-size: 8.9pt; }
+.pistas div { break-inside: avoid; margin-bottom: 4px; padding-left: 15px; text-indent: -15px; }
+.pistas b { font-family: Montserrat,sans-serif; font-weight: 800; color: #1f4ea8; }
+.abc { display: flex; gap: 2px; justify-content: center; margin: 5px 0 3px; }
+.abc span { flex: 1; text-align: center; font-family: 'Source Code Pro',monospace; font-size: 7.4pt;
+            font-weight: 600; border: .8px solid #c9ced6; border-radius: 2px; padding: 1px 0; }
+.p7 { background: repeating-linear-gradient(-45deg,#111 0 1.6px,#fff 1.6px 4.6px); }
+.p8 { background: repeating-linear-gradient(0deg,#111 0 1.5px,#fff 1.5px 4.6px); }
+.mandala svg { width: 100%; height: auto; display: block; }
+.pats { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; }
+.pats div { display: flex; align-items: center; gap: 5px; font-size: 8pt; font-family: Montserrat,sans-serif; font-weight: 600; }
+.solpeq table.nono td { height: 3.8mm; font-size: 5pt; }
+.sol-h { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10pt; text-transform: uppercase;
+         letter-spacing: .6px; background: #111; color: #fff; padding: 3px 9px; border-radius: 4px; display: inline-block; margin-bottom: 6px; }
+</style>
+
+<!-- ============ 10 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">10</div>
+    <div class="tit"><h1>La tarea perdida</h1>
+      <div class="sub">Cinco alumnos, cinco excusas y una sola combinación posible. No hay que adivinar nada.</div></div>
+    <div class="tiempo"><b>40</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr" style="margin-bottom:7px">Ninguno de los cinco entregó la tarea. Cada uno usa una plataforma distinta,
+    se durmió a una hora distinta y dio una excusa distinta. <b>Empieza por las pistas que dicen «no».</b></div>
+
+  <div class="caja mb" style="padding:7px 11px">
+    <div class="rot">Las nueve pistas</div>
+    <div class="pistas">
+      <div><b>1.</b> Ana se durmió exactamente una hora después que Ceci.</div>
+      <div><b>2.</b> Ceci fue la que dijo que sí hizo la tarea, pero que la dejó en su casa.</div>
+      <div><b>3.</b> Quien se quedó viendo YouTube se durmió a las 00:00.</div>
+      <div><b>4.</b> Quien dijo «se me acabó la pila del celular» fue el último de los cinco en dormirse.</div>
+      <div><b>5.</b> Emi no usa TikTok ni Twitch.</div>
+      <div><b>6.</b> Ni Ceci ni Diego usan Twitch.</div>
+      <div><b>7.</b> Quien escucha Spotify dijo que pensó que la tarea era para el lunes.</div>
+      <div><b>8.</b> Diego se durmió más tarde que Ana, pero más temprano que Beto.</div>
+      <div><b>9.</b> Quien dijo que el perro se comió la tarea se durmió antes de las 22:00.</div>
+    </div>
+  </div>
+
+  <div class="fila mb" style="align-items:flex-start">
+    <div style="flex:none"><table class="lg lg15"><colgroup><col class="cl"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"></colgroup><tr><td class="hueco" rowspan="2"></td><td class="gtit" colspan="5">Plataforma</td><td class="gtit" colspan="5">Se durmió a las</td><td class="gtit" colspan="5">Su excusa</td></tr><tr><td class="vlab"><span>TikTok</span></td><td class="vlab"><span>Twitch</span></td><td class="vlab"><span>Spotify</span></td><td class="vlab"><span>YouTube</span></td><td class="vlab"><span>Discord</span></td><td class="vlab sep"><span>21:00</span></td><td class="vlab"><span>22:00</span></td><td class="vlab"><span>23:00</span></td><td class="vlab"><span>00:00</span></td><td class="vlab"><span>01:00</span></td><td class="vlab sep"><span>Se fue la luz</span></td><td class="vlab"><span>El perro</span></td><td class="vlab"><span>Se acabó la pila</span></td><td class="vlab"><span>Era para el lunes</span></td><td class="vlab"><span>La dejé en casa</span></td></tr><tr class=" sepr"><td class="hlab">Ana</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">Beto</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">Ceci</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">Diego</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">Emi</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></table></div>
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Cómo se usa la rejilla</div>
+      <div style="font-size:8.5pt">Cada casilla cruza a un alumno con una posibilidad. Pon <b>✗</b> cuando una pista descarte
+        ese cruce y <b>✓</b> cuando lo confirme.</div>
+      <div style="font-size:8.5pt;margin-top:5px">En cuanto pongas un <b>✓</b>, tacha con <b>✗</b> el resto de esa fila
+        <i>y</i> el resto de esa columna: si Ana usa Spotify, nadie más lo usa y Ana no usa ningún otro.</div>
+      <div style="font-size:8.5pt;margin-top:5px">Las dos rejillas de abajo sirven para cruzar los datos entre sí, no con los
+        nombres. Ahí es donde se resuelve lo difícil.</div>
+    </div>
+  </div>
+
+  <div class="fila mb" style="align-items:flex-start"><div style="flex:none"><table class="lg lg10"><colgroup><col class="cl"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"></colgroup><tr><td class="hueco" rowspan="2"></td><td class="gtit" colspan="5">Plataforma</td><td class="gtit" colspan="5">Se durmió a las</td></tr><tr><td class="vlab"><span>TikTok</span></td><td class="vlab"><span>Twitch</span></td><td class="vlab"><span>Spotify</span></td><td class="vlab"><span>YouTube</span></td><td class="vlab"><span>Discord</span></td><td class="vlab sep"><span>21:00</span></td><td class="vlab"><span>22:00</span></td><td class="vlab"><span>23:00</span></td><td class="vlab"><span>00:00</span></td><td class="vlab"><span>01:00</span></td></tr><tr class=" sepr"><td class="hlab">Se fue la luz</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">El perro</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">Se acabó la pila</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">Era para el lunes</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">La dejé en casa</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c sep"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></table></div><div style="flex:none"><table class="lg lg5"><colgroup><col class="cl"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"></colgroup><tr><td class="hueco" rowspan="2"></td><td class="gtit" colspan="5">Plataforma</td></tr><tr><td class="vlab"><span>TikTok</span></td><td class="vlab"><span>Twitch</span></td><td class="vlab"><span>Spotify</span></td><td class="vlab"><span>YouTube</span></td><td class="vlab"><span>Discord</span></td></tr><tr class=" sepr"><td class="hlab">21:00</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">22:00</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">23:00</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">00:00</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr class=""><td class="hlab">01:00</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></table></div></div>
+
+  <div class="caja" style="padding:7px 10px">
+    <div class="rot">Respuesta final</div>
+    <table style="font-size:8.4pt">
+      <tr><th style="width:26mm"></th><th>Ana</th><th>Beto</th><th>Ceci</th><th>Diego</th><th>Emi</th></tr>
+      <tr><td><b>Plataforma</b></td><td class="v"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><b>Se durmió a las</b></td><td class="v"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><b>Su excusa</b></td><td class="v"></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escribe en tres renglones <i>cómo</i> lo resolviste: cuál fue la
+    primera casilla que pudiste marcar con certeza y qué pista te la dio. Saber explicar el camino vale más que la respuesta.</div>
+    <div class="folio">10</div></div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">11</div>
+    <div class="tit"><h1>Escape room de papel</h1>
+      <div class="sub">Cuatro acertijos, cuatro dígitos. Con los cuatro se abre el candado.</div></div>
+    <div class="tiempo"><b>45</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Resuelve los cuatro. De cada resultado anota <b>únicamente la cifra de las unidades</b> (si te da 34,
+    escribes 4). Esos cuatro dígitos, en orden A · B · C · D, abren el candado de abajo.</div>
+
+  <div class="fila mb" style="height:68mm">
+    <div class="col acertijo">
+      <div class="cab"><b>A</b><span>La serie que no se detiene</span></div>
+      <div class="mini">¿Qué número sigue? Fíjate en cómo se construye cada uno a partir de los anteriores.</div>
+      <div class="secuencia mt6">1 · 1 · 2 · 3 · 5 · 8 · 13 · 21 · <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></div>
+      <div class="res"><span>Cifra de las unidades</span><span class="caj"></span></div>
+    </div>
+    <div class="col acertijo">
+      <div class="cab"><b>B</b><span>Cada figura vale un número</span></div>
+      <div class="simb"><g>▲</g> + <g>▲</g> + <g>▲</g> = 12<br><g>▲</g> + <g>■</g> = 9<br><g>■</g> <g>×</g> <g>●</g> = 15</div>
+      <div style="text-align:center;margin-top:4px;font-size:10pt">Entonces, <g style="font-size:13pt">▲</g> + <g style="font-size:13pt">■</g> + <g style="font-size:13pt">●</g> = ?</div>
+      <div class="res"><span>Cifra de las unidades</span><span class="caj"></span></div>
+    </div>
+  </div>
+
+  <div class="fila mb" style="height:74mm">
+    <div class="col acertijo">
+      <div class="cab"><b>C</b><span>El mensaje corrido</span></div>
+      <div class="mini">Cada letra se escribió <b>tres lugares más adelante</b> en este abecedario. Regrésalas tres lugares
+        y lee la palabra. Usa exactamente estas 26 letras, sin la ñ.</div>
+      <div class="abc"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span></div>
+      <div class="abc"><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span></div>
+      <div class="secuencia" style="margin-top:4px">F O D Y H</div>
+      <div class="mini" style="text-align:center;margin-top:3px">La palabra es: <span class="linea" style="min-width:38mm"></span></div>
+      <div class="res"><span>Cuenta sus letras. Cifra de las unidades</span><span class="caj"></span></div>
+    </div>
+    <div class="col acertijo">
+      <div class="cab"><b>D</b><span>Cuenta bien</span></div>
+      <div class="mini">¿Cuántos triángulos hay en esta figura? Cuidado: no son solo los chiquitos.</div>
+      <div style="width:38mm;margin:4px auto 0"><svg viewBox="0 0 200 176" style="width:100%;height:auto" fill="none" stroke="#111"
+ stroke-width="2.4" stroke-linejoin="round">
+<path d="M100,10 L190,166 L10,166 Z"/>
+<path d="M55,88 L145,88"/><path d="M55,88 L100,166"/><path d="M145,88 L100,166"/>
+</svg></div>
+      <div class="res"><span>Total de triángulos. Cifra de las unidades</span><span class="caj"></span></div>
+    </div>
+  </div>
+
+  <div class="caja" style="padding:14px 10px 17px">
+    <div class="rot s" style="justify-content:center;margin-bottom:13px">El candado se abre con</div>
+    <div class="candado"><div class="d"><span>A</span></div><div class="d"><span>B</span></div>
+      <div class="d"><span>C</span></div><div class="d"><span>D</span></div></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> En 3.º B hay 30 alumnos: 18 usan Spotify, 15 usan YouTube Music y 7
+    usan las dos. ¿Cuántos no usan ninguna de las dos? Dibuja los dos círculos que se cruzan y acomoda los números adentro
+    antes de responder.</div><div class="folio">11</div></div>
+</section>
+<!-- ============ 12 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">12</div>
+    <div class="tit"><h1>Arma tu setup con $15,000</h1>
+      <div class="sub">Con una trampa: los precios de la lista no traen IVA, y el tope sí lo incluye.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Tienes <b>$15,000 pesos</b> para armar tu espacio. <b>Reglas:</b> eliges exactamente una opción de cada
+    una de las seis categorías; los precios de la lista están <b>sin IVA</b> y hay que sumarle el 16 %; el <b>total con IVA</b>
+    no puede pasar de $15,000. Con esta lista sí se puede, pero no eligiendo lo más caro de cada renglón.</div>
+
+  <div class="fila mb">
+    <div class="col">
+      <table style="font-size:8.4pt">
+        <tr><th style="width:22mm">Categoría</th><th>Opciones (precio sin IVA)</th></tr>
+        <tr><td><b>Cómputo</b></td><td>Laptop de uso general $8,400 · PC de escritorio armada $10,300 · Consola de segunda mano $4,900 · Tableta con teclado $3,700</td></tr>
+        <tr><td><b>Pantalla</b></td><td>Monitor de 24" $2,100 · Monitor de 27" $3,450 · Televisión de 32" $2,800 · No compro pantalla $0</td></tr>
+        <tr><td><b>Audio</b></td><td>Audífonos con cable $650 · Diadema con micrófono $1,150 · Bocinas de escritorio $890</td></tr>
+        <tr><td><b>Entrada</b></td><td>Teclado y ratón básicos $480 · Teclado mecánico $1,290 · Control inalámbrico $920</td></tr>
+        <tr><td><b>Mueble</b></td><td>Silla con respaldo alto $1,750 · Escritorio de 1.20 m $1,600 · Tapete y soporte $390</td></tr>
+        <tr><td><b>Extras</b></td><td>Micrófono de escritorio $780 · Cámara web HD $560 · Tira de luces LED $240</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col">
+      <table style="font-size:8.6pt">
+        <tr><th style="width:22mm">Categoría</th><th>Lo que elegí</th><th style="width:24mm">Precio sin IVA</th><th style="width:26mm">% del subtotal</th></tr>
+        <tr><td><b>Cómputo</b></td><td class="v"></td><td></td><td></td></tr>
+        <tr><td><b>Pantalla</b></td><td class="v"></td><td></td><td></td></tr>
+        <tr><td><b>Audio</b></td><td class="v"></td><td></td><td></td></tr>
+        <tr><td><b>Entrada</b></td><td class="v"></td><td></td><td></td></tr>
+        <tr><td><b>Mueble</b></td><td class="v"></td><td></td><td></td></tr>
+        <tr><td><b>Extras</b></td><td class="v"></td><td></td><td></td></tr>
+        <tr><td colspan="2" style="text-align:right"><b>Subtotal</b></td><td></td><td style="background:#eceef2;text-align:center">100 %</td></tr>
+        <tr><td colspan="2" style="text-align:right"><b>IVA (16 % del subtotal)</b></td><td></td><td rowspan="3" style="vertical-align:middle;font-size:8pt;color:#5b6069">Si el total se pasó de $15,000, regresa y cambia algo. Tacha y vuelve a sumar: así se hace en la vida real.</td></tr>
+        <tr><td colspan="2" style="text-align:right"><b>Total a pagar</b></td><td style="background:#eceef2"></td></tr>
+        <tr><td colspan="2" style="text-align:right"><b>Me sobraron</b></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px"><div class="rot">Defiende dos decisiones</div>
+      <div class="mini" style="margin:-2px 0 3px">¿Por qué gastaste tanto en una y tan poco en otra?</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px"><div class="rot">La que más trabajo te costó</div>
+      <div class="mini" style="margin:-2px 0 3px">¿Qué te hubiera gustado comprar y no alcanzó?</div>
+      <div class="reng"></div><div class="reng"></div><div class="reng"></div></div>
+    <div class="col caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+      <div class="rot">La pregunta del IVA</div>
+      <div class="mini" style="margin:-2px 0 3px">¿Cuál es el máximo que puedes gastar <i>en precios de lista</i> sin pasarte
+        de $15,000 al pagar? Escribe la operación.</div>
+      <div class="reng"></div><div class="reng"></div></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Mala noticia: el presupuesto bajó a $12,000 con IVA. Marca con una
+    <b>X</b> lo que quitas o cambias de tu lista y escribe en dos renglones qué es lo primero que sacrificarías y por qué.
+    Nadie puede quedarse sin cómputo.</div><div class="folio">12</div></div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="hoja">
+  <div class="tira"><div class="num">13</div>
+    <div class="tit"><h1>Mandala geométrico</h1>
+      <div class="sub">136 zonas y una sola regla que lo vuelve un rompecabezas en lugar de un pasatiempo.</div></div>
+    <div class="tiempo"><b>&#8734;</b>abierta</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Rellena cada zona con uno de los ocho patrones de abajo. <b>La regla: dos zonas que se toquen por un
+    lado no pueden llevar el mismo patrón.</b> Que compartan solo una esquina sí se vale. Trabaja de adentro hacia afuera y
+    piensa antes de rayar, porque de eso no hay borrador.</div>
+
+  <div class="caja mb" style="padding:6px">
+    <div class="pats">
+      <div><span class="pat p1"></span>1 · vacío</div>
+      <div><span class="pat p2"></span>2 · verticales</div>
+      <div><span class="pat p8"></span>3 · horizontales</div>
+      <div><span class="pat p3"></span>4 · diagonal</div>
+      <div><span class="pat p7"></span>5 · contradiagonal</div>
+      <div><span class="pat p4"></span>6 · puntos</div>
+      <div><span class="pat p5"></span>7 · cuadrícula</div>
+      <div><span class="pat p6"></span>8 · sólido</div>
+    </div>
+  </div>
+
+  <div class="mandala crece" style="display:flex;align-items:center;justify-content:center">
+    <div style="width:158mm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="450.0" cy="450.0" r="46"/>
+<circle cx="450.0" cy="450.0" r="92"/>
+<circle cx="450.0" cy="450.0" r="150"/>
+<circle cx="450.0" cy="450.0" r="208"/>
+<circle cx="450.0" cy="450.0" r="268"/>
+<circle cx="450.0" cy="450.0" r="330"/>
+<circle cx="450.0" cy="450.0" r="400"/>
+<line x1="467.6" y1="407.5" x2="485.2" y2="365.0"/>
+<line x1="492.5" y1="432.4" x2="535.0" y2="414.8"/>
+<line x1="492.5" y1="467.6" x2="535.0" y2="485.2"/>
+<line x1="467.6" y1="492.5" x2="485.2" y2="535.0"/>
+<line x1="432.4" y1="492.5" x2="414.8" y2="535.0"/>
+<line x1="407.5" y1="467.6" x2="365.0" y2="485.2"/>
+<line x1="407.5" y1="432.4" x2="365.0" y2="414.8"/>
+<line x1="432.4" y1="407.5" x2="414.8" y2="365.0"/>
+<line x1="450.0" y1="358.0" x2="450.0" y2="300.0"/>
+<line x1="485.2" y1="365.0" x2="507.4" y2="311.4"/>
+<line x1="515.1" y1="384.9" x2="556.1" y2="343.9"/>
+<line x1="535.0" y1="414.8" x2="588.6" y2="392.6"/>
+<line x1="542.0" y1="450.0" x2="600.0" y2="450.0"/>
+<line x1="535.0" y1="485.2" x2="588.6" y2="507.4"/>
+<line x1="515.1" y1="515.1" x2="556.1" y2="556.1"/>
+<line x1="485.2" y1="535.0" x2="507.4" y2="588.6"/>
+<line x1="450.0" y1="542.0" x2="450.0" y2="600.0"/>
+<line x1="414.8" y1="535.0" x2="392.6" y2="588.6"/>
+<line x1="384.9" y1="515.1" x2="343.9" y2="556.1"/>
+<line x1="365.0" y1="485.2" x2="311.4" y2="507.4"/>
+<line x1="358.0" y1="450.0" x2="300.0" y2="450.0"/>
+<line x1="365.0" y1="414.8" x2="311.4" y2="392.6"/>
+<line x1="384.9" y1="384.9" x2="343.9" y2="343.9"/>
+<line x1="414.8" y1="365.0" x2="392.6" y2="311.4"/>
+<line x1="479.3" y1="302.9" x2="490.6" y2="246.0"/>
+<line x1="533.3" y1="325.3" x2="565.6" y2="277.1"/>
+<line x1="574.7" y1="366.7" x2="622.9" y2="334.4"/>
+<line x1="597.1" y1="420.7" x2="654.0" y2="409.4"/>
+<line x1="597.1" y1="479.3" x2="654.0" y2="490.6"/>
+<line x1="574.7" y1="533.3" x2="622.9" y2="565.6"/>
+<line x1="533.3" y1="574.7" x2="565.6" y2="622.9"/>
+<line x1="479.3" y1="597.1" x2="490.6" y2="654.0"/>
+<line x1="420.7" y1="597.1" x2="409.4" y2="654.0"/>
+<line x1="366.7" y1="574.7" x2="334.4" y2="622.9"/>
+<line x1="325.3" y1="533.3" x2="277.1" y2="565.6"/>
+<line x1="302.9" y1="479.3" x2="246.0" y2="490.6"/>
+<line x1="302.9" y1="420.7" x2="246.0" y2="409.4"/>
+<line x1="325.3" y1="366.7" x2="277.1" y2="334.4"/>
+<line x1="366.7" y1="325.3" x2="334.4" y2="277.1"/>
+<line x1="420.7" y1="302.9" x2="409.4" y2="246.0"/>
+<line x1="450.0" y1="242.0" x2="450.0" y2="182.0"/>
+<line x1="503.8" y1="249.1" x2="519.4" y2="191.1"/>
+<line x1="554.0" y1="269.9" x2="584.0" y2="217.9"/>
+<line x1="597.1" y1="302.9" x2="639.5" y2="260.5"/>
+<line x1="630.1" y1="346.0" x2="682.1" y2="316.0"/>
+<line x1="650.9" y1="396.2" x2="708.9" y2="380.6"/>
+<line x1="658.0" y1="450.0" x2="718.0" y2="450.0"/>
+<line x1="650.9" y1="503.8" x2="708.9" y2="519.4"/>
+<line x1="630.1" y1="554.0" x2="682.1" y2="584.0"/>
+<line x1="597.1" y1="597.1" x2="639.5" y2="639.5"/>
+<line x1="554.0" y1="630.1" x2="584.0" y2="682.1"/>
+<line x1="503.8" y1="650.9" x2="519.4" y2="708.9"/>
+<line x1="450.0" y1="658.0" x2="450.0" y2="718.0"/>
+<line x1="396.2" y1="650.9" x2="380.6" y2="708.9"/>
+<line x1="346.0" y1="630.1" x2="316.0" y2="682.1"/>
+<line x1="302.9" y1="597.1" x2="260.5" y2="639.5"/>
+<line x1="269.9" y1="554.0" x2="217.9" y2="584.0"/>
+<line x1="249.1" y1="503.8" x2="191.1" y2="519.4"/>
+<line x1="242.0" y1="450.0" x2="182.0" y2="450.0"/>
+<line x1="249.1" y1="396.2" x2="191.1" y2="380.6"/>
+<line x1="269.9" y1="346.0" x2="217.9" y2="316.0"/>
+<line x1="302.9" y1="302.9" x2="260.5" y2="260.5"/>
+<line x1="346.0" y1="269.9" x2="316.0" y2="217.9"/>
+<line x1="396.2" y1="249.1" x2="380.6" y2="191.1"/>
+<line x1="519.4" y1="191.1" x2="535.4" y2="131.2"/>
+<line x1="639.5" y1="260.5" x2="683.3" y2="216.7"/>
+<line x1="708.9" y1="380.6" x2="768.8" y2="364.6"/>
+<line x1="708.9" y1="519.4" x2="768.8" y2="535.4"/>
+<line x1="639.5" y1="639.5" x2="683.3" y2="683.3"/>
+<line x1="519.4" y1="708.9" x2="535.4" y2="768.8"/>
+<line x1="380.6" y1="708.9" x2="364.6" y2="768.8"/>
+<line x1="260.5" y1="639.5" x2="216.7" y2="683.3"/>
+<line x1="191.1" y1="519.4" x2="131.2" y2="535.4"/>
+<line x1="191.1" y1="380.6" x2="131.2" y2="364.6"/>
+<line x1="260.5" y1="260.5" x2="216.7" y2="216.7"/>
+<line x1="380.6" y1="191.1" x2="364.6" y2="131.2"/>
+<line x1="450.0" y1="120.0" x2="450.0" y2="50.0"/>
+<line x1="535.4" y1="131.2" x2="553.5" y2="63.6"/>
+<line x1="615.0" y1="164.2" x2="650.0" y2="103.6"/>
+<line x1="683.3" y1="216.7" x2="732.8" y2="167.2"/>
+<line x1="735.8" y1="285.0" x2="796.4" y2="250.0"/>
+<line x1="768.8" y1="364.6" x2="836.4" y2="346.5"/>
+<line x1="780.0" y1="450.0" x2="850.0" y2="450.0"/>
+<line x1="768.8" y1="535.4" x2="836.4" y2="553.5"/>
+<line x1="735.8" y1="615.0" x2="796.4" y2="650.0"/>
+<line x1="683.3" y1="683.3" x2="732.8" y2="732.8"/>
+<line x1="615.0" y1="735.8" x2="650.0" y2="796.4"/>
+<line x1="535.4" y1="768.8" x2="553.5" y2="836.4"/>
+<line x1="450.0" y1="780.0" x2="450.0" y2="850.0"/>
+<line x1="364.6" y1="768.8" x2="346.5" y2="836.4"/>
+<line x1="285.0" y1="735.8" x2="250.0" y2="796.4"/>
+<line x1="216.7" y1="683.3" x2="167.2" y2="732.8"/>
+<line x1="164.2" y1="615.0" x2="103.6" y2="650.0"/>
+<line x1="131.2" y1="535.4" x2="63.6" y2="553.5"/>
+<line x1="120.0" y1="450.0" x2="50.0" y2="450.0"/>
+<line x1="131.2" y1="364.6" x2="63.6" y2="346.5"/>
+<line x1="164.2" y1="285.0" x2="103.6" y2="250.0"/>
+<line x1="216.7" y1="216.7" x2="167.2" y2="167.2"/>
+<line x1="285.0" y1="164.2" x2="250.0" y2="103.6"/>
+<line x1="364.6" y1="131.2" x2="346.5" y2="63.6"/>
+<path d="M450.0,300.0 Q489.4,251.9 507.4,311.4"/>
+<path d="M507.4,311.4 Q562.2,282.0 556.1,343.9"/>
+<path d="M556.1,343.9 Q618.0,337.8 588.6,392.6"/>
+<path d="M588.6,392.6 Q648.1,410.6 600.0,450.0"/>
+<path d="M600.0,450.0 Q648.1,489.4 588.6,507.4"/>
+<path d="M588.6,507.4 Q618.0,562.2 556.1,556.1"/>
+<path d="M556.1,556.1 Q562.2,618.0 507.4,588.6"/>
+<path d="M507.4,588.6 Q489.4,648.1 450.0,600.0"/>
+<path d="M450.0,600.0 Q410.6,648.1 392.6,588.6"/>
+<path d="M392.6,588.6 Q337.8,618.0 343.9,556.1"/>
+<path d="M343.9,556.1 Q282.0,562.2 311.4,507.4"/>
+<path d="M311.4,507.4 Q251.9,489.4 300.0,450.0"/>
+<path d="M300.0,450.0 Q251.9,410.6 311.4,392.6"/>
+<path d="M311.4,392.6 Q282.0,337.8 343.9,343.9"/>
+<path d="M343.9,343.9 Q337.8,282.0 392.6,311.4"/>
+<path d="M392.6,311.4 Q410.6,251.9 450.0,300.0"/>
+<path d="M519.4,191.1 L465.6,151.4 L535.4,131.2 L585.7,183.6 Z"/>
+<path d="M639.5,260.5 L612.8,199.2 L683.3,216.7 L700.8,287.2 Z"/>
+<path d="M708.9,380.6 L716.4,314.3 L768.8,364.6 L748.6,434.4 Z"/>
+<path d="M708.9,519.4 L748.6,465.6 L768.8,535.4 L716.4,585.7 Z"/>
+<path d="M639.5,639.5 L700.8,612.8 L683.3,683.3 L612.8,700.8 Z"/>
+<path d="M519.4,708.9 L585.7,716.4 L535.4,768.8 L465.6,748.6 Z"/>
+<path d="M380.6,708.9 L434.4,748.6 L364.6,768.8 L314.3,716.4 Z"/>
+<path d="M260.5,639.5 L287.2,700.8 L216.7,683.3 L199.2,612.8 Z"/>
+<path d="M191.1,519.4 L183.6,585.7 L131.2,535.4 L151.4,465.6 Z"/>
+<path d="M191.1,380.6 L151.4,434.4 L131.2,364.6 L183.6,314.3 Z"/>
+<path d="M260.5,260.5 L199.2,287.2 L216.7,216.7 L287.2,199.2 Z"/>
+<path d="M380.6,191.1 L314.3,183.6 L364.6,131.2 L434.4,151.4 Z"/>
+<path d="M450.0,404.0 Q459.2,427.8 482.5,417.5"/>
+<path d="M482.5,417.5 Q472.2,440.8 496.0,450.0"/>
+<path d="M496.0,450.0 Q472.2,459.2 482.5,482.5"/>
+<path d="M482.5,482.5 Q459.2,472.2 450.0,496.0"/>
+<path d="M450.0,496.0 Q440.8,472.2 417.5,482.5"/>
+<path d="M417.5,482.5 Q427.8,459.2 404.0,450.0"/>
+<path d="M404.0,450.0 Q427.8,440.8 417.5,417.5"/>
+<path d="M417.5,417.5 Q440.8,427.8 450.0,404.0"/>
+<circle cx="450.0" cy="450.0" r="16"/>
+<path d="M450.0,50.0 L506.4,21.7 L553.5,63.6"/>
+<path d="M553.5,63.6 L615.3,50.9 L650.0,103.6"/>
+<path d="M650.0,103.6 L713.0,107.3 L732.8,167.2"/>
+<path d="M732.8,167.2 L792.7,187.0 L796.4,250.0"/>
+<path d="M796.4,250.0 L849.1,284.7 L836.4,346.5"/>
+<path d="M836.4,346.5 L878.3,393.6 L850.0,450.0"/>
+<path d="M850.0,450.0 L878.3,506.4 L836.4,553.5"/>
+<path d="M836.4,553.5 L849.1,615.3 L796.4,650.0"/>
+<path d="M796.4,650.0 L792.7,713.0 L732.8,732.8"/>
+<path d="M732.8,732.8 L713.0,792.7 L650.0,796.4"/>
+<path d="M650.0,796.4 L615.3,849.1 L553.5,836.4"/>
+<path d="M553.5,836.4 L506.4,878.3 L450.0,850.0"/>
+<path d="M450.0,850.0 L393.6,878.3 L346.5,836.4"/>
+<path d="M346.5,836.4 L284.7,849.1 L250.0,796.4"/>
+<path d="M250.0,796.4 L187.0,792.7 L167.2,732.8"/>
+<path d="M167.2,732.8 L107.3,713.0 L103.6,650.0"/>
+<path d="M103.6,650.0 L50.9,615.3 L63.6,553.5"/>
+<path d="M63.6,553.5 L21.7,506.4 L50.0,450.0"/>
+<path d="M50.0,450.0 L21.7,393.6 L63.6,346.5"/>
+<path d="M63.6,346.5 L50.9,284.7 L103.6,250.0"/>
+<path d="M103.6,250.0 L107.3,187.0 L167.2,167.2"/>
+<path d="M167.2,167.2 L187.0,107.3 L250.0,103.6"/>
+<path d="M250.0,103.6 L284.7,50.9 L346.5,63.6"/>
+<path d="M346.5,63.6 L393.6,21.7 L450.0,50.0"/>
+</svg></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Cuenta cuántas zonas le tocaron a cada patrón y anótalo al margen.
+    Después responde: ¿cuál es el <i>mínimo</i> de patrones distintos con el que se podría rellenar todo el mandala sin romper
+    la regla? Inténtalo en una esquina antes de contestar.</div><div class="folio">13</div></div>
+</section>
+
+<!-- ============ SOLUCIONARIO ============ -->
+<style>
+.sol-pag td, .sol-pag th { padding: 2.4px 5px; line-height: 1.3; }
+.sol-pag .gtit { margin-bottom: 8px; }
+.sol-pag .sol-h { margin-bottom: 5px; padding: 2px 8px; font-size: 9.4pt; }
+</style>
+<section class="hoja sol-pag">
+  <div class="gtit">Solucionario<small>Solo para ti. Las actividades 01, 02, 05, 06, 07, 08 y 13 son abiertas: no tienen respuesta única, se califican con la rúbrica de la página 3.</small></div>
+
+  <div class="fila mb" style="align-items:flex-start">
+    <div class="col">
+      <div class="sol-h">04 · Los cinco errores</div>
+      <table style="font-size:8.4pt">
+        <tr><th style="width:8mm">#</th><th style="width:44mm">Dice</th><th>Debe decir</th></tr>
+        <tr><td style="text-align:center">1</td><td>Comenzó en 1810</td><td>En <b>1910</b>. En 1810 empezó la Independencia, no la Revolución.</td></tr>
+        <tr><td style="text-align:center">2</td><td>Madero publicó el Plan de Ayala</td><td>Madero publicó el <b>Plan de San Luis</b>. El Plan de Ayala fue de <b>Zapata</b>, en 1911, y fue contra Madero.</td></tr>
+        <tr><td style="text-align:center">3</td><td>En el norte, Zapata encabezó al Ejército Libertador del Sur</td><td>Zapata operó en el <b>sur</b>, sobre todo en Morelos. <b>Este es el error que se contradice solo:</b> dice «norte» y en la misma línea «del Sur».</td></tr>
+        <tr><td style="text-align:center">4</td><td>Constitución firmada en Guadalajara</td><td>Se promulgó en <b>Querétaro</b>, el 5 de febrero de 1917.</td></tr>
+        <tr><td style="text-align:center">5</td><td>Sus efectos se extendieron hasta 1950</td><td>La etapa armada se cierra hacia <b>1920</b>. Lo demás es discutible, 1950 no lo sostiene nadie.</td></tr>
+      </table>
+      <div class="sol-h" style="margin-top:11px">11 · El candado</div>
+      <table style="font-size:8.4pt">
+        <tr><th style="width:8mm">A</th><th style="width:8mm">B</th><th style="width:8mm">C</th><th style="width:8mm">D</th><th>Cómo sale</th></tr>
+        <tr><td style="text-align:center"><b>4</b></td><td style="text-align:center"><b>2</b></td><td style="text-align:center"><b>5</b></td><td style="text-align:center"><b>5</b></td>
+          <td><b>A:</b> Fibonacci, cada número es la suma de los dos anteriores: 13+21 = <b>34</b>. <b>B:</b> ▲=4, ■=5, ●=3; 4+5+3 = <b>12</b>.
+              <b>C:</b> FODYH corrido tres lugares atrás es <b>CLAVE</b>, cinco letras. <b>D:</b> <b>5</b> triángulos: los tres de las
+              puntas, el invertido del centro y el grande completo.</td></tr>
+      </table>
+      <div class="mini mt6"><b>Candado: 4 · 2 · 5 · 5.</b> &nbsp; <b>Reto extra:</b> 18 + 15 − 7 = 26 usan al menos una; 30 − 26 = <b>4 alumnos</b> no usan ninguna.</div>
+    </div>
+    <div style="width:78mm">
+      <div class="sol-h">09 · Pixel lógica</div>
+      <div class="solpeq"><table class="nono sol"><colgroup><col class="cp"><col class="cp"><col class="cp"><col class="cp"><col class="cp"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"><col class="cc"></colgroup><tr><td class="esq" colspan="5" rowspan="3"></td><td class="pc g5"></td><td class="pc"></td><td class="pc"></td><td class="pc">4</td><td class="pc">5</td><td class="pc g5"></td><td class="pc"></td><td class="pc"></td><td class="pc"></td><td class="pc"></td><td class="pc g5">5</td><td class="pc">4</td><td class="pc"></td><td class="pc"></td><td class="pc"></td></tr><tr><td class="pc g5"></td><td class="pc"></td><td class="pc">4</td><td class="pc">2</td><td class="pc">2</td><td class="pc g5">5</td><td class="pc"></td><td class="pc"></td><td class="pc"></td><td class="pc">5</td><td class="pc g5">2</td><td class="pc">2</td><td class="pc">4</td><td class="pc"></td><td class="pc"></td></tr><tr><td class="pc g5">11</td><td class="pc">13</td><td class="pc">5</td><td class="pc">4</td><td class="pc">6</td><td class="pc g5">6</td><td class="pc">14</td><td class="pc">13</td><td class="pc">14</td><td class="pc">6</td><td class="pc g5">6</td><td class="pc">4</td><td class="pc">5</td><td class="pc">13</td><td class="pc">11</td></tr><tr class="g5"><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">7</td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">11</td><td class="cel g5"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">13</td><td class="cel g5"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">13</td><td class="cel g5"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class="g5"><td class="pr"></td><td class="pr"></td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr">2</td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="pr">2</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr">2</td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="pr">2</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr">2</td><td class="pr">3</td><td class="pr">2</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel g5"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td><td class="cel g5"></td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class="g5"><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr"></td><td class="pr">15</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr"></td><td class="pr">3</td><td class="pr">3</td><td class="pr">3</td><td class="pr">3</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel on"></td><td class="cel"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td><td class="cel on"></td></tr><tr class=""><td class="pr"></td><td class="pr">2</td><td class="pr">2</td><td class="pr">2</td><td class="pr">2</td><td class="cel g5 on"></td><td class="cel on"></td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel g5 on"></td><td class="cel"></td><td class="cel"></td><td class="cel on"></td><td class="cel on"></td></tr></table></div>
+      <div class="mini mt6">Se empieza por las filas de 15 (llenas) y por las columnas de 14 y 13. Con eso caen los ojos casi solos.</div>
+    </div>
+  </div>
+
+  <div class="fila">
+    <div class="col">
+      <div class="sol-h">10 · La tarea perdida</div>
+      <table style="font-size:8.4pt">
+        <tr><th style="width:18mm">Alumno</th><th style="width:22mm">Plataforma</th><th style="width:16mm">Hora</th><th>Excusa</th></tr>
+        <tr><td><b>Ana</b></td><td>Spotify</td><td>23:00</td><td>Pensó que era para el lunes</td></tr>
+        <tr><td><b>Beto</b></td><td>Twitch</td><td>01:00</td><td>Se le acabó la pila del celular</td></tr>
+        <tr><td><b>Ceci</b></td><td>TikTok</td><td>22:00</td><td>La hizo y la dejó en su casa</td></tr>
+        <tr><td><b>Diego</b></td><td>YouTube</td><td>00:00</td><td>Se fue la luz</td></tr>
+        <tr><td><b>Emi</b></td><td>Discord</td><td>21:00</td><td>El perro se la comió</td></tr>
+      </table>
+      <div class="mini mt6"><b>Por dónde empezar:</b> la pista 8 ordena a Ana &lt; Diego &lt; Beto, y la 1 pone a Ceci justo antes de Ana.
+        Solo hay un acomodo posible: Emi 21:00, Ceci 22:00, Ana 23:00, Diego 00:00 y Beto 01:00. De ahí en adelante todo cae solo:
+        la 3 le da YouTube a Diego, la 4 la pila a Beto, la 9 el perro a Emi y la 7 amarra Spotify con Ana.</div>
+    </div>
+    <div class="col">
+      <div class="sol-h">12 · Arma tu setup</div>
+      <div class="mini" style="font-size:8.4pt">Hay muchas respuestas válidas: de las 1,296 combinaciones posibles, <b>735 caben</b>
+        en el presupuesto. Lo que se califica es que las cuentas cierren.</div>
+      <table class="mt6" style="font-size:8.4pt">
+        <tr><th>Ejemplo de lista válida</th><th style="width:22mm">Sin IVA</th></tr>
+        <tr><td>Laptop de uso general</td><td>$8,400</td></tr>
+        <tr><td>Monitor de 24" · Audífonos con cable</td><td>$2,750</td></tr>
+        <tr><td>Teclado y ratón · Tapete y soporte · Cámara web</td><td>$1,430</td></tr>
+        <tr><td style="text-align:right"><b>Subtotal</b></td><td><b>$12,580</b></td></tr>
+        <tr><td style="text-align:right">IVA 16 %</td><td>$2,012.80</td></tr>
+        <tr><td style="text-align:right"><b>Total</b></td><td><b>$14,592.80</b></td></tr>
+        <tr><td style="text-align:right">Sobran</td><td>$407.20</td></tr>
+      </table>
+      <div class="mini mt6"><b>El error típico</b> es sumar hasta $15,000 en precios de lista y luego agregarle el IVA. El tope
+        real de gasto sin IVA es <b>$15,000 ÷ 1.16 = $12,931.03</b>. Esa división es la respuesta de la casilla azul.</div>
+    </div>
+  </div>
+  <div class="caja mt" style="padding:8px 11px">
+    <div class="sol-h" style="margin-bottom:5px">03 · Cazafakes</div>
+    <div style="font-size:8.5pt"><b>Veredicto: falsa. No se marca ninguna de las ocho casillas.</b> Las señales: dominio que
+      imita a un medio sin serlo; sin autor, solo «Redacción»; sin fecha; el 47 % no viene de ningún estudio con nombre;
+      todo en condicional («habría demostrado», «sería»), que es afirmar sin hacerse responsable; la carta de la conspiración
+      («los médicos no quieren que se difunda»); la prisa («compártela antes de que la eliminen»); la popularidad usada como
+      prueba; «Fuente: internet», que no es una fuente; y un consejo que sí es peligroso, porque dormir con audífonos a
+      volumen alto daña el oído. <b>Si alguien marcó alguna casilla</b>, pregúntale cuál: ahí se ve qué señal todavía no distingue.</div>
+  </div>
+  <div class="pie"><div class="folio" style="margin-left:auto">Solucionario · no fotocopiar para el grupo</div></div>
+</section>
+
+</body></html>

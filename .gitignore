@@ -1,0 +1,7 @@
+# imágenes de revisión y temporales de la maquetación
+rev/
+**/rev/
+__pycache__/
+**/__pycache__/
+*.bak
+*.log

@@ -1,0 +1,170 @@
+{
+ "nono10": [
+  "...####...",
+  ".########.",
+  "##########",
+  "##.####.##",
+  "##.####.##",
+  "##########",
+  "#.######.#",
+  "##.####.##",
+  ".########.",
+  "...####..."
+ ],
+ "nono12": [
+  "....####....",
+  "..########..",
+  ".##########.",
+  "###########.",
+  "#.#.#.#.#.#.",
+  ".....##.....",
+  ".....##.....",
+  ".....##.....",
+  ".....##.....",
+  "....###.....",
+  "...##.##....",
+  "....###....."
+ ],
+ "bim6": [
+  "#.....",
+  "......",
+  "#.###.",
+  "......",
+  "..#...",
+  "..#.##"
+ ],
+ "bim7": [
+  ".##....",
+  ".......",
+  "##...#.",
+  ".......",
+  "#......",
+  "#.###..",
+  "#.....#"
+ ],
+ "lab1": {
+  "pasos": 200,
+  "seed": 29
+ },
+ "lab2": {
+  "barato": 114,
+  "pasos_barato": 26,
+  "pasos_corto": 22,
+  "costo_corto": 129
+ },
+ "sopa12": {
+  "mensaje": "EL QUE ACABE ANTES DIBUJA AL REVERSO EL ANIMAL QUE NO CONOZCA",
+  "palabras": [
+   "AJOLOTE",
+   "ARMADILLO",
+   "CENZONTLE",
+   "COLIBRI",
+   "COYOTE",
+   "IGUANA",
+   "JAGUAR",
+   "LAGARTIJA",
+   "LECHUZA",
+   "MAPACHE",
+   "MURCIELAGO",
+   "TORTUGA",
+   "VENADO",
+   "ZOPILOTE"
+  ],
+  "filas": [
+   "ELQEHCAPAMUE",
+   "ACOLLIDAMRAA",
+   "BAEAZNTCESDI",
+   "BNETOYOCUJAE",
+   "AALRPLEVERAL",
+   "MURCIELAGOGT",
+   "RGSBLCOELDUN",
+   "AIRAOHNIMATO",
+   "UIALTUQUENRZ",
+   "GNOCEZONOEON",
+   "AJITRAGALVTE",
+   "JZCAAJOLOTEC"
+  ]
+ },
+ "sopa13": {
+  "mensaje": "EL QUE ACABE ANTES ESCOGE UNA PALABRA DE LA LISTA Y ESCRIBE AL REVERSO DONDE LA VIO HOY",
+  "palabras": [
+   "CALOR",
+   "CIRCUITO",
+   "CORRIENTE",
+   "ELECTRICO",
+   "ENERGIA",
+   "FRICCION",
+   "FUERZA",
+   "IMAN",
+   "INERCIA",
+   "MASA",
+   "ONDA",
+   "PALANCA",
+   "POLEA",
+   "RESORTE",
+   "VELOCIDAD",
+   "VOLTAJE"
+  ],
+  "filas": [
+   "EMOCIRTCELELA",
+   "AAQAOUEAECABZ",
+   "ISEEARNTTEAVR",
+   "GASLESRCOCGOE",
+   "REAOUOVINNALU",
+   "ECIPSPEAEALTF",
+   "NICEABLDRNAAR",
+   "ERRDEAONLATJO",
+   "LCEIPSCOTAYEL",
+   "EUNSFRICCIONA",
+   "CIIRIBDEALREC",
+   "VTERSOANAMIDO",
+   "NODELADVIOHOY"
+  ]
+ },
+ "ces1": {
+  "frase": "EL COLIBRI PUEDE VOLAR HACIA ATRAS",
+  "reto": "TAMBIEN LATE MIL VECES POR MINUTO",
+  "corrimiento": 7,
+  "cifrada": "LS JVSPIYP WBLKL CVSHY OHJPH HAYHZ"
+ },
+ "sus2": {
+  "frase": "LA LUZ DEL SOL TARDA OCHO MINUTOS EN LLEGAR A LA TIERRA",
+  "reto": "Y LA DE LA LUNA SOLO UN SEGUNDO",
+  "clave": {
+   "L": "A",
+   "E": "B",
+   "K": "C",
+   "F": "D",
+   "H": "E",
+   "O": "F",
+   "R": "G",
+   "G": "H",
+   "B": "I",
+   "S": "J",
+   "W": "K",
+   "C": "L",
+   "U": "M",
+   "Z": "N",
+   "J": "O",
+   "A": "P",
+   "V": "Q",
+   "Y": "R",
+   "I": "S",
+   "X": "T",
+   "M": "U",
+   "P": "V",
+   "T": "W",
+   "Q": "X",
+   "N": "Y",
+   "D": "Z"
+  },
+  "regalos": [
+   "L",
+   "A",
+   "E",
+   "O",
+   "R",
+   "T"
+  ]
+ }
+}

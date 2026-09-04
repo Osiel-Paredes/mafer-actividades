@@ -1,0 +1,1772 @@
+<!doctype html>
+<html lang="es-MX"><head><meta charset="utf-8">
+<title>Actividades recreativas - 3o de secundaria</title>
+<style>
+@page { size: letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Roboto','Open Sans',sans-serif; color: #111; background: #fff; font-size: 10.5pt; line-height: 1.45; }
+
+.hoja { width: 216mm; height: 279mm; padding: 11mm 12mm 9mm; page-break-after: always;
+        position: relative; display: flex; flex-direction: column; overflow: hidden; }
+.hoja:last-child { page-break-after: auto; }
+
+/* ---------- encabezado de actividad ---------- */
+.tira { flex: none; display: flex; align-items: stretch; border: 2.2px solid #111; border-radius: 7px; overflow: hidden; }
+.tira .num { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800;
+             font-size: 21pt; letter-spacing: -.5px; padding: 6px 11px 4px; display: flex; align-items: center; }
+.tira .tit { flex: 1; padding: 6px 12px 5px; }
+.tira h1 { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 16.5pt; line-height: 1.05;
+           letter-spacing: -.35px; text-transform: uppercase; }
+.tira .sub { font-size: 8.6pt; color: #4a4f57; margin-top: 2px; }
+.tira .tiempo { background: #eceef2; border-left: 2.2px solid #111; font-family: Montserrat,sans-serif;
+                font-weight: 700; font-size: 8.5pt; padding: 0 10px; display: flex; flex-direction: column;
+                align-items: center; justify-content: center; text-align: center; min-width: 74px; line-height: 1.15; }
+.tira .tiempo b { font-size: 13pt; font-weight: 800; }
+
+.meta { flex: none; display: flex; gap: 14px; margin: 6px 0 8px; font-size: 8.4pt; color: #5b6069;
+        font-family: Montserrat,sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+.meta span { display: flex; align-items: flex-end; gap: 5px; }
+.meta i { font-style: normal; border-bottom: 1.2px solid #9aa0a8; flex: 1; min-width: 40px; height: 13px; }
+.meta .g1 { flex: 3 } .meta .g2 { flex: 1 } .meta .g3 { flex: 1.4 }
+
+/* ---------- bloques ---------- */
+.instr { background: #f3f4f6; border-left: 4px solid #1f4ea8; border-radius: 0 5px 5px 0;
+         padding: 7px 11px; font-size: 9.4pt; margin-bottom: 9px; }
+.instr b { font-family: Montserrat,sans-serif; font-weight: 800; }
+.caja { border: 1.8px solid #111; border-radius: 6px; padding: 9px 11px; }
+.caja.punt { border: 1.6px dashed #a9aeb6; }
+.rot { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.6pt; text-transform: uppercase;
+       letter-spacing: .7px; color: #111; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.rot::before { content: ""; width: 13px; height: 3px; background: #1f4ea8; border-radius: 2px; flex: none; }
+.rot.s::before { display: none; }
+.mini { font-size: 8pt; color: #6b7078; line-height: 1.3; }
+.fila { display: flex; gap: 9px; }
+.col { flex: 1; min-width: 0; }
+.mt { margin-top: 9px; } .mt6 { margin-top: 6px; } .mb { margin-bottom: 9px; }
+.crece { flex: 1; min-height: 0; }
+
+/* renglones para escribir */
+.reng { border-bottom: 1.1px dashed #9aa0a8; height: 22px; }
+.reng.a { height: 26px; }
+.linea { border-bottom: 1.1px solid #9aa0a8; display: inline-block; min-width: 60px; }
+
+/* checkbox */
+.cb { display: inline-block; width: 12px; height: 12px; border: 1.5px solid #111; border-radius: 2.5px;
+      vertical-align: -2px; margin-right: 6px; flex: none; }
+ul.chk { list-style: none; } ul.chk li { display: flex; gap: 0; margin-bottom: 5.5px; font-size: 9pt; line-height: 1.3; }
+
+/* pie */
+.pie { margin-top: auto; padding-top: 7px; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+.extra { flex: 1; border: 1.6px solid #111; border-radius: 6px; padding: 6px 10px; font-size: 8.6pt; background: #fff; }
+.extra b { font-family: Montserrat,sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
+           font-size: 8pt; background: #111; color: #fff; padding: 1.5px 6px; border-radius: 3px; margin-right: 6px; }
+.folio { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; color: #9aa0a8; white-space: nowrap; padding-bottom: 2px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+th, td { border: 1.2px solid #111; padding: 4px 6px; text-align: left; }
+th { background: #eceef2; font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8.2pt;
+     text-transform: uppercase; letter-spacing: .3px; }
+td.v { height: 25px; }
+.mono { font-family: 'Source Code Pro',monospace; }
+
+/* ---------- piezas de los pasatiempos ---------- */
+table.bim { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 126mm; }
+table.bim col { width: 14mm; }
+table.bim td { border: 1px solid #b8bcc2; height: 14mm; text-align: center; vertical-align: middle;
+               font-family: Montserrat,sans-serif; font-weight: 800; font-size: 11pt; padding: 0; }
+table.bim td.esq { border: none; }
+table.bim td.pc, table.bim td.pr { border: none; color: #111; }
+table.bim td.cel { background: #fff; border: 1.4px solid #111; }
+table.bim td.cel.barco { background: #111; }
+table.bim td.cel.agua { position: relative; }
+table.bim td.cel.agua::after { content: ""; position: absolute; left: 50%; top: 50%; width: 3.4mm; height: 3.4mm;
+  transform: translate(-50%,-50%); border: 1.6px solid #9aa0a8; border-radius: 50%; }
+.flota { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.flota .gr { display: flex; align-items: center; gap: 6px; }
+.flota .et { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 8pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #5b6069; }
+.barco-mini { display: inline-flex; gap: 1px; }
+.barco-mini i { width: 5mm; height: 5mm; background: #111; border: 1px solid #111; }
+
+table.sopa { border-collapse: collapse; margin: 0 auto; table-layout: fixed; width: 141mm; }
+table.sopa td { width: 9.4mm; height: 9.4mm; text-align: center; vertical-align: middle; border: none;
+                font-family: 'Source Code Pro',monospace; font-weight: 600; font-size: 12pt; padding: 0; }
+.listapal { display: flex; gap: 12px; }
+.listapal ul { list-style: none; flex: 1; }
+.listapal li { display: flex; align-items: center; gap: 5px; font-size: 8.6pt; margin-bottom: 3.5px; }
+.listapal .cb { width: 10px; height: 10px; margin: 0; flex: none; }
+
+.crip-linea { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 9px; }
+.crip-pal { display: flex; gap: 1.5px; }
+.crip-ch { display: flex; flex-direction: column; align-items: center; width: 6.4mm; }
+.crip-ch b { display: block; height: 7mm; border: 1.4px solid #111; border-radius: 2px; width: 100%;
+             font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10.5pt; line-height: 7mm; text-align: center; }
+.crip-ch i { font-family: 'Source Code Pro',monospace; font-style: normal; font-size: 8pt; color: #6b7078;
+             margin-top: 1.5px; letter-spacing: 0; }
+table.abc-trab { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.abc-trab td { border: 1px solid #c9ced6; height: 6.6mm; text-align: center; padding: 0;
+                    font-family: 'Source Code Pro',monospace; font-size: 8.4pt; }
+table.abc-trab td.l { background: #eceef2; font-weight: 600; color: #5b6069; height: 5.2mm; font-size: 7.6pt; }
+table.abc-trab td.v { font-family: Montserrat,sans-serif; font-weight: 800; font-size: 10pt; }
+table.frec { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.frec th, table.frec td { border: 1px solid #c9ced6; text-align: center; padding: 2px 0; font-size: 7.6pt; }
+table.frec th { background: #111; color: #fff; font-family: Montserrat,sans-serif; font-weight: 800; font-size: 8.4pt; }
+table.frec td { font-family: 'Source Code Pro',monospace; color: #4a4f57; }
+
+.lab { border: 2.2px solid #111; border-radius: 4px; padding: 3px; background: #fff; }
+.lab svg { display: block; }
+.leyenda-lab { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-size: 8.4pt; align-items: center; }
+.leyenda-lab span { display: flex; align-items: center; gap: 5px; }
+.leyenda-lab b { width: 6mm; height: 6mm; border: 1.6px solid #111; border-radius: 50%; display: flex;
+                 align-items: center; justify-content: center; font-family: Montserrat,sans-serif;
+                 font-weight: 800; font-size: 7.6pt; flex: none; }
+.leyenda-lab b.n { background: #111; color: #fff; }
+.lb { font-family: Montserrat,sans-serif; font-weight: 700; font-size: 7.6pt; text-transform: uppercase;
+      letter-spacing: .3px; color: #5b6069; line-height: 1.2; }
+.campos { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px 11px; }
+.campos.c1 { grid-template-columns: 1fr; }
+.campos .ln { border-bottom: 1.1px dashed #9aa0a8; height: 19px; }
+.dibujo { position: relative; border: 1.8px dashed #a9aeb6; border-radius: 7px; overflow: hidden; background: #fff; }
+.dibujo .et { position: absolute; bottom: 4px; right: 8px; font-size: 7.6pt; color: #b8bcc2;
+              font-family: Montserrat,sans-serif; font-weight: 600; }
+.reticula { background: repeating-linear-gradient(0deg,#e9ebef 0 .5px,transparent .5px 5mm),
+                        repeating-linear-gradient(90deg,#e9ebef 0 .5px,transparent .5px 5mm); }
+.hoja.densa { font-size: 10pt; padding: 7mm 11mm 5mm; }
+.hoja.densa .instr { font-size: 8.9pt; padding: 6px 10px; }
+.hoja.densa .mini { font-size: 7.6pt; }
+.hoja.densa .extra { font-size: 7.7pt; padding: 4px 9px; }
+.hoja.densa .pie { padding-top: 5px; }
+/* el relato va impreso de cabeza, como las soluciones de las revistas */
+.decabeza { transform: rotate(180deg); }
+.decabeza .texto { column-count: 2; column-gap: 9mm; font-size: 8.8pt; line-height: 1.55; text-align: justify; }
+.hueco { display: inline-block; min-width: 17mm; border-bottom: 1.2px solid #111; text-align: center;
+         font-family: Montserrat,sans-serif; font-weight: 800; font-size: 7.4pt; vertical-align: 1px; }
+.sello-oct { width: 15mm; height: 15mm; background: #111; color: #fff; clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);
+             display: flex; align-items: center; justify-content: center; text-align: center;
+             font-family: Montserrat,sans-serif; font-weight: 800; font-size: 5pt; line-height: 1.1; padding: 2px; }
+.sellos-fila { display: flex; gap: 7px; }
+.sellos-fila .vacio-oct { width: 15mm; height: 15mm; border: 1.6px dashed #a9aeb6;
+  clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%); background: #f3f4f6; }
+table.bim.sol { width: 84mm; }
+table.bim.sol col { width: 9.3mm; }
+table.bim.sol td { height: 9.3mm; font-size: 8.4pt; }
+table.bim.sol td.cel.agua::after { width: 2.2mm; height: 2.2mm; }
+table.sopa.chica td { width: 6.6mm; height: 6.6mm; font-size: 8.4pt; }
+</style></head><body>
+<!-- ================= 15 · BIMARU ================= -->
+<section class="hoja">
+  <div class="tira"><div class="num">15</div>
+    <div class="tit"><h1>Batalla naval de un solo jugador</h1>
+      <div class="sub">Los barcos ya están puestos. Tu trabajo es deducir dónde, y hay una sola respuesta posible.</div></div>
+    <div class="tiempo"><b>45</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr"><b>Cómo se juega.</b> En el mar de abajo hay seis barcos escondidos. Los números de cada fila y de cada
+    columna dicen <b>cuántas casillas de esa línea están ocupadas por barco</b>. Rellena de negro las casillas con barco y
+    marca con un puntito las que son agua: los puntitos valen tanto como el negro.<br>
+    <b>La regla que lo hace resoluble:</b> dos barcos nunca se tocan, ni de lado ni de esquina. Siempre hay al menos una
+    casilla de agua entre dos barcos. <b>Ya te regalamos cuatro casillas</b> para que arranques. Empieza por las filas y
+    columnas con 0 (esas son todas agua) y por las que están completamente llenas.</div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot s" style="justify-content:center;margin-bottom:6px">La flota que tienes que encontrar · táchala cuando la halles</div>
+    <div class="flota"><div class="gr"><span class="et">Uno de 3</span><span class="barco-mini"><i></i><i></i><i></i></span></div><div class="gr"><span class="et">Dos de 2</span><span class="barco-mini"><i></i><i></i></span><span class="barco-mini"><i></i><i></i></span></div><div class="gr"><span class="et">Tres de 1</span><span class="barco-mini"><i></i></span><span class="barco-mini"><i></i></span><span class="barco-mini"><i></i></span></div></div>
+  </div>
+
+  <table class="bim"><colgroup><col><col><col><col><col><col><col><col><col></colgroup><tr><td class="esq"></td><td class="pc">0</td><td class="pc">3</td><td class="pc">1</td><td class="pc">3</td><td class="pc">0</td><td class="pc">0</td><td class="pc">2</td><td class="pc">1</td></tr><tr><td class="pr">2</td><td class="cel"></td><td class="cel barco"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr><td class="pr">1</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel barco"></td></tr><tr><td class="pr">0</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr><td class="pr">2</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr><td class="pr">1</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr><tr><td class="pr">2</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel agua"></td><td class="cel"></td></tr><tr><td class="pr">2</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel barco"></td><td class="cel"></td></tr><tr><td class="pr">0</td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td><td class="cel"></td></tr></table>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Diseña el tuyo al reverso: dibuja una rejilla de 8 × 8, esconde la
+    misma flota respetando la regla de que no se toquen, escribe los números de cada fila y columna y regala cuatro casillas.
+    Cámbialo con el compañero de junto sin levantarte. <b>Si el tuyo tiene dos respuestas posibles, no está bien hecho.</b></div>
+    <div class="folio">15</div></div>
+</section>
+
+<!-- ================= 16 · LABERINTO ================= -->
+<section class="hoja">
+  <div class="tira"><div class="num">16</div>
+    <div class="tit"><h1>El laberinto de las tres llaves</h1>
+      <div class="sub">No basta con llegar a la salida: hay que recoger las tres llaves, y en orden.</div></div>
+    <div class="tiempo"><b>45</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Entra por la <b>E</b> y sal por la <b>S</b>, pero antes tienes que pasar por la llave <b>1</b>, luego por
+    la <b>2</b> y luego por la <b>3</b>, <b>en ese orden</b>. Puedes volver a pasar por donde ya pasaste. Traza el camino con
+    lápiz, sin cruzar ninguna pared, y cuenta los pasos: <b>un paso es moverse de una casilla a la de al lado</b>.
+    <span class="mini">Truco de quien ya sabe: los pasillos sin salida se detectan antes de entrar en ellos si los tachas en
+    cuanto los ves.</span></div>
+
+  <div class="caja mb" style="padding:5px 8px">
+    <div class="leyenda-lab" style="margin-bottom:5px">
+      <span><b class="n">E</b> entrada</span><span><b>1</b> primera llave</span><span><b>2</b> segunda llave</span>
+      <span><b>3</b> tercera llave</span><span><b class="n">S</b> salida</span>
+    </div>
+    <div class="lab"><svg viewBox="0 0 642 422" style="width:100%;height:auto" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="square">
+<rect x="2" y="2" width="638" height="418" fill="#fff" stroke="none"/>
+<line x1="24" y1="2" x2="46" y2="2"/>
+<line x1="46" y1="2" x2="68" y2="2"/>
+<line x1="46" y1="2" x2="46" y2="24"/>
+<line x1="68" y1="2" x2="90" y2="2"/>
+<line x1="90" y1="2" x2="112" y2="2"/>
+<line x1="112" y1="2" x2="134" y2="2"/>
+<line x1="112" y1="2" x2="112" y2="24"/>
+<line x1="134" y1="2" x2="156" y2="2"/>
+<line x1="156" y1="2" x2="178" y2="2"/>
+<line x1="178" y1="2" x2="200" y2="2"/>
+<line x1="200" y1="2" x2="222" y2="2"/>
+<line x1="222" y1="2" x2="244" y2="2"/>
+<line x1="222" y1="2" x2="222" y2="24"/>
+<line x1="244" y1="2" x2="266" y2="2"/>
+<line x1="266" y1="2" x2="288" y2="2"/>
+<line x1="288" y1="2" x2="310" y2="2"/>
+<line x1="310" y1="2" x2="332" y2="2"/>
+<line x1="332" y1="2" x2="354" y2="2"/>
+<line x1="354" y1="2" x2="376" y2="2"/>
+<line x1="354" y1="2" x2="354" y2="24"/>
+<line x1="376" y1="2" x2="398" y2="2"/>
+<line x1="398" y1="2" x2="420" y2="2"/>
+<line x1="420" y1="2" x2="442" y2="2"/>
+<line x1="442" y1="2" x2="464" y2="2"/>
+<line x1="464" y1="2" x2="486" y2="2"/>
+<line x1="486" y1="2" x2="508" y2="2"/>
+<line x1="508" y1="2" x2="530" y2="2"/>
+<line x1="530" y1="2" x2="552" y2="2"/>
+<line x1="552" y1="2" x2="574" y2="2"/>
+<line x1="552" y1="2" x2="552" y2="24"/>
+<line x1="574" y1="2" x2="596" y2="2"/>
+<line x1="596" y1="2" x2="618" y2="2"/>
+<line x1="596" y1="2" x2="596" y2="24"/>
+<line x1="618" y1="2" x2="640" y2="2"/>
+<line x1="2" y1="24" x2="24" y2="24"/>
+<line x1="2" y1="24" x2="2" y2="46"/>
+<line x1="24" y1="24" x2="24" y2="46"/>
+<line x1="46" y1="24" x2="46" y2="46"/>
+<line x1="68" y1="24" x2="68" y2="46"/>
+<line x1="90" y1="24" x2="112" y2="24"/>
+<line x1="134" y1="24" x2="134" y2="46"/>
+<line x1="156" y1="24" x2="178" y2="24"/>
+<line x1="156" y1="24" x2="156" y2="46"/>
+<line x1="178" y1="24" x2="200" y2="24"/>
+<line x1="200" y1="24" x2="200" y2="46"/>
+<line x1="222" y1="24" x2="244" y2="24"/>
+<line x1="244" y1="24" x2="266" y2="24"/>
+<line x1="266" y1="24" x2="266" y2="46"/>
+<line x1="288" y1="24" x2="310" y2="24"/>
+<line x1="310" y1="24" x2="310" y2="46"/>
+<line x1="332" y1="24" x2="332" y2="46"/>
+<line x1="354" y1="24" x2="376" y2="24"/>
+<line x1="376" y1="24" x2="398" y2="24"/>
+<line x1="398" y1="24" x2="398" y2="46"/>
+<line x1="420" y1="24" x2="420" y2="46"/>
+<line x1="442" y1="24" x2="464" y2="24"/>
+<line x1="464" y1="24" x2="486" y2="24"/>
+<line x1="464" y1="24" x2="464" y2="46"/>
+<line x1="486" y1="24" x2="508" y2="24"/>
+<line x1="508" y1="24" x2="530" y2="24"/>
+<line x1="552" y1="24" x2="552" y2="46"/>
+<line x1="574" y1="24" x2="574" y2="46"/>
+<line x1="596" y1="24" x2="618" y2="24"/>
+<line x1="618" y1="24" x2="618" y2="46"/>
+<line x1="2" y1="46" x2="2" y2="68"/>
+<line x1="24" y1="46" x2="24" y2="68"/>
+<line x1="46" y1="46" x2="68" y2="46"/>
+<line x1="68" y1="46" x2="90" y2="46"/>
+<line x1="90" y1="46" x2="112" y2="46"/>
+<line x1="112" y1="46" x2="134" y2="46"/>
+<line x1="112" y1="46" x2="112" y2="68"/>
+<line x1="156" y1="46" x2="156" y2="68"/>
+<line x1="178" y1="46" x2="178" y2="68"/>
+<line x1="200" y1="46" x2="222" y2="46"/>
+<line x1="222" y1="46" x2="244" y2="46"/>
+<line x1="244" y1="46" x2="244" y2="68"/>
+<line x1="266" y1="46" x2="288" y2="46"/>
+<line x1="288" y1="46" x2="310" y2="46"/>
+<line x1="288" y1="46" x2="288" y2="68"/>
+<line x1="332" y1="46" x2="354" y2="46"/>
+<line x1="332" y1="46" x2="332" y2="68"/>
+<line x1="354" y1="46" x2="376" y2="46"/>
+<line x1="398" y1="46" x2="420" y2="46"/>
+<line x1="420" y1="46" x2="442" y2="46"/>
+<line x1="464" y1="46" x2="464" y2="68"/>
+<line x1="486" y1="46" x2="508" y2="46"/>
+<line x1="486" y1="46" x2="486" y2="68"/>
+<line x1="508" y1="46" x2="530" y2="46"/>
+<line x1="530" y1="46" x2="552" y2="46"/>
+<line x1="574" y1="46" x2="596" y2="46"/>
+<line x1="574" y1="46" x2="574" y2="68"/>
+<line x1="596" y1="46" x2="596" y2="68"/>
+<line x1="618" y1="46" x2="618" y2="68"/>
+<line x1="2" y1="68" x2="2" y2="90"/>
+<line x1="24" y1="68" x2="46" y2="68"/>
+<line x1="46" y1="68" x2="68" y2="68"/>
+<line x1="68" y1="68" x2="90" y2="68"/>
+<line x1="68" y1="68" x2="68" y2="90"/>
+<line x1="90" y1="68" x2="90" y2="90"/>
+<line x1="134" y1="68" x2="156" y2="68"/>
+<line x1="134" y1="68" x2="134" y2="90"/>
+<line x1="178" y1="68" x2="200" y2="68"/>
+<line x1="178" y1="68" x2="178" y2="90"/>
+<line x1="200" y1="68" x2="222" y2="68"/>
+<line x1="222" y1="68" x2="244" y2="68"/>
+<line x1="244" y1="68" x2="266" y2="68"/>
+<line x1="244" y1="68" x2="244" y2="90"/>
+<line x1="288" y1="68" x2="288" y2="90"/>
+<line x1="310" y1="68" x2="332" y2="68"/>
+<line x1="332" y1="68" x2="354" y2="68"/>
+<line x1="354" y1="68" x2="376" y2="68"/>
+<line x1="376" y1="68" x2="398" y2="68"/>
+<line x1="376" y1="68" x2="376" y2="90"/>
+<line x1="398" y1="68" x2="420" y2="68"/>
+<line x1="420" y1="68" x2="442" y2="68"/>
+<line x1="442" y1="68" x2="464" y2="68"/>
+<line x1="464" y1="68" x2="464" y2="90"/>
+<line x1="486" y1="68" x2="486" y2="90"/>
+<line x1="508" y1="68" x2="530" y2="68"/>
+<line x1="530" y1="68" x2="552" y2="68"/>
+<line x1="552" y1="68" x2="574" y2="68"/>
+<line x1="574" y1="68" x2="574" y2="90"/>
+<line x1="2" y1="90" x2="2" y2="112"/>
+<line x1="24" y1="90" x2="46" y2="90"/>
+<line x1="46" y1="90" x2="46" y2="112"/>
+<line x1="68" y1="90" x2="68" y2="112"/>
+<line x1="90" y1="90" x2="112" y2="90"/>
+<line x1="90" y1="90" x2="90" y2="112"/>
+<line x1="112" y1="90" x2="134" y2="90"/>
+<line x1="156" y1="90" x2="156" y2="112"/>
+<line x1="178" y1="90" x2="178" y2="112"/>
+<line x1="200" y1="90" x2="222" y2="90"/>
+<line x1="200" y1="90" x2="200" y2="112"/>
+<line x1="222" y1="90" x2="222" y2="112"/>
+<line x1="266" y1="90" x2="288" y2="90"/>
+<line x1="266" y1="90" x2="266" y2="112"/>
+<line x1="288" y1="90" x2="310" y2="90"/>
+<line x1="310" y1="90" x2="332" y2="90"/>
+<line x1="332" y1="90" x2="354" y2="90"/>
+<line x1="376" y1="90" x2="376" y2="112"/>
+<line x1="398" y1="90" x2="420" y2="90"/>
+<line x1="420" y1="90" x2="442" y2="90"/>
+<line x1="442" y1="90" x2="442" y2="112"/>
+<line x1="464" y1="90" x2="464" y2="112"/>
+<line x1="486" y1="90" x2="508" y2="90"/>
+<line x1="486" y1="90" x2="486" y2="112"/>
+<line x1="508" y1="90" x2="530" y2="90"/>
+<line x1="530" y1="90" x2="552" y2="90"/>
+<line x1="552" y1="90" x2="552" y2="112"/>
+<line x1="574" y1="90" x2="596" y2="90"/>
+<line x1="596" y1="90" x2="618" y2="90"/>
+<line x1="596" y1="90" x2="596" y2="112"/>
+<line x1="618" y1="90" x2="618" y2="112"/>
+<line x1="2" y1="112" x2="24" y2="112"/>
+<line x1="2" y1="112" x2="2" y2="134"/>
+<line x1="46" y1="112" x2="46" y2="134"/>
+<line x1="90" y1="112" x2="90" y2="134"/>
+<line x1="112" y1="112" x2="134" y2="112"/>
+<line x1="112" y1="112" x2="112" y2="134"/>
+<line x1="156" y1="112" x2="156" y2="134"/>
+<line x1="178" y1="112" x2="178" y2="134"/>
+<line x1="222" y1="112" x2="244" y2="112"/>
+<line x1="244" y1="112" x2="266" y2="112"/>
+<line x1="244" y1="112" x2="244" y2="134"/>
+<line x1="288" y1="112" x2="310" y2="112"/>
+<line x1="310" y1="112" x2="332" y2="112"/>
+<line x1="310" y1="112" x2="310" y2="134"/>
+<line x1="332" y1="112" x2="354" y2="112"/>
+<line x1="332" y1="112" x2="332" y2="134"/>
+<line x1="354" y1="112" x2="376" y2="112"/>
+<line x1="376" y1="112" x2="398" y2="112"/>
+<line x1="398" y1="112" x2="420" y2="112"/>
+<line x1="398" y1="112" x2="398" y2="134"/>
+<line x1="442" y1="112" x2="442" y2="134"/>
+<line x1="464" y1="112" x2="464" y2="134"/>
+<line x1="508" y1="112" x2="530" y2="112"/>
+<line x1="508" y1="112" x2="508" y2="134"/>
+<line x1="530" y1="112" x2="530" y2="134"/>
+<line x1="552" y1="112" x2="574" y2="112"/>
+<line x1="552" y1="112" x2="552" y2="134"/>
+<line x1="596" y1="112" x2="596" y2="134"/>
+<line x1="618" y1="112" x2="618" y2="134"/>
+<line x1="2" y1="134" x2="2" y2="156"/>
+<line x1="24" y1="134" x2="46" y2="134"/>
+<line x1="24" y1="134" x2="24" y2="156"/>
+<line x1="46" y1="134" x2="68" y2="134"/>
+<line x1="90" y1="134" x2="90" y2="156"/>
+<line x1="112" y1="134" x2="112" y2="156"/>
+<line x1="134" y1="134" x2="156" y2="134"/>
+<line x1="156" y1="134" x2="178" y2="134"/>
+<line x1="178" y1="134" x2="200" y2="134"/>
+<line x1="200" y1="134" x2="222" y2="134"/>
+<line x1="222" y1="134" x2="222" y2="156"/>
+<line x1="244" y1="134" x2="266" y2="134"/>
+<line x1="266" y1="134" x2="288" y2="134"/>
+<line x1="310" y1="134" x2="310" y2="156"/>
+<line x1="354" y1="134" x2="354" y2="156"/>
+<line x1="376" y1="134" x2="376" y2="156"/>
+<line x1="398" y1="134" x2="398" y2="156"/>
+<line x1="420" y1="134" x2="442" y2="134"/>
+<line x1="442" y1="134" x2="442" y2="156"/>
+<line x1="464" y1="134" x2="486" y2="134"/>
+<line x1="486" y1="134" x2="508" y2="134"/>
+<line x1="530" y1="134" x2="530" y2="156"/>
+<line x1="552" y1="134" x2="552" y2="156"/>
+<line x1="574" y1="134" x2="596" y2="134"/>
+<line x1="574" y1="134" x2="574" y2="156"/>
+<line x1="2" y1="156" x2="2" y2="178"/>
+<line x1="24" y1="156" x2="46" y2="156"/>
+<line x1="46" y1="156" x2="68" y2="156"/>
+<line x1="68" y1="156" x2="90" y2="156"/>
+<line x1="68" y1="156" x2="68" y2="178"/>
+<line x1="112" y1="156" x2="134" y2="156"/>
+<line x1="112" y1="156" x2="112" y2="178"/>
+<line x1="134" y1="156" x2="156" y2="156"/>
+<line x1="156" y1="156" x2="156" y2="178"/>
+<line x1="178" y1="156" x2="200" y2="156"/>
+<line x1="200" y1="156" x2="222" y2="156"/>
+<line x1="222" y1="156" x2="244" y2="156"/>
+<line x1="244" y1="156" x2="266" y2="156"/>
+<line x1="266" y1="156" x2="288" y2="156"/>
+<line x1="288" y1="156" x2="310" y2="156"/>
+<line x1="310" y1="156" x2="310" y2="178"/>
+<line x1="332" y1="156" x2="354" y2="156"/>
+<line x1="332" y1="156" x2="332" y2="178"/>
+<line x1="354" y1="156" x2="354" y2="178"/>
+<line x1="376" y1="156" x2="376" y2="178"/>
+<line x1="398" y1="156" x2="420" y2="156"/>
+<line x1="420" y1="156" x2="420" y2="178"/>
+<line x1="442" y1="156" x2="464" y2="156"/>
+<line x1="464" y1="156" x2="486" y2="156"/>
+<line x1="486" y1="156" x2="508" y2="156"/>
+<line x1="486" y1="156" x2="486" y2="178"/>
+<line x1="530" y1="156" x2="530" y2="178"/>
+<line x1="552" y1="156" x2="552" y2="178"/>
+<line x1="574" y1="156" x2="574" y2="178"/>
+<line x1="596" y1="156" x2="618" y2="156"/>
+<line x1="618" y1="156" x2="640" y2="156"/>
+<line x1="618" y1="156" x2="618" y2="178"/>
+<line x1="2" y1="178" x2="2" y2="200"/>
+<line x1="24" y1="178" x2="46" y2="178"/>
+<line x1="46" y1="178" x2="46" y2="200"/>
+<line x1="90" y1="178" x2="112" y2="178"/>
+<line x1="90" y1="178" x2="90" y2="200"/>
+<line x1="112" y1="178" x2="134" y2="178"/>
+<line x1="156" y1="178" x2="178" y2="178"/>
+<line x1="178" y1="178" x2="200" y2="178"/>
+<line x1="200" y1="178" x2="200" y2="200"/>
+<line x1="222" y1="178" x2="244" y2="178"/>
+<line x1="244" y1="178" x2="266" y2="178"/>
+<line x1="266" y1="178" x2="288" y2="178"/>
+<line x1="288" y1="178" x2="310" y2="178"/>
+<line x1="310" y1="178" x2="310" y2="200"/>
+<line x1="332" y1="178" x2="332" y2="200"/>
+<line x1="354" y1="178" x2="354" y2="200"/>
+<line x1="376" y1="178" x2="398" y2="178"/>
+<line x1="398" y1="178" x2="420" y2="178"/>
+<line x1="420" y1="178" x2="442" y2="178"/>
+<line x1="442" y1="178" x2="464" y2="178"/>
+<line x1="464" y1="178" x2="464" y2="200"/>
+<line x1="486" y1="178" x2="486" y2="200"/>
+<line x1="508" y1="178" x2="508" y2="200"/>
+<line x1="530" y1="178" x2="530" y2="200"/>
+<line x1="574" y1="178" x2="596" y2="178"/>
+<line x1="574" y1="178" x2="574" y2="200"/>
+<line x1="596" y1="178" x2="596" y2="200"/>
+<line x1="618" y1="178" x2="618" y2="200"/>
+<line x1="2" y1="200" x2="24" y2="200"/>
+<line x1="2" y1="200" x2="2" y2="222"/>
+<line x1="24" y1="200" x2="24" y2="222"/>
+<line x1="46" y1="200" x2="68" y2="200"/>
+<line x1="46" y1="200" x2="46" y2="222"/>
+<line x1="68" y1="200" x2="90" y2="200"/>
+<line x1="90" y1="200" x2="112" y2="200"/>
+<line x1="112" y1="200" x2="112" y2="222"/>
+<line x1="134" y1="200" x2="156" y2="200"/>
+<line x1="134" y1="200" x2="134" y2="222"/>
+<line x1="156" y1="200" x2="178" y2="200"/>
+<line x1="178" y1="200" x2="178" y2="222"/>
+<line x1="200" y1="200" x2="222" y2="200"/>
+<line x1="200" y1="200" x2="200" y2="222"/>
+<line x1="222" y1="200" x2="244" y2="200"/>
+<line x1="244" y1="200" x2="266" y2="200"/>
+<line x1="266" y1="200" x2="288" y2="200"/>
+<line x1="288" y1="200" x2="288" y2="222"/>
+<line x1="354" y1="200" x2="376" y2="200"/>
+<line x1="376" y1="200" x2="398" y2="200"/>
+<line x1="376" y1="200" x2="376" y2="222"/>
+<line x1="398" y1="200" x2="420" y2="200"/>
+<line x1="398" y1="200" x2="398" y2="222"/>
+<line x1="442" y1="200" x2="464" y2="200"/>
+<line x1="442" y1="200" x2="442" y2="222"/>
+<line x1="486" y1="200" x2="486" y2="222"/>
+<line x1="508" y1="200" x2="530" y2="200"/>
+<line x1="530" y1="200" x2="552" y2="200"/>
+<line x1="530" y1="200" x2="530" y2="222"/>
+<line x1="552" y1="200" x2="574" y2="200"/>
+<line x1="596" y1="200" x2="596" y2="222"/>
+<line x1="618" y1="200" x2="618" y2="222"/>
+<line x1="2" y1="222" x2="2" y2="244"/>
+<line x1="24" y1="222" x2="24" y2="244"/>
+<line x1="46" y1="222" x2="68" y2="222"/>
+<line x1="46" y1="222" x2="46" y2="244"/>
+<line x1="90" y1="222" x2="90" y2="244"/>
+<line x1="134" y1="222" x2="134" y2="244"/>
+<line x1="156" y1="222" x2="156" y2="244"/>
+<line x1="200" y1="222" x2="200" y2="244"/>
+<line x1="222" y1="222" x2="244" y2="222"/>
+<line x1="244" y1="222" x2="266" y2="222"/>
+<line x1="266" y1="222" x2="266" y2="244"/>
+<line x1="288" y1="222" x2="310" y2="222"/>
+<line x1="288" y1="222" x2="288" y2="244"/>
+<line x1="310" y1="222" x2="332" y2="222"/>
+<line x1="332" y1="222" x2="354" y2="222"/>
+<line x1="332" y1="222" x2="332" y2="244"/>
+<line x1="398" y1="222" x2="398" y2="244"/>
+<line x1="420" y1="222" x2="442" y2="222"/>
+<line x1="464" y1="222" x2="486" y2="222"/>
+<line x1="464" y1="222" x2="464" y2="244"/>
+<line x1="486" y1="222" x2="508" y2="222"/>
+<line x1="508" y1="222" x2="508" y2="244"/>
+<line x1="530" y1="222" x2="530" y2="244"/>
+<line x1="552" y1="222" x2="574" y2="222"/>
+<line x1="552" y1="222" x2="552" y2="244"/>
+<line x1="596" y1="222" x2="596" y2="244"/>
+<line x1="2" y1="244" x2="2" y2="266"/>
+<line x1="46" y1="244" x2="46" y2="266"/>
+<line x1="68" y1="244" x2="90" y2="244"/>
+<line x1="68" y1="244" x2="68" y2="266"/>
+<line x1="90" y1="244" x2="112" y2="244"/>
+<line x1="112" y1="244" x2="134" y2="244"/>
+<line x1="134" y1="244" x2="134" y2="266"/>
+<line x1="156" y1="244" x2="178" y2="244"/>
+<line x1="178" y1="244" x2="200" y2="244"/>
+<line x1="200" y1="244" x2="222" y2="244"/>
+<line x1="200" y1="244" x2="200" y2="266"/>
+<line x1="222" y1="244" x2="244" y2="244"/>
+<line x1="266" y1="244" x2="266" y2="266"/>
+<line x1="310" y1="244" x2="310" y2="266"/>
+<line x1="332" y1="244" x2="354" y2="244"/>
+<line x1="354" y1="244" x2="376" y2="244"/>
+<line x1="354" y1="244" x2="354" y2="266"/>
+<line x1="398" y1="244" x2="420" y2="244"/>
+<line x1="398" y1="244" x2="398" y2="266"/>
+<line x1="420" y1="244" x2="442" y2="244"/>
+<line x1="442" y1="244" x2="464" y2="244"/>
+<line x1="486" y1="244" x2="508" y2="244"/>
+<line x1="508" y1="244" x2="508" y2="266"/>
+<line x1="552" y1="244" x2="552" y2="266"/>
+<line x1="574" y1="244" x2="596" y2="244"/>
+<line x1="596" y1="244" x2="618" y2="244"/>
+<line x1="618" y1="244" x2="618" y2="266"/>
+<line x1="2" y1="266" x2="2" y2="288"/>
+<line x1="24" y1="266" x2="46" y2="266"/>
+<line x1="24" y1="266" x2="24" y2="288"/>
+<line x1="68" y1="266" x2="68" y2="288"/>
+<line x1="90" y1="266" x2="112" y2="266"/>
+<line x1="112" y1="266" x2="112" y2="288"/>
+<line x1="134" y1="266" x2="156" y2="266"/>
+<line x1="156" y1="266" x2="178" y2="266"/>
+<line x1="178" y1="266" x2="200" y2="266"/>
+<line x1="222" y1="266" x2="244" y2="266"/>
+<line x1="222" y1="266" x2="222" y2="288"/>
+<line x1="244" y1="266" x2="266" y2="266"/>
+<line x1="266" y1="266" x2="288" y2="266"/>
+<line x1="288" y1="266" x2="310" y2="266"/>
+<line x1="310" y1="266" x2="332" y2="266"/>
+<line x1="332" y1="266" x2="332" y2="288"/>
+<line x1="354" y1="266" x2="376" y2="266"/>
+<line x1="376" y1="266" x2="376" y2="288"/>
+<line x1="398" y1="266" x2="420" y2="266"/>
+<line x1="420" y1="266" x2="442" y2="266"/>
+<line x1="420" y1="266" x2="420" y2="288"/>
+<line x1="442" y1="266" x2="464" y2="266"/>
+<line x1="464" y1="266" x2="464" y2="288"/>
+<line x1="486" y1="266" x2="486" y2="288"/>
+<line x1="508" y1="266" x2="530" y2="266"/>
+<line x1="530" y1="266" x2="552" y2="266"/>
+<line x1="530" y1="266" x2="530" y2="288"/>
+<line x1="552" y1="266" x2="574" y2="266"/>
+<line x1="574" y1="266" x2="596" y2="266"/>
+<line x1="618" y1="266" x2="618" y2="288"/>
+<line x1="2" y1="288" x2="2" y2="310"/>
+<line x1="24" y1="288" x2="46" y2="288"/>
+<line x1="68" y1="288" x2="90" y2="288"/>
+<line x1="90" y1="288" x2="90" y2="310"/>
+<line x1="112" y1="288" x2="134" y2="288"/>
+<line x1="134" y1="288" x2="156" y2="288"/>
+<line x1="156" y1="288" x2="178" y2="288"/>
+<line x1="178" y1="288" x2="200" y2="288"/>
+<line x1="200" y1="288" x2="222" y2="288"/>
+<line x1="200" y1="288" x2="200" y2="310"/>
+<line x1="222" y1="288" x2="244" y2="288"/>
+<line x1="266" y1="288" x2="288" y2="288"/>
+<line x1="266" y1="288" x2="266" y2="310"/>
+<line x1="288" y1="288" x2="288" y2="310"/>
+<line x1="310" y1="288" x2="332" y2="288"/>
+<line x1="310" y1="288" x2="310" y2="310"/>
+<line x1="332" y1="288" x2="354" y2="288"/>
+<line x1="376" y1="288" x2="398" y2="288"/>
+<line x1="376" y1="288" x2="376" y2="310"/>
+<line x1="442" y1="288" x2="442" y2="310"/>
+<line x1="464" y1="288" x2="464" y2="310"/>
+<line x1="486" y1="288" x2="486" y2="310"/>
+<line x1="508" y1="288" x2="530" y2="288"/>
+<line x1="508" y1="288" x2="508" y2="310"/>
+<line x1="552" y1="288" x2="574" y2="288"/>
+<line x1="552" y1="288" x2="552" y2="310"/>
+<line x1="574" y1="288" x2="596" y2="288"/>
+<line x1="596" y1="288" x2="596" y2="310"/>
+<line x1="618" y1="288" x2="618" y2="310"/>
+<line x1="2" y1="310" x2="24" y2="310"/>
+<line x1="2" y1="310" x2="2" y2="332"/>
+<line x1="24" y1="310" x2="46" y2="310"/>
+<line x1="46" y1="310" x2="68" y2="310"/>
+<line x1="68" y1="310" x2="68" y2="332"/>
+<line x1="90" y1="310" x2="112" y2="310"/>
+<line x1="112" y1="310" x2="134" y2="310"/>
+<line x1="134" y1="310" x2="156" y2="310"/>
+<line x1="156" y1="310" x2="178" y2="310"/>
+<line x1="156" y1="310" x2="156" y2="332"/>
+<line x1="178" y1="310" x2="178" y2="332"/>
+<line x1="200" y1="310" x2="200" y2="332"/>
+<line x1="222" y1="310" x2="222" y2="332"/>
+<line x1="244" y1="310" x2="266" y2="310"/>
+<line x1="244" y1="310" x2="244" y2="332"/>
+<line x1="310" y1="310" x2="310" y2="332"/>
+<line x1="332" y1="310" x2="354" y2="310"/>
+<line x1="332" y1="310" x2="332" y2="332"/>
+<line x1="354" y1="310" x2="376" y2="310"/>
+<line x1="376" y1="310" x2="398" y2="310"/>
+<line x1="398" y1="310" x2="420" y2="310"/>
+<line x1="420" y1="310" x2="442" y2="310"/>
+<line x1="420" y1="310" x2="420" y2="332"/>
+<line x1="464" y1="310" x2="486" y2="310"/>
+<line x1="508" y1="310" x2="508" y2="332"/>
+<line x1="530" y1="310" x2="552" y2="310"/>
+<line x1="530" y1="310" x2="530" y2="332"/>
+<line x1="574" y1="310" x2="574" y2="332"/>
+<line x1="596" y1="310" x2="618" y2="310"/>
+<line x1="2" y1="332" x2="2" y2="354"/>
+<line x1="24" y1="332" x2="46" y2="332"/>
+<line x1="46" y1="332" x2="46" y2="354"/>
+<line x1="68" y1="332" x2="90" y2="332"/>
+<line x1="90" y1="332" x2="112" y2="332"/>
+<line x1="112" y1="332" x2="134" y2="332"/>
+<line x1="112" y1="332" x2="112" y2="354"/>
+<line x1="156" y1="332" x2="156" y2="354"/>
+<line x1="178" y1="332" x2="178" y2="354"/>
+<line x1="200" y1="332" x2="222" y2="332"/>
+<line x1="222" y1="332" x2="222" y2="354"/>
+<line x1="244" y1="332" x2="266" y2="332"/>
+<line x1="266" y1="332" x2="288" y2="332"/>
+<line x1="266" y1="332" x2="266" y2="354"/>
+<line x1="288" y1="332" x2="310" y2="332"/>
+<line x1="354" y1="332" x2="376" y2="332"/>
+<line x1="354" y1="332" x2="354" y2="354"/>
+<line x1="376" y1="332" x2="398" y2="332"/>
+<line x1="420" y1="332" x2="442" y2="332"/>
+<line x1="442" y1="332" x2="464" y2="332"/>
+<line x1="464" y1="332" x2="486" y2="332"/>
+<line x1="486" y1="332" x2="508" y2="332"/>
+<line x1="508" y1="332" x2="508" y2="354"/>
+<line x1="530" y1="332" x2="530" y2="354"/>
+<line x1="552" y1="332" x2="574" y2="332"/>
+<line x1="574" y1="332" x2="596" y2="332"/>
+<line x1="596" y1="332" x2="618" y2="332"/>
+<line x1="596" y1="332" x2="596" y2="354"/>
+<line x1="618" y1="332" x2="640" y2="332"/>
+<line x1="2" y1="354" x2="2" y2="376"/>
+<line x1="24" y1="354" x2="46" y2="354"/>
+<line x1="24" y1="354" x2="24" y2="376"/>
+<line x1="46" y1="354" x2="68" y2="354"/>
+<line x1="90" y1="354" x2="90" y2="376"/>
+<line x1="112" y1="354" x2="112" y2="376"/>
+<line x1="134" y1="354" x2="156" y2="354"/>
+<line x1="134" y1="354" x2="134" y2="376"/>
+<line x1="178" y1="354" x2="200" y2="354"/>
+<line x1="200" y1="354" x2="200" y2="376"/>
+<line x1="222" y1="354" x2="244" y2="354"/>
+<line x1="244" y1="354" x2="244" y2="376"/>
+<line x1="288" y1="354" x2="310" y2="354"/>
+<line x1="288" y1="354" x2="288" y2="376"/>
+<line x1="310" y1="354" x2="332" y2="354"/>
+<line x1="332" y1="354" x2="354" y2="354"/>
+<line x1="354" y1="354" x2="376" y2="354"/>
+<line x1="376" y1="354" x2="398" y2="354"/>
+<line x1="398" y1="354" x2="420" y2="354"/>
+<line x1="420" y1="354" x2="442" y2="354"/>
+<line x1="442" y1="354" x2="464" y2="354"/>
+<line x1="464" y1="354" x2="486" y2="354"/>
+<line x1="464" y1="354" x2="464" y2="376"/>
+<line x1="530" y1="354" x2="552" y2="354"/>
+<line x1="552" y1="354" x2="574" y2="354"/>
+<line x1="574" y1="354" x2="574" y2="376"/>
+<line x1="618" y1="354" x2="618" y2="376"/>
+<line x1="2" y1="376" x2="24" y2="376"/>
+<line x1="2" y1="376" x2="2" y2="398"/>
+<line x1="46" y1="376" x2="68" y2="376"/>
+<line x1="46" y1="376" x2="46" y2="398"/>
+<line x1="68" y1="376" x2="90" y2="376"/>
+<line x1="90" y1="376" x2="112" y2="376"/>
+<line x1="112" y1="376" x2="112" y2="398"/>
+<line x1="134" y1="376" x2="156" y2="376"/>
+<line x1="178" y1="376" x2="178" y2="398"/>
+<line x1="200" y1="376" x2="222" y2="376"/>
+<line x1="200" y1="376" x2="200" y2="398"/>
+<line x1="222" y1="376" x2="222" y2="398"/>
+<line x1="244" y1="376" x2="266" y2="376"/>
+<line x1="266" y1="376" x2="288" y2="376"/>
+<line x1="310" y1="376" x2="332" y2="376"/>
+<line x1="310" y1="376" x2="310" y2="398"/>
+<line x1="332" y1="376" x2="354" y2="376"/>
+<line x1="354" y1="376" x2="376" y2="376"/>
+<line x1="376" y1="376" x2="398" y2="376"/>
+<line x1="376" y1="376" x2="376" y2="398"/>
+<line x1="398" y1="376" x2="420" y2="376"/>
+<line x1="420" y1="376" x2="442" y2="376"/>
+<line x1="420" y1="376" x2="420" y2="398"/>
+<line x1="464" y1="376" x2="464" y2="398"/>
+<line x1="486" y1="376" x2="508" y2="376"/>
+<line x1="486" y1="376" x2="486" y2="398"/>
+<line x1="508" y1="376" x2="530" y2="376"/>
+<line x1="530" y1="376" x2="530" y2="398"/>
+<line x1="552" y1="376" x2="574" y2="376"/>
+<line x1="552" y1="376" x2="552" y2="398"/>
+<line x1="574" y1="376" x2="596" y2="376"/>
+<line x1="596" y1="376" x2="618" y2="376"/>
+<line x1="596" y1="376" x2="596" y2="398"/>
+<line x1="2" y1="398" x2="2" y2="420"/>
+<line x1="24" y1="398" x2="46" y2="398"/>
+<line x1="68" y1="398" x2="90" y2="398"/>
+<line x1="90" y1="398" x2="90" y2="420"/>
+<line x1="112" y1="398" x2="134" y2="398"/>
+<line x1="134" y1="398" x2="156" y2="398"/>
+<line x1="156" y1="398" x2="178" y2="398"/>
+<line x1="222" y1="398" x2="244" y2="398"/>
+<line x1="244" y1="398" x2="266" y2="398"/>
+<line x1="266" y1="398" x2="288" y2="398"/>
+<line x1="288" y1="398" x2="310" y2="398"/>
+<line x1="332" y1="398" x2="354" y2="398"/>
+<line x1="332" y1="398" x2="332" y2="420"/>
+<line x1="398" y1="398" x2="398" y2="420"/>
+<line x1="420" y1="398" x2="420" y2="420"/>
+<line x1="442" y1="398" x2="464" y2="398"/>
+<line x1="464" y1="398" x2="486" y2="398"/>
+<line x1="508" y1="398" x2="508" y2="420"/>
+<line x1="530" y1="398" x2="552" y2="398"/>
+<line x1="574" y1="398" x2="574" y2="420"/>
+<line x1="618" y1="398" x2="640" y2="398"/>
+<line x1="2" y1="420" x2="640" y2="420"/>
+<line x1="640" y1="2" x2="640" y2="420"/>
+<line x1="2" y1="2" x2="24" y2="2" stroke="#fff" stroke-width="4"/>
+<line x1="618" y1="420" x2="640" y2="420" stroke="#fff" stroke-width="4"/>
+<circle cx="13.0" cy="13.0" r="8.8" fill="#111" stroke="#111" stroke-width="1.8"/>
+<text x="13.0" y="13.0" font-family="Montserrat,sans-serif" font-size="11.440000000000001" font-weight="800" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central">E</text>
+<circle cx="79.0" cy="211.0" r="8.8" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<text x="79.0" y="211.0" font-family="Montserrat,sans-serif" font-size="11.440000000000001" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="409.0" cy="57.0" r="8.8" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<text x="409.0" y="57.0" font-family="Montserrat,sans-serif" font-size="11.440000000000001" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="189.0" cy="365.0" r="8.8" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<text x="189.0" y="365.0" font-family="Montserrat,sans-serif" font-size="11.440000000000001" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">3</text>
+<circle cx="629.0" cy="409.0" r="8.8" fill="#111" stroke="#111" stroke-width="1.8"/>
+<text x="629.0" y="409.0" font-family="Montserrat,sans-serif" font-size="11.440000000000001" font-weight="800" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central">S</text>
+</svg></div>
+  </div>
+
+  <div class="fila">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Mis pasos</div>
+      <div class="mini" style="margin:-2px 0 3px">Cuenta los del camino que trazaste, de la E a la S pasando por las tres llaves.</div>
+      <div class="puntos" style="border:none;padding:0"><span class="lb">Total</span><span class="caj" style="width:22mm;height:9mm;border:1.6px solid #111;border-radius:4px"></span>
+        <span class="mini">El camino más corto posible existe y es uno solo. ¿Le atinaste?</span></div>
+    </div>
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">El pasillo que más te engañó</div>
+      <div class="mini" style="margin:-2px 0 3px">Descríbelo con las letras y números del borde, o dibújalo aquí.</div>
+      <div class="reng"></div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Vuelve a hacerlo, pero <b>en orden inverso</b>: de la S a la E pasando
+    por la 3, la 2 y la 1. Traza este segundo camino con otro color o con línea punteada. ¿Te dio el mismo número de pasos?
+    Explica en un renglón por qué sí o por qué no.</div><div class="folio">16</div></div>
+</section>
+<!-- ================= 17 · SOPA CON MENSAJE ================= -->
+<section class="hoja">
+  <div class="tira"><div class="num">17</div>
+    <div class="tit"><h1>Palabras que suenan inventadas</h1>
+      <div class="sub">Las diecisiete existen todas. Y cuando las tachas, las letras que sobran te dicen algo.</div></div>
+    <div class="tiempo"><b>45</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Encuentra las diecisiete palabras. Van en <b>cualquier dirección</b>: horizontal, vertical, diagonal, y
+    también al revés. Táchalas con una línea que las atraviese, no las encierres. <b>Aquí está el truco:</b> cuando ya no
+    quede ninguna, lee <b>las letras que sobraron</b> de izquierda a derecha y de arriba abajo, como si leyeras un texto
+    normal. Forman una frase que te dice qué hacer después. Ni una letra de la rejilla está de relleno.</div>
+
+  <div class="fila mb">
+    <div><table class="sopa"><tr><td>A</td><td>E</td><td>Z</td><td>A</td><td>N</td><td>G</td><td>O</td><td>L</td><td>O</td><td>T</td><td>E</td><td>A</td><td>R</td><td>L</td><td>Q</td></tr><tr><td>G</td><td>U</td><td>E</td><td>A</td><td>A</td><td>O</td><td>S</td><td>O</td><td>G</td><td>A</td><td>M</td><td>A</td><td>H</td><td>C</td><td>C</td></tr><tr><td>U</td><td>T</td><td>E</td><td>C</td><td>O</td><td>L</td><td>O</td><td>T</td><td>E</td><td>A</td><td>B</td><td>E</td><td>P</td><td>I</td><td>R</td></tr><tr><td>A</td><td>I</td><td>M</td><td>H</td><td>C</td><td>H</td><td>A</td><td>P</td><td>U</td><td>L</td><td>I</td><td>N</td><td>P</td><td>T</td><td>E</td></tr><tr><td>C</td><td>R</td><td>O</td><td>I</td><td>I</td><td>J</td><td>N</td><td>V</td><td>E</td><td>N</td><td>T</td><td>I</td><td>A</td><td>I</td><td>U</td></tr><tr><td>E</td><td>N</td><td>A</td><td>C</td><td>A</td><td>P</td><td>I</td><td>A</td><td>L</td><td>A</td><td>H</td><td>B</td><td>E</td><td>A</td><td>A</td></tr><tr><td>R</td><td>R</td><td>I</td><td>H</td><td>A</td><td>Q</td><td>U</td><td>P</td><td>E</td><td>C</td><td>N</td><td>O</td><td>T</td><td>N</td><td>L</td></tr><tr><td>O</td><td>R</td><td>N</td><td>I</td><td>T</td><td>O</td><td>R</td><td>R</td><td>I</td><td>N</td><td>C</td><td>O</td><td>A</td><td>G</td><td>U</td></tr><tr><td>E</td><td>X</td><td>O</td><td>N</td><td>I</td><td>S</td><td>T</td><td>P</td><td>A</td><td>J</td><td>P</td><td>E</td><td>T</td><td>U</td><td>J</td></tr><tr><td>R</td><td>O</td><td>F</td><td>C</td><td>Q</td><td>U</td><td>I</td><td>E</td><td>S</td><td>U</td><td>A</td><td>E</td><td>E</td><td>I</td><td>U</td></tr><tr><td>N</td><td>E</td><td>O</td><td>L</td><td>R</td><td>H</td><td>E</td><td>A</td><td>L</td><td>Y</td><td>E</td><td>P</td><td>M</td><td>S</td><td>R</td></tr><tr><td>S</td><td>C</td><td>C</td><td>E</td><td>C</td><td>R</td><td>P</td><td>E</td><td>T</td><td>A</td><td>T</td><td>E</td><td>A</td><td>I</td><td>D</td></tr><tr><td>B</td><td>E</td><td>A</td><td>S</td><td>U</td><td>A</td><td>P</td><td>A</td><td>P</td><td>A</td><td>C</td><td>H</td><td>A</td><td>R</td><td>S</td></tr><tr><td>D</td><td>E</td><td>C</td><td>F</td><td>I</td><td>T</td><td>L</td><td>A</td><td>C</td><td>U</td><td>A</td><td>C</td><td>H</td><td>E</td><td>E</td></tr><tr><td>N</td><td>I</td><td>C</td><td>I</td><td>O</td><td>E</td><td>T</td><td>E</td><td>J</td><td>A</td><td>C</td><td>L</td><td>O</td><td>M</td><td>N</td></tr></table></div>
+    <div class="col caja" style="padding:7px 9px">
+      <div class="rot">Las diecisiete</div>
+      <div class="mini" style="margin:-2px 0 5px;font-size:7.2pt">Márcalas conforme las halles.</div>
+      <div class="listapal"><ul><li><span class="cb"></span>Achichincle</li><li><span class="cb"></span>Aguacero</li><li><span class="cb"></span>Apapachar</li><li><span class="cb"></span>Cacofonia</li><li><span class="cb"></span>Chamagoso</li><li><span class="cb"></span>Chapulin</li><li><span class="cb"></span>Chipichipi</li><li><span class="cb"></span>Esdrujula</li><li><span class="cb"></span>Jipijapa</li><li><span class="cb"></span>Metate</li><li><span class="cb"></span>Molcajete</li><li><span class="cb"></span>Ornitorrinco</li><li><span class="cb"></span>Petate</li><li><span class="cb"></span>Tecolote</li><li><span class="cb"></span>Tianguis</li><li><span class="cb"></span>Tlacuache</li><li><span class="cb"></span>Zangolotear</li></ul></div>
+      <div class="mini" style="margin-top:7px;font-size:7.2pt"><b>Todas son palabras reales del español.</b> Si alguna no la
+        conoces, apúntala aquí y busca qué significa cuando salgas:</div>
+      <div class="reng"></div><div class="reng"></div>
+    </div>
+  </div>
+
+  <div class="caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+    <div class="rot">El mensaje escondido · 81 letras</div>
+    <div class="mini" style="margin:-2px 0 4px">Escríbelo aquí, ya con sus espacios. Si te sobran o te faltan letras, alguna
+      palabra la tachaste mal.</div>
+    <div class="reng a"></div><div class="reng a"></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Haz lo que dice el mensaje: <b>inventa una palabra que no exista pero
+    que suene real</b> en español, escríbela con su definición como si viniera en el diccionario, y úsala en una frase. Vale
+    más si nadie del salón puede decidir si es real o no.</div><div class="folio">17</div></div>
+</section>
+
+<!-- ================= 18 · CRIPTOGRAMA ================= -->
+<section class="hoja">
+  <div class="tira"><div class="num">18</div>
+    <div class="tit"><h1>Mensaje cifrado</h1>
+      <div class="sub">Cada letra fue cambiada por otra, siempre la misma. Descífralo sin que nadie te dé la clave.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Abajo hay una frase cifrada. Cada letra del alfabeto fue reemplazada por otra distinta, y
+    <b>siempre por la misma</b>: si la G es una A, la G es una A en todo el mensaje. La letra chica de abajo de cada casilla es
+    la letra cifrada; en la casilla escribes la de verdad. <b>Te regalamos tres letras.</b><br>
+    <b>Por dónde se entra:</b> la letra que más se repite casi siempre es la <b>E</b> o la <b>A</b>. Las palabras de una sola
+    letra en español solo pueden ser <b>a, y, o, e</b>. Y ninguna letra se cifró en sí misma.</div>
+
+  <div class="caja mb" style="padding:9px 11px">
+    <div class="rot">El mensaje</div>
+    <div class="crip-linea"><span class="crip-pal"><span class="crip-ch"><b>U</b><i>M</i></span><span class="crip-ch"><b></b><i>Z</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>A</i></span><span class="crip-ch"><b>U</b><i>M</i></span><span class="crip-ch"><b></b><i>C</i></span><span class="crip-ch"><b></b><i>A</i></span><span class="crip-ch"><b></b><i>J</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>X</i></span><span class="crip-ch"><b></b><i>B</i></span><span class="crip-ch"><b>E</b><i>H</i></span><span class="crip-ch"><b></b><i>Z</i></span><span class="crip-ch"><b>E</b><i>H</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>X</i></span><span class="crip-ch"><b></b><i>Y</i></span><span class="crip-ch"><b>E</b><i>H</i></span><span class="crip-ch"><b></b><i>I</i></span></span></div><div class="crip-linea"><span class="crip-pal"><span class="crip-ch"><b></b><i>K</i></span><span class="crip-ch"><b></b><i>J</i></span><span class="crip-ch"><b></b><i>Y</i></span><span class="crip-ch"><b></b><i>L</i></span><span class="crip-ch"><b>Z</b><i>D</i></span><span class="crip-ch"><b></b><i>J</i></span><span class="crip-ch"><b></b><i>Z</i></span><span class="crip-ch"><b>E</b><i>H</i></span><span class="crip-ch"><b></b><i>I</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>Z</i></span><span class="crip-ch"><b>U</b><i>M</i></span><span class="crip-ch"><b>E</b><i>H</i></span><span class="crip-ch"><b></b><i>P</i></span><span class="crip-ch"><b>E</b><i>H</i></span></span></div><div class="crip-linea"><span class="crip-pal"><span class="crip-ch"><b></b><i>K</i></span><span class="crip-ch"><b>E</b><i>H</i></span><span class="crip-ch"><b></b><i>Y</i></span><span class="crip-ch"><b>E</b><i>H</i></span><span class="crip-ch"><b></b><i>E</i></span><span class="crip-ch"><b></b><i>Y</i></span><span class="crip-ch"><b></b><i>J</i></span><span class="crip-ch"><b></b><i>I</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>N</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>I</i></span><span class="crip-ch"><b></b><i>L</i></span><span class="crip-ch"><b></b><i>Z</i></span><span class="crip-ch"><b></b><i>R</i></span><span class="crip-ch"><b></b><i>Y</i></span><span class="crip-ch"><b>E</b><i>H</i></span></span><span class="crip-pal"><span class="crip-ch"><b></b><i>L</i></span><span class="crip-ch"><b>Z</b><i>D</i></span><span class="crip-ch"><b>U</b><i>M</i></span><span class="crip-ch"><b></b><i>C</i></span></span></div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Tu tabla de trabajo</div>
+      <div class="mini" style="margin:-2px 0 4px">Arriba la letra cifrada, abajo la de verdad. Ve llenándola: es lo que evita
+        que te contradigas a la mitad.</div>
+      <table class="abc-trab"><tr><td class="l">A</td><td class="l">B</td><td class="l">C</td><td class="l">D</td><td class="l">E</td><td class="l">F</td><td class="l">G</td><td class="l">H</td><td class="l">I</td><td class="l">J</td><td class="l">K</td><td class="l">L</td><td class="l">M</td></tr><tr><td class="v"></td><td class="v"></td><td class="v"></td><td class="v">Z</td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v">E</td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v">U</td></tr><tr><td class="l">N</td><td class="l">O</td><td class="l">P</td><td class="l">Q</td><td class="l">R</td><td class="l">S</td><td class="l">T</td><td class="l">U</td><td class="l">V</td><td class="l">W</td><td class="l">X</td><td class="l">Y</td><td class="l">Z</td></tr><tr><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td><td class="v"></td></tr></table>
+    </div>
+    <div style="width:74mm" class="caja" style="padding:7px 10px">
+      <div class="rot">Frecuencias del español</div>
+      <div class="mini" style="margin:-2px 0 4px">De cada 100 letras de un texto en español, cuántas son cada una.</div>
+      <table class="frec"><tr><th>E</th><th>A</th><th>O</th><th>S</th><th>R</th><th>N</th><th>I</th><th>D</th><th>L</th><th>C</th><th>T</th><th>U</th></tr><tr><td>13.7</td><td>12.5</td><td>8.7</td><td>8.0</td><td>6.9</td><td>6.7</td><td>6.2</td><td>5.9</td><td>5.0</td><td>4.7</td><td>4.6</td><td>3.9</td></tr></table>
+      <div class="mini" style="margin-top:5px;font-size:7.2pt">Cuenta cuántas veces aparece cada letra cifrada en el mensaje y
+        compara con esta tabla. Ahí está la entrada.</div>
+    </div>
+  </div>
+
+  <div class="caja" style="padding:7px 10px">
+    <div class="rot">Escribe aquí la frase descifrada</div>
+    <div class="reng a"></div>
+    <div class="mini" style="margin-top:3px">¿Es verdad lo que dice? Escribe sí o no y por qué crees eso: <span class="linea" style="min-width:96mm"></span></div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Con la misma clave que ya descubriste, descifra esta segunda línea:
+    <span class="mono" style="font-size:9pt;letter-spacing:.5px">XLUEBHZ AMHFH AYJELY KJZ CJI EYLDJI</span>. Y luego cifra tú
+    una frase de tu propia cosecha con una clave nueva, anótala al reverso con tres letras de regalo y pásala al de junto.</div>
+    <div class="folio">18</div></div>
+</section>
+<!-- ================= 19 · LA HISTORIA RELLENADA ================= -->
+<section class="hoja densa">
+  <div class="tira"><div class="num">19</div>
+    <div class="tit"><h1>La historia rellenada</h1>
+      <div class="sub">Escribes doce palabras a ciegas. Luego ves el desastre que armaste.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr"><b>El relato de abajo está impreso de cabeza a propósito.</b> No voltees la hoja hasta tener las doce
+    palabras escritas: si lo lees antes vas a escoger palabras que quedan bien, y eso no tiene ningún chiste. Respeta la
+    categoría de cada hueco: «corrió» no sirve donde piden verbo en pasado en <i>yo</i>, ahí va «corrí».</div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot">Parte 1 · las doce palabras, a ciegas</div>
+    <div class="campos" style="gap:3px 11px">
+      <div><div class="lb">1 · Sustantivo en singular, algo que traes en la mochila</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">2 · Adjetivo masculino, de los que se usan para una sopa</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">3 · Sustantivo en plural</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">4 · Verbo en pasado, en yo (corrí, grité)</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">5 · Verbo en pasado, en él o ella (corrió, gritó)</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">6 · Sustantivo en plural, algo que se come</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">7 · Número del 1 al 500</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">8 · Sustantivo con su artículo (el radio, la calculadora)</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">9 · Interjección (¡órale!, ¡uf!, ¡ay!)</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">10 · Lugar de la escuela con su artículo (la azotea, el baño)</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">11 · Adjetivo masculino, de los que se usan para el clima</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">12 · Número del 10 al 99</div><div class="ln" style="height:17px"></div></div>
+    </div>
+  </div>
+
+  <div class="caja mb" style="padding:8px 11px">
+    <div class="decabeza">
+      <div class="texto">El lunes llegué tarde a la secundaria con un <span class="hueco">1</span> en la mochila y el
+        uniforme <span class="hueco">2</span>. La puerta que rechina estaba amarrada con <span class="hueco">3</span>, así que
+        <span class="hueco">4</span> por encima de la reja mientras el prefecto me <span class="hueco">5</span> desde la
+        caseta. Nadie me abrió. En la tiendita de enfrente pedí <span class="hueco">6</span> de
+        <span class="hueco">7</span> pesos. La señora me miró raro y escondió <span class="hueco">8</span> debajo del
+        mostrador. Yo solo alcancé a decir «<span class="hueco">9</span>» y salí con las manos vacías. En el receso el balón
+        acabó en <span class="hueco">10</span>. Fui por él, pisé el tope de la entrada, me caí solo y todo el patio gritó:
+        «¡Qué <span class="hueco">11</span>!». A la última hora el maestro preguntó cuánto es seis por ocho y yo respondí
+        <span class="hueco">12</span> con toda seguridad. Me mandó a la dirección, y ahí me quedé oliendo a gis, oyendo la
+        puerta que rechina y pensando que este lunes no se lo iba a creer nadie.</div>
+      <div class="rot s" style="justify-content:center;margin:5px 0 0;font-size:7.4pt;color:#9aa0a8">Parte 2 · el relato · no lo leas antes de tener tus doce palabras</div>
+    </div>
+  </div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot">Parte 3 · las dos líneas que quedaron peor</div>
+    <div class="mini" style="margin:-2px 0 4px">«Está chistosa» no es una razón. Di <b>qué categoría</b> la reventó y por qué.</div>
+    <table style="font-size:8.2pt">
+      <tr><th>La línea, copiada tal cual con tu palabra ya puesta</th><th style="width:14mm">Hueco</th><th style="width:56mm">Qué categoría la reventó y por qué</th></tr>
+      <tr><td class="v" style="height:11mm"></td><td></td><td></td></tr>
+      <tr><td class="v" style="height:11mm"></td><td></td><td></td></tr>
+    </table>
+    <div class="fila mt6" style="gap:11px">
+      <div class="col"><div class="lb">Título de tu historia · no puede ser «mi historia loca»</div><div class="ln" style="height:17px"></div></div>
+      <div class="col"><div class="lb">La categoría que más la reventó · circula una</div>
+        <div style="font-size:8.4pt;padding-top:2px">sustantivo · verbo · adjetivo · número · interjección</div></div>
+    </div>
+  </div>
+
+  <div class="caja" style="padding:7px 10px">
+    <div class="rot">Parte 4 · ahora los huecos los pones tú</div>
+    <div class="mini" style="margin:-2px 0 4px">Escribe el párrafo que sigue («llegué a mi casa y…») con <b>cinco huecos
+      numerados del 13 al 17</b>. Anota primero las cinco palabras aquí al margen, sin ver tu propio párrafo.</div>
+    <div class="fila" style="gap:10px">
+      <div style="width:46mm"><div class="lb">13 a 17 · palabra y categoría</div>
+        <div class="reng"></div><div class="reng"></div></div>
+      <div class="col"><div class="lb">Tu párrafo con los huecos</div>
+        <div class="reng"></div><div class="reng"></div></div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Pásale tu Parte 4 al de junto sin decirle de qué trata, que te dé sus
+    cinco palabras, y llénalo con las de él. <b>Sin levantarte:</b> se pasan las hojas y ya.</div><div class="folio">19</div></div>
+</section>
+<!-- ================= 20 · DISEÑA TU NIVEL ================= -->
+<section class="hoja densa">
+  <div class="tira"><div class="num">20</div>
+    <div class="tit"><h1>Diseña tu nivel</h1>
+      <div class="sub">Un nivel de plataformas visto de lado. Sin letreros, sin copiar, y se cruza en menos de dos minutos.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Dibuja el mapa completo de un nivel de plataformas, <b>de perfil</b>: el jugador entra por la izquierda y
+    sale por la derecha. Tres reglas: nada de copiar un nivel que ya exista, nada de letreros que expliquen los controles, y
+    quien ya se lo sabe lo termina en menos de dos minutos. <b>Lo que el jugador aprenda, lo aprende porque el mapa lo
+    obliga.</b> «Pozo con enemigos y una llave al final» no sirve: eso es cualquier nivel.</div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot">Mapa del nivel</div>
+    <div class="mini" style="margin:-2px 0 4px">De izquierda a derecha. Marca la <b>entrada</b>, la <b>salida</b>, las letras
+      <b>A</b>, <b>B</b> y <b>C</b> de los tres momentos, y con una <b>X</b> el lugar donde el jugador se muere por primera vez.</div>
+    <div class="dibujo reticula" style="height:78mm;position:relative">
+      <span class="et" style="left:8px;right:auto;bottom:auto;top:5px">entrada &rarr;</span>
+      <span class="et">&rarr; salida</span>
+    </div>
+    <div class="mini" style="margin-top:4px">Junto a la <b>X</b>, en un renglón: ¿qué lo mató y por qué justo ahí?</div>
+    <div class="reng"></div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">La maña del nivel</div>
+      <div class="mini" style="margin:-2px 0 4px">Primero nómbrala. Si los tres puntos son iguales, tu nivel es plano.</div>
+      <div class="campos c1" style="gap:2px">
+        <div><div class="lb">La única maña que el jugador tiene que aprender, en cinco palabras</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">A · se la enseño sin decirle nada. ¿Qué hay en el mapa?</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">B · se la complico. ¿Qué le agrego?</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">C · se la cobro. ¿Qué pasa si falla, y por qué lo va a intentar otra vez?</div><div class="ln" style="height:17px"></div></div>
+      </div>
+    </div>
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Leyenda · cinco símbolos tuyos</div>
+      <div class="mini" style="margin:-2px 0 4px">Dibuja el símbolo y ponle nombre. <b>Si dos hacen lo mismo, sobra uno.</b></div>
+      <table style="font-size:7.8pt">
+        <tr><th style="width:14mm">Símbolo</th><th style="width:26mm">Nombre</th><th>Qué le hace al jugador</th></tr>
+        <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+        <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+        <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+        <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+        <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="fila">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">El enemigo que enseña</div>
+      <div class="mini" style="margin:-2px 0 3px">No vale «te quita vida»: eso no enseña nada.</div>
+      <div class="campos c1" style="gap:2px">
+        <div><div class="lb">Cómo se ve y cómo se mueve</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">Qué entiende el jugador después de que este enemigo lo mata</div><div class="ln" style="height:17px"></div></div>
+      </div>
+    </div>
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">El atajo</div>
+      <div class="mini" style="margin:-2px 0 3px">Para el que ya domina el nivel. Se ve desde el camino normal, pero cuesta algo.</div>
+      <div class="campos c1" style="gap:2px">
+        <div><div class="lb">Dónde empieza y dónde sale</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">Qué arriesga por tomarlo, y cuántos segundos se ahorra</div><div class="ln" style="height:17px"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Al reverso, dibuja el mismo nivel <b>para alguien que ya lo pasó cien
+    veces</b>: quita todo lo que sobra y deja solo lo que todavía cuesta. Si tu mapa nuevo salió más largo, no entendiste el reto.</div>
+    <div class="folio">20</div></div>
+</section>
+
+<!-- ================= 21 · INVENTA UN DEPORTE ================= -->
+<section class="hoja densa">
+  <div class="tira"><div class="num">21</div>
+    <div class="tit"><h1>Inventa un deporte</h1>
+      <div class="sub">Que se pueda jugar mañana en el patio, con lo que ya hay. Y que aguante a un tramposo.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Inventa un deporte que de verdad se pueda jugar: dibuja la cancha con sus medidas y define cómo se anota.
+    <b>El material tiene que existir ya en tu escuela:</b> «un balón de plasma» no sirve, «una sudadera amarrada» sí. Y tiene
+    que tener <b>una regla rara</b> que no exista en ningún otro deporte. Lo que se califica de verdad es el último bloque: si
+    tu deporte se puede romper con una jugada aburrida, no está terminado.</div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot">Ficha técnica</div>
+    <div class="campos c3" style="gap:3px 11px">
+      <div><div class="lb">Nombre del deporte</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">Jugadores por equipo</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">Con qué se juega · algo que ya exista en tu escuela</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">Qué pasa cuando sale de la cancha</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">La falta más grave y su castigo · que se cumpla en 10 segundos</div><div class="ln" style="height:17px"></div></div>
+      <div><div class="lb">El partido se acaba cuando</div><div class="ln" style="height:17px"></div></div>
+    </div>
+  </div>
+
+  <div class="caja mb" style="padding:7px 10px">
+    <div class="rot">La cancha</div>
+    <div class="mini" style="margin:-2px 0 4px">Cada cuadro de la retícula es <b>un paso</b>. Escribe sobre las líneas el largo,
+      el ancho y la zona de anotación. Y dibuja con <b>flechas numeradas 1, 2, 3…</b> la jugada completa que termina en el
+      primer punto: si necesita más de cinco flechas, tu deporte es demasiado lento.</div>
+    <div class="dibujo reticula" style="height:72mm"><span class="et">planta de la cancha, con medidas</span></div>
+  </div>
+
+  <div class="fila">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Puntos y victoria</div>
+      <div class="mini" style="margin:-2px 0 4px">Dos formas de anotar, máximo. Si las dos valen igual, tu deporte no tiene decisiones.</div>
+      <table style="font-size:7.8pt">
+        <tr><th>Acción que da puntos</th><th style="width:13mm">Vale</th><th style="width:38mm">Por qué eso y no más</th></tr>
+        <tr><td class="v" style="height:11mm"></td><td></td><td></td></tr>
+        <tr><td class="v" style="height:11mm"></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="col caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+      <div class="rot">La regla rara y el roto</div>
+      <div class="mini" style="margin:-2px 0 3px">Todo deporte inventado tiene una jugada que lo rompe. Encuéntrala tú antes que ellos.</div>
+      <div class="campos c1" style="gap:2px">
+        <div><div class="lb">La regla que no existe en ningún otro deporte, y qué obliga a hacer distinto</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">La jugada aburrida que ganaría siempre si alguien la descubre</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">La regla exacta que la impide sin volver el juego lento</div><div class="ln" style="height:17px"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Escribe el nombre de tu deporte como se llamaría si lo inventaran en
+    otro país, y dibuja al reverso el uniforme del equipo local: <b>una sola pieza de ropa modificada</b>, nada de trajes
+    completos.</div><div class="folio">21</div></div>
+</section>
+<!-- ================= 22 · LA CAJA DE CEREAL ================= -->
+<section class="hoja densa">
+  <div class="tira"><div class="num">22</div>
+    <div class="tit"><h1>La caja de cereal</h1>
+      <div class="sub">Diseña el empaque de algo que no existe, y hazle las cuentas para ver cuántos sellos negros le tocan.</div></div>
+    <div class="tiempo"><b>50</b>minutos</div></div>
+  <div class="meta"><span class="g1">Nombre <i></i></span><span class="g2">Grupo <i></i></span><span class="g3">Fecha <i></i></span></div>
+
+  <div class="instr">Diseña la caja de un cereal que no existe: el frente, con su mascota y su promesa, y el reverso con la
+    tabla de lo que trae de verdad. <b>Dos reglas:</b> la mascota no puede parecerse a ninguna que exista, y la promesa del
+    frente no puede ser una mentira imposible de comprobar. «El mejor sabor del mundo» no sirve. «Aguanta tres horas sin
+    aguadarse» sí, porque eso se puede medir. Y al final le haces las cuentas: <b>los sellos no se ponen porque tú quieras,
+    salen de tus propios números.</b></div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">El frente de la caja</div>
+      <div class="mini" style="margin:-2px 0 4px">Con su mascota. Rellena de negro por lo menos un tercio: el lápiz flojo
+        desaparece en la fotocopia.</div>
+      <div class="dibujo" style="height:64mm"><span class="et">frente del empaque</span></div>
+      <div class="campos c1" style="margin-top:5px;gap:2px">
+        <div><div class="lb">Nombre del cereal</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">La promesa, máximo cinco palabras, y que se pueda comprobar</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">La mascota se llama, y qué hace</div><div class="ln" style="height:17px"></div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="caja mb" style="padding:7px 10px">
+        <div class="rot">Lo que trae de verdad · por porción de 30 g</div>
+        <div class="mini" style="margin:-2px 0 4px">Los gramos tienen que sumar 30 y los porcentajes 100. <b>Usa gramos
+          múltiplos de 3</b> (3, 6, 9…) para que el porcentaje salga exacto.</div>
+        <table style="font-size:8pt">
+          <tr><th>Qué trae</th><th style="width:20mm">Gramos</th><th style="width:22mm">% de los 30 g</th></tr>
+          <tr><td class="v" style="height:9mm">Azúcares</td><td></td><td></td></tr>
+          <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+          <tr><td class="v" style="height:9mm"></td><td></td><td></td></tr>
+          <tr><td style="text-align:right;background:#eceef2"><b>Total</b></td><td style="background:#eceef2"><b>30 g</b></td><td style="background:#eceef2"><b>100 %</b></td></tr>
+        </table>
+      </div>
+      <div class="caja" style="padding:7px 10px;border-color:#1f4ea8;border-width:2.2px">
+        <div class="rot">Los sellos</div>
+        <div class="mini" style="margin:-2px 0 5px"><b>8 g de azúcar o más</b> por porción de 30 g te gana el sello. Dibuja en
+          los octágonos vacíos los que te toquen, en negro, y tacha los que no.</div>
+        <div class="sellos-fila mb">
+          <div class="sello-oct">EXCESO<br>AZÚCARES</div>
+          <div class="vacio-oct"></div><div class="vacio-oct"></div><div class="vacio-oct"></div>
+        </div>
+        <div class="campos c1" style="gap:2px">
+          <div><div class="lb">Azúcar de tu porción: ______ g &nbsp;·&nbsp; ¿lleva sello? sí / no</div><div class="ln" style="height:17px"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fila mb">
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Las cuentas de la caja</div>
+      <div class="mini" style="margin:-2px 0 4px">Aquí sí se puede tachar. Redondea a centavos.</div>
+      <div style="font-size:8.8pt;line-height:2.0">
+        La caja trae <span class="linea" style="min-width:16mm"></span> g (múltiplo de 30) =
+        <span class="linea" style="min-width:13mm"></span> porciones de 30 g.<br>
+        Azúcar de toda la caja: <span class="linea" style="min-width:16mm"></span> g.
+        La caja cuesta $<span class="linea" style="min-width:14mm"></span>, o sea
+        $<span class="linea" style="min-width:14mm"></span> por porción.
+      </div>
+    </div>
+    <div class="col caja" style="padding:7px 10px">
+      <div class="rot">Lo que viene adentro</div>
+      <div class="mini" style="margin:-2px 0 3px">Además del cereal. La pregunta buena es la segunda.</div>
+      <div class="campos c1" style="gap:2px">
+        <div><div class="lb">Qué viene adentro</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">Por qué alguien lo querría aunque no le guste el cereal</div><div class="ln" style="height:17px"></div></div>
+        <div><div class="lb">De ese precio, lo de adentro vale $______ . Sin eso, la caja costaría $______</div><div class="ln" style="height:17px"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pie"><div class="extra"><b>Reto extra</b> Ahora rediseña tu propia caja para que <b>no le toque ningún sello</b>:
+    cambia los números de la tabla y escribe al reverso qué le tuviste que quitar y a qué sabría ahora. Si tu cereal sin sellos
+    sigue sabiendo igual, revisa tus cuentas.</div><div class="folio">22</div></div>
+</section>
+<!-- ================= SOLUCIONES DE LOS PASATIEMPOS ================= -->
+<section class="hoja">
+  <div class="gtit" style="font-family:Montserrat,sans-serif;font-weight:800;font-size:19pt;letter-spacing:-.5px;text-transform:uppercase;border-bottom:3px solid #111;padding-bottom:5px;margin-bottom:10px">
+    Soluciones de los pasatiempos
+    <small style="display:block;font-family:Roboto,sans-serif;font-weight:400;font-size:9pt;text-transform:none;letter-spacing:0;color:#5b6069;margin-top:3px">
+      Hojas 15 a 18. Esta hoja no se fotocopia para el grupo. Las actividades 19 a 22 son abiertas: no tienen respuesta única.</small>
+  </div>
+
+  <div class="fila mb" style="align-items:flex-start">
+    <div class="col">
+      <div class="rot">15 · Batalla naval</div>
+      <div class="mini" style="margin:-2px 0 5px">Los círculos son agua. Se empieza por la fila y las columnas con 0, y por la
+        fila que está completa.</div>
+      <table class="bim sol"><colgroup><col><col><col><col><col><col><col><col><col></colgroup><tr><td class="esq"></td><td class="pc">0</td><td class="pc">3</td><td class="pc">1</td><td class="pc">3</td><td class="pc">0</td><td class="pc">0</td><td class="pc">2</td><td class="pc">1</td></tr><tr><td class="pr">2</td><td class="cel agua"></td><td class="cel barco"></td><td class="cel barco"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td></tr><tr><td class="pr">1</td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel barco"></td></tr><tr><td class="pr">0</td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td></tr><tr><td class="pr">2</td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td></tr><tr><td class="pr">1</td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td></tr><tr><td class="pr">2</td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td></tr><tr><td class="pr">2</td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel barco"></td><td class="cel agua"></td></tr><tr><td class="pr">0</td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td><td class="cel agua"></td></tr></table>
+    </div>
+    <div class="col">
+      <div class="rot">18 · Mensaje cifrado</div>
+      <div class="caja" style="padding:8px 10px">
+        <div style="font-family:Montserrat,sans-serif;font-weight:800;font-size:11pt;line-height:1.3;margin-bottom:6px">
+          «Un pulpo tiene tres corazones, nueve cerebros y sangre azul.»</div>
+        <div class="mini">Y es verdad: tienen un corazón principal y dos que bombean a las branquias, un cerebro central más
+          un grupo de nervios en cada brazo, y la sangre azul porque transporta el oxígeno con cobre y no con hierro.</div>
+        <div class="rot" style="margin-top:8px">La clave completa</div>
+        <div class="mono" style="font-size:8.4pt;line-height:1.75"><b>A</b>=P &middot; <b>B</b>=I &middot; <b>C</b>=L &middot; <b>D</b>=Z &middot; <b>E</b>=B &middot; <b>H</b>=E &middot; <b>I</b>=S &middot; <b>J</b>=O &middot; <b>K</b>=C &middot; <b>L</b>=A &middot; <b>M</b>=U &middot; <b>N</b>=Y &middot; <b>P</b>=V &middot; <b>R</b>=G &middot; <b>X</b>=T &middot; <b>Y</b>=R &middot; <b>Z</b>=N</div>
+        <div class="mini" style="margin-top:5px">Solo se usaron las letras que aparecen en la frase; las demás no hacía falta
+          descubrirlas. <b>Reto extra:</b> «también puede probar con los brazos».</div>
+      </div>
+      <div class="rot mt">17 · Palabras que suenan inventadas</div>
+      <div class="caja" style="padding:8px 10px">
+        <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:9.4pt;line-height:1.35">
+          «El que acabe primero inventa una palabra que no exista pero que suene real y escribe su definición.»</div>
+        <div class="mini" style="margin-top:5px">81 letras exactas. Si les sobran o les faltan, tacharon mal alguna palabra.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rot">16 · El laberinto de las tres llaves</div>
+  <div class="mini" style="margin:-2px 0 5px">El camino más corto pasando por 1, 2 y 3 en orden mide <b>1072 pasos</b>. En gris,
+    el recorrido completo.</div>
+  <div class="lab"><svg viewBox="0 0 381 251" style="width:100%;height:auto" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="square">
+<rect x="2" y="2" width="377" height="247" fill="#fff" stroke="none"/>
+<polyline points="8.5,8.5 21.5,8.5 21.5,21.5 21.5,34.5 34.5,34.5 47.5,34.5 60.5,34.5 60.5,47.5 73.5,47.5 73.5,34.5 86.5,34.5 86.5,21.5 86.5,8.5 99.5,8.5 112.5,8.5 125.5,8.5 125.5,21.5 138.5,21.5 151.5,21.5 151.5,34.5 164.5,34.5 164.5,47.5 151.5,47.5 151.5,60.5 138.5,60.5 138.5,47.5 125.5,47.5 112.5,47.5 112.5,60.5 112.5,73.5 125.5,73.5 138.5,73.5 138.5,86.5 151.5,86.5 164.5,86.5 177.5,86.5 177.5,73.5 164.5,73.5 164.5,60.5 177.5,60.5 190.5,60.5 203.5,60.5 216.5,60.5 216.5,47.5 203.5,47.5 190.5,47.5 177.5,47.5 177.5,34.5 190.5,34.5 190.5,21.5 190.5,8.5 203.5,8.5 203.5,21.5 216.5,21.5 229.5,21.5 229.5,34.5 242.5,34.5 255.5,34.5 268.5,34.5 268.5,21.5 255.5,21.5 255.5,8.5 268.5,8.5 281.5,8.5 294.5,8.5 307.5,8.5 320.5,8.5 320.5,21.5 307.5,21.5 294.5,21.5 281.5,21.5 281.5,34.5 281.5,47.5 281.5,60.5 281.5,73.5 294.5,73.5 294.5,60.5 307.5,60.5 320.5,60.5 320.5,73.5 320.5,86.5 320.5,99.5 320.5,112.5 333.5,112.5 333.5,99.5 333.5,86.5 333.5,73.5 346.5,73.5 346.5,60.5 333.5,60.5 333.5,47.5 320.5,47.5 307.5,47.5 294.5,47.5 294.5,34.5 307.5,34.5 320.5,34.5 333.5,34.5 333.5,21.5 333.5,8.5 346.5,8.5 346.5,21.5 359.5,21.5 359.5,34.5 359.5,47.5 372.5,47.5 372.5,60.5 372.5,73.5 372.5,86.5 359.5,86.5 346.5,86.5 346.5,99.5 359.5,99.5 359.5,112.5 359.5,125.5 359.5,138.5 372.5,138.5 372.5,151.5 372.5,164.5 372.5,177.5 372.5,190.5 359.5,190.5 346.5,190.5 346.5,177.5 333.5,177.5 333.5,190.5 320.5,190.5 320.5,203.5 333.5,203.5 346.5,203.5 346.5,216.5 359.5,216.5 359.5,203.5 372.5,203.5 372.5,216.5 372.5,229.5 359.5,229.5 359.5,242.5 346.5,242.5 346.5,229.5 333.5,229.5 333.5,242.5 320.5,242.5 307.5,242.5 307.5,229.5 294.5,229.5 294.5,242.5 281.5,242.5 268.5,242.5 255.5,242.5 255.5,229.5 268.5,229.5 268.5,216.5 255.5,216.5 242.5,216.5 229.5,216.5 216.5,216.5 203.5,216.5 190.5,216.5 177.5,216.5 177.5,229.5 164.5,229.5 151.5,229.5 138.5,229.5 138.5,216.5 125.5,216.5 125.5,203.5 112.5,203.5 112.5,190.5 112.5,177.5 99.5,177.5 86.5,177.5 73.5,177.5 60.5,177.5 60.5,164.5 47.5,164.5 47.5,151.5 60.5,151.5 73.5,151.5 73.5,164.5 86.5,164.5 99.5,164.5 112.5,164.5 125.5,164.5 125.5,151.5 138.5,151.5 151.5,151.5 151.5,138.5 138.5,138.5 125.5,138.5 125.5,125.5 138.5,125.5 151.5,125.5 164.5,125.5 164.5,138.5 164.5,151.5 177.5,151.5 177.5,138.5 190.5,138.5 190.5,151.5 203.5,151.5 203.5,164.5 216.5,164.5 216.5,177.5 203.5,177.5 190.5,177.5 190.5,190.5 190.5,203.5 203.5,203.5 203.5,190.5 216.5,190.5 229.5,190.5 242.5,190.5 242.5,203.5 255.5,203.5 268.5,203.5 281.5,203.5 294.5,203.5 294.5,216.5 307.5,216.5 307.5,203.5 307.5,190.5 307.5,177.5 320.5,177.5 320.5,164.5 333.5,164.5 346.5,164.5 359.5,164.5 359.5,151.5 346.5,151.5 333.5,151.5 333.5,138.5 346.5,138.5 346.5,125.5 333.5,125.5 320.5,125.5 320.5,138.5 320.5,151.5 307.5,151.5 307.5,138.5 307.5,125.5 294.5,125.5 294.5,112.5 294.5,99.5 307.5,99.5 307.5,86.5 294.5,86.5 281.5,86.5 268.5,86.5 268.5,73.5 268.5,60.5 268.5,47.5 255.5,47.5 242.5,47.5 229.5,47.5 229.5,60.5 242.5,60.5 255.5,60.5 255.5,73.5 242.5,73.5 242.5,86.5 255.5,86.5 255.5,99.5 268.5,99.5 281.5,99.5 281.5,112.5 281.5,125.5 268.5,125.5 268.5,138.5 255.5,138.5 242.5,138.5 242.5,125.5 255.5,125.5 255.5,112.5 242.5,112.5 229.5,112.5 216.5,112.5 216.5,99.5 216.5,86.5 216.5,73.5 203.5,73.5 203.5,86.5 190.5,86.5 190.5,99.5 190.5,112.5 190.5,125.5 177.5,125.5 177.5,112.5 164.5,112.5 151.5,112.5 138.5,112.5 125.5,112.5 125.5,99.5 112.5,99.5 99.5,99.5 99.5,86.5 86.5,86.5 73.5,86.5 73.5,73.5 86.5,73.5 86.5,60.5 73.5,60.5 60.5,60.5 60.5,73.5 60.5,86.5 60.5,99.5 47.5,99.5 47.5,112.5 34.5,112.5 34.5,99.5 21.5,99.5 8.5,99.5 8.5,112.5 21.5,112.5 21.5,125.5 21.5,138.5 21.5,151.5 8.5,151.5 8.5,164.5 8.5,177.5 21.5,177.5 34.5,177.5 34.5,164.5 34.5,151.5 34.5,138.5 47.5,138.5 47.5,125.5 47.5,138.5 34.5,138.5 34.5,151.5 34.5,164.5 34.5,177.5 21.5,177.5 8.5,177.5 8.5,164.5 8.5,151.5 21.5,151.5 21.5,138.5 21.5,125.5 21.5,112.5 8.5,112.5 8.5,99.5 21.5,99.5 34.5,99.5 34.5,112.5 47.5,112.5 47.5,99.5 60.5,99.5 60.5,86.5 60.5,73.5 60.5,60.5 73.5,60.5 86.5,60.5 86.5,73.5 73.5,73.5 73.5,86.5 86.5,86.5 99.5,86.5 99.5,99.5 112.5,99.5 125.5,99.5 125.5,112.5 138.5,112.5 151.5,112.5 164.5,112.5 177.5,112.5 177.5,125.5 190.5,125.5 190.5,112.5 190.5,99.5 190.5,86.5 203.5,86.5 203.5,73.5 216.5,73.5 216.5,86.5 216.5,99.5 216.5,112.5 229.5,112.5 242.5,112.5 255.5,112.5 255.5,125.5 242.5,125.5 242.5,138.5 255.5,138.5 268.5,138.5 268.5,125.5 281.5,125.5 281.5,112.5 281.5,99.5 268.5,99.5 255.5,99.5 255.5,86.5 242.5,86.5 242.5,73.5 255.5,73.5 255.5,60.5 242.5,60.5 229.5,60.5 229.5,47.5 242.5,47.5 255.5,47.5 268.5,47.5 268.5,60.5 268.5,73.5 268.5,86.5 281.5,86.5 294.5,86.5 307.5,86.5 307.5,99.5 294.5,99.5 294.5,112.5 294.5,125.5 307.5,125.5 307.5,138.5 307.5,151.5 320.5,151.5 320.5,138.5 320.5,125.5 333.5,125.5 346.5,125.5 346.5,138.5 333.5,138.5 333.5,151.5 346.5,151.5 359.5,151.5 359.5,164.5 346.5,164.5 333.5,164.5 320.5,164.5 320.5,177.5 307.5,177.5 307.5,190.5 307.5,203.5 307.5,216.5 294.5,216.5 294.5,203.5 281.5,203.5 268.5,203.5 255.5,203.5 242.5,203.5 242.5,190.5 229.5,190.5 216.5,190.5 203.5,190.5 203.5,203.5 190.5,203.5 190.5,190.5 190.5,177.5 203.5,177.5 216.5,177.5 216.5,164.5 203.5,164.5 203.5,151.5 190.5,151.5 190.5,138.5 177.5,138.5 177.5,151.5 164.5,151.5 164.5,138.5 164.5,125.5 151.5,125.5 138.5,125.5 125.5,125.5 125.5,138.5 138.5,138.5 151.5,138.5 151.5,151.5 138.5,151.5 125.5,151.5 125.5,164.5 112.5,164.5 99.5,164.5 86.5,164.5 73.5,164.5 73.5,151.5 60.5,151.5 47.5,151.5 47.5,164.5 60.5,164.5 60.5,177.5 73.5,177.5 86.5,177.5 99.5,177.5 112.5,177.5 112.5,190.5 112.5,203.5 125.5,203.5 125.5,216.5 138.5,216.5 138.5,229.5 151.5,229.5 164.5,229.5 177.5,229.5 177.5,216.5 190.5,216.5 203.5,216.5 216.5,216.5 229.5,216.5 242.5,216.5 255.5,216.5 268.5,216.5 268.5,229.5 255.5,229.5 255.5,242.5 268.5,242.5 281.5,242.5 294.5,242.5 294.5,229.5 307.5,229.5 307.5,242.5 320.5,242.5 333.5,242.5 333.5,229.5 346.5,229.5 346.5,242.5 359.5,242.5 359.5,229.5 372.5,229.5 372.5,216.5 372.5,203.5 359.5,203.5 359.5,216.5 346.5,216.5 346.5,203.5 333.5,203.5 320.5,203.5 320.5,190.5 333.5,190.5 333.5,177.5 346.5,177.5 346.5,190.5 359.5,190.5 372.5,190.5 372.5,177.5 372.5,164.5 372.5,151.5 372.5,138.5 359.5,138.5 359.5,125.5 359.5,112.5 359.5,99.5 346.5,99.5 346.5,86.5 359.5,86.5 372.5,86.5 372.5,73.5 372.5,60.5 372.5,47.5 359.5,47.5 359.5,34.5 359.5,21.5 346.5,21.5 346.5,8.5 333.5,8.5 333.5,21.5 333.5,34.5 320.5,34.5 307.5,34.5 294.5,34.5 294.5,47.5 307.5,47.5 320.5,47.5 333.5,47.5 333.5,60.5 346.5,60.5 346.5,73.5 333.5,73.5 333.5,86.5 333.5,99.5 333.5,112.5 320.5,112.5 320.5,99.5 320.5,86.5 320.5,73.5 320.5,60.5 307.5,60.5 294.5,60.5 294.5,73.5 281.5,73.5 281.5,60.5 281.5,47.5 281.5,34.5 281.5,21.5 294.5,21.5 307.5,21.5 320.5,21.5 320.5,8.5 307.5,8.5 294.5,8.5 281.5,8.5 268.5,8.5 255.5,8.5 255.5,21.5 268.5,21.5 268.5,34.5 255.5,34.5 242.5,34.5 255.5,34.5 268.5,34.5 268.5,21.5 255.5,21.5 255.5,8.5 268.5,8.5 281.5,8.5 294.5,8.5 307.5,8.5 320.5,8.5 320.5,21.5 307.5,21.5 294.5,21.5 281.5,21.5 281.5,34.5 281.5,47.5 281.5,60.5 281.5,73.5 294.5,73.5 294.5,60.5 307.5,60.5 320.5,60.5 320.5,73.5 320.5,86.5 320.5,99.5 320.5,112.5 333.5,112.5 333.5,99.5 333.5,86.5 333.5,73.5 346.5,73.5 346.5,60.5 333.5,60.5 333.5,47.5 320.5,47.5 307.5,47.5 294.5,47.5 294.5,34.5 307.5,34.5 320.5,34.5 333.5,34.5 333.5,21.5 333.5,8.5 346.5,8.5 346.5,21.5 359.5,21.5 359.5,34.5 359.5,47.5 372.5,47.5 372.5,60.5 372.5,73.5 372.5,86.5 359.5,86.5 346.5,86.5 346.5,99.5 359.5,99.5 359.5,112.5 359.5,125.5 359.5,138.5 372.5,138.5 372.5,151.5 372.5,164.5 372.5,177.5 372.5,190.5 359.5,190.5 346.5,190.5 346.5,177.5 333.5,177.5 333.5,190.5 320.5,190.5 320.5,203.5 333.5,203.5 346.5,203.5 346.5,216.5 359.5,216.5 359.5,203.5 372.5,203.5 372.5,216.5 372.5,229.5 359.5,229.5 359.5,242.5 346.5,242.5 346.5,229.5 333.5,229.5 333.5,242.5 320.5,242.5 307.5,242.5 307.5,229.5 294.5,229.5 294.5,242.5 281.5,242.5 268.5,242.5 255.5,242.5 255.5,229.5 268.5,229.5 268.5,216.5 255.5,216.5 242.5,216.5 229.5,216.5 216.5,216.5 203.5,216.5 190.5,216.5 177.5,216.5 177.5,229.5 164.5,229.5 151.5,229.5 138.5,229.5 138.5,216.5 125.5,216.5 125.5,203.5 112.5,203.5 112.5,190.5 112.5,177.5 99.5,177.5 86.5,177.5 73.5,177.5 60.5,177.5 60.5,164.5 47.5,164.5 47.5,151.5 60.5,151.5 73.5,151.5 73.5,164.5 86.5,164.5 99.5,164.5 112.5,164.5 125.5,164.5 125.5,151.5 138.5,151.5 151.5,151.5 151.5,138.5 138.5,138.5 125.5,138.5 125.5,125.5 138.5,125.5 151.5,125.5 164.5,125.5 164.5,138.5 164.5,151.5 177.5,151.5 177.5,138.5 190.5,138.5 190.5,151.5 203.5,151.5 203.5,164.5 216.5,164.5 216.5,177.5 203.5,177.5 190.5,177.5 190.5,190.5 190.5,203.5 203.5,203.5 203.5,190.5 216.5,190.5 229.5,190.5 242.5,190.5 242.5,203.5 255.5,203.5 268.5,203.5 281.5,203.5 294.5,203.5 294.5,216.5 307.5,216.5 307.5,203.5 307.5,190.5 307.5,177.5 320.5,177.5 320.5,164.5 333.5,164.5 346.5,164.5 359.5,164.5 359.5,151.5 346.5,151.5 333.5,151.5 333.5,138.5 346.5,138.5 346.5,125.5 333.5,125.5 320.5,125.5 320.5,138.5 320.5,151.5 307.5,151.5 307.5,138.5 307.5,125.5 294.5,125.5 294.5,112.5 294.5,99.5 307.5,99.5 307.5,86.5 294.5,86.5 281.5,86.5 268.5,86.5 268.5,73.5 268.5,60.5 268.5,47.5 255.5,47.5 242.5,47.5 229.5,47.5 229.5,60.5 242.5,60.5 255.5,60.5 255.5,73.5 242.5,73.5 242.5,86.5 255.5,86.5 255.5,99.5 268.5,99.5 281.5,99.5 281.5,112.5 281.5,125.5 268.5,125.5 268.5,138.5 255.5,138.5 242.5,138.5 242.5,125.5 255.5,125.5 255.5,112.5 242.5,112.5 229.5,112.5 216.5,112.5 216.5,99.5 216.5,86.5 216.5,73.5 203.5,73.5 203.5,86.5 190.5,86.5 190.5,99.5 190.5,112.5 190.5,125.5 177.5,125.5 177.5,112.5 164.5,112.5 151.5,112.5 138.5,112.5 125.5,112.5 125.5,99.5 112.5,99.5 99.5,99.5 99.5,86.5 86.5,86.5 73.5,86.5 73.5,73.5 86.5,73.5 86.5,60.5 73.5,60.5 60.5,60.5 60.5,73.5 60.5,86.5 60.5,99.5 47.5,99.5 47.5,112.5 34.5,112.5 34.5,99.5 21.5,99.5 8.5,99.5 8.5,112.5 21.5,112.5 21.5,125.5 21.5,138.5 21.5,151.5 8.5,151.5 8.5,164.5 8.5,177.5 21.5,177.5 34.5,177.5 47.5,177.5 47.5,190.5 60.5,190.5 73.5,190.5 86.5,190.5 86.5,203.5 73.5,203.5 73.5,216.5 73.5,229.5 86.5,229.5 99.5,229.5 99.5,216.5 112.5,216.5 99.5,216.5 99.5,229.5 86.5,229.5 73.5,229.5 73.5,216.5 73.5,203.5 86.5,203.5 86.5,190.5 73.5,190.5 60.5,190.5 47.5,190.5 47.5,177.5 34.5,177.5 21.5,177.5 8.5,177.5 8.5,164.5 8.5,151.5 21.5,151.5 21.5,138.5 21.5,125.5 21.5,112.5 8.5,112.5 8.5,99.5 21.5,99.5 34.5,99.5 34.5,112.5 47.5,112.5 47.5,99.5 60.5,99.5 60.5,86.5 60.5,73.5 60.5,60.5 73.5,60.5 86.5,60.5 86.5,73.5 73.5,73.5 73.5,86.5 86.5,86.5 99.5,86.5 99.5,99.5 112.5,99.5 125.5,99.5 125.5,112.5 138.5,112.5 151.5,112.5 164.5,112.5 177.5,112.5 177.5,125.5 190.5,125.5 190.5,112.5 190.5,99.5 190.5,86.5 203.5,86.5 203.5,73.5 216.5,73.5 216.5,86.5 216.5,99.5 216.5,112.5 229.5,112.5 242.5,112.5 255.5,112.5 255.5,125.5 242.5,125.5 242.5,138.5 255.5,138.5 268.5,138.5 268.5,125.5 281.5,125.5 281.5,112.5 281.5,99.5 268.5,99.5 255.5,99.5 255.5,86.5 242.5,86.5 242.5,73.5 255.5,73.5 255.5,60.5 242.5,60.5 229.5,60.5 229.5,47.5 242.5,47.5 255.5,47.5 268.5,47.5 268.5,60.5 268.5,73.5 268.5,86.5 281.5,86.5 294.5,86.5 307.5,86.5 307.5,99.5 294.5,99.5 294.5,112.5 294.5,125.5 307.5,125.5 307.5,138.5 307.5,151.5 320.5,151.5 320.5,138.5 320.5,125.5 333.5,125.5 346.5,125.5 346.5,138.5 333.5,138.5 333.5,151.5 346.5,151.5 359.5,151.5 359.5,164.5 346.5,164.5 333.5,164.5 320.5,164.5 320.5,177.5 307.5,177.5 307.5,190.5 307.5,203.5 307.5,216.5 294.5,216.5 294.5,203.5 281.5,203.5 268.5,203.5 255.5,203.5 242.5,203.5 242.5,190.5 229.5,190.5 216.5,190.5 203.5,190.5 203.5,203.5 190.5,203.5 190.5,190.5 190.5,177.5 203.5,177.5 216.5,177.5 216.5,164.5 203.5,164.5 203.5,151.5 190.5,151.5 190.5,138.5 177.5,138.5 177.5,151.5 164.5,151.5 164.5,138.5 164.5,125.5 151.5,125.5 138.5,125.5 125.5,125.5 125.5,138.5 138.5,138.5 151.5,138.5 151.5,151.5 138.5,151.5 125.5,151.5 125.5,164.5 112.5,164.5 99.5,164.5 86.5,164.5 73.5,164.5 73.5,151.5 60.5,151.5 47.5,151.5 47.5,164.5 60.5,164.5 60.5,177.5 73.5,177.5 86.5,177.5 99.5,177.5 112.5,177.5 112.5,190.5 112.5,203.5 125.5,203.5 125.5,216.5 138.5,216.5 138.5,229.5 151.5,229.5 164.5,229.5 177.5,229.5 177.5,216.5 190.5,216.5 203.5,216.5 216.5,216.5 229.5,216.5 242.5,216.5 255.5,216.5 268.5,216.5 268.5,229.5 255.5,229.5 255.5,242.5 268.5,242.5 281.5,242.5 294.5,242.5 294.5,229.5 307.5,229.5 307.5,242.5 320.5,242.5 333.5,242.5 333.5,229.5 346.5,229.5 346.5,242.5 359.5,242.5 372.5,242.5" stroke="#1f4ea8" stroke-width="5.46" stroke-opacity=".30" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="15" y1="2" x2="28" y2="2"/>
+<line x1="28" y1="2" x2="41" y2="2"/>
+<line x1="28" y1="2" x2="28" y2="15"/>
+<line x1="41" y1="2" x2="54" y2="2"/>
+<line x1="54" y1="2" x2="67" y2="2"/>
+<line x1="67" y1="2" x2="80" y2="2"/>
+<line x1="67" y1="2" x2="67" y2="15"/>
+<line x1="80" y1="2" x2="93" y2="2"/>
+<line x1="93" y1="2" x2="106" y2="2"/>
+<line x1="106" y1="2" x2="119" y2="2"/>
+<line x1="119" y1="2" x2="132" y2="2"/>
+<line x1="132" y1="2" x2="145" y2="2"/>
+<line x1="132" y1="2" x2="132" y2="15"/>
+<line x1="145" y1="2" x2="158" y2="2"/>
+<line x1="158" y1="2" x2="171" y2="2"/>
+<line x1="171" y1="2" x2="184" y2="2"/>
+<line x1="184" y1="2" x2="197" y2="2"/>
+<line x1="197" y1="2" x2="210" y2="2"/>
+<line x1="210" y1="2" x2="223" y2="2"/>
+<line x1="210" y1="2" x2="210" y2="15"/>
+<line x1="223" y1="2" x2="236" y2="2"/>
+<line x1="236" y1="2" x2="249" y2="2"/>
+<line x1="249" y1="2" x2="262" y2="2"/>
+<line x1="262" y1="2" x2="275" y2="2"/>
+<line x1="275" y1="2" x2="288" y2="2"/>
+<line x1="288" y1="2" x2="301" y2="2"/>
+<line x1="301" y1="2" x2="314" y2="2"/>
+<line x1="314" y1="2" x2="327" y2="2"/>
+<line x1="327" y1="2" x2="340" y2="2"/>
+<line x1="327" y1="2" x2="327" y2="15"/>
+<line x1="340" y1="2" x2="353" y2="2"/>
+<line x1="353" y1="2" x2="366" y2="2"/>
+<line x1="353" y1="2" x2="353" y2="15"/>
+<line x1="366" y1="2" x2="379" y2="2"/>
+<line x1="2" y1="15" x2="15" y2="15"/>
+<line x1="2" y1="15" x2="2" y2="28"/>
+<line x1="15" y1="15" x2="15" y2="28"/>
+<line x1="28" y1="15" x2="28" y2="28"/>
+<line x1="41" y1="15" x2="41" y2="28"/>
+<line x1="54" y1="15" x2="67" y2="15"/>
+<line x1="80" y1="15" x2="80" y2="28"/>
+<line x1="93" y1="15" x2="106" y2="15"/>
+<line x1="93" y1="15" x2="93" y2="28"/>
+<line x1="106" y1="15" x2="119" y2="15"/>
+<line x1="119" y1="15" x2="119" y2="28"/>
+<line x1="132" y1="15" x2="145" y2="15"/>
+<line x1="145" y1="15" x2="158" y2="15"/>
+<line x1="158" y1="15" x2="158" y2="28"/>
+<line x1="171" y1="15" x2="184" y2="15"/>
+<line x1="184" y1="15" x2="184" y2="28"/>
+<line x1="197" y1="15" x2="197" y2="28"/>
+<line x1="210" y1="15" x2="223" y2="15"/>
+<line x1="223" y1="15" x2="236" y2="15"/>
+<line x1="236" y1="15" x2="236" y2="28"/>
+<line x1="249" y1="15" x2="249" y2="28"/>
+<line x1="262" y1="15" x2="275" y2="15"/>
+<line x1="275" y1="15" x2="288" y2="15"/>
+<line x1="275" y1="15" x2="275" y2="28"/>
+<line x1="288" y1="15" x2="301" y2="15"/>
+<line x1="301" y1="15" x2="314" y2="15"/>
+<line x1="327" y1="15" x2="327" y2="28"/>
+<line x1="340" y1="15" x2="340" y2="28"/>
+<line x1="353" y1="15" x2="366" y2="15"/>
+<line x1="366" y1="15" x2="366" y2="28"/>
+<line x1="2" y1="28" x2="2" y2="41"/>
+<line x1="15" y1="28" x2="15" y2="41"/>
+<line x1="28" y1="28" x2="41" y2="28"/>
+<line x1="41" y1="28" x2="54" y2="28"/>
+<line x1="54" y1="28" x2="67" y2="28"/>
+<line x1="67" y1="28" x2="80" y2="28"/>
+<line x1="67" y1="28" x2="67" y2="41"/>
+<line x1="93" y1="28" x2="93" y2="41"/>
+<line x1="106" y1="28" x2="106" y2="41"/>
+<line x1="119" y1="28" x2="132" y2="28"/>
+<line x1="132" y1="28" x2="145" y2="28"/>
+<line x1="145" y1="28" x2="145" y2="41"/>
+<line x1="158" y1="28" x2="171" y2="28"/>
+<line x1="171" y1="28" x2="184" y2="28"/>
+<line x1="171" y1="28" x2="171" y2="41"/>
+<line x1="197" y1="28" x2="210" y2="28"/>
+<line x1="197" y1="28" x2="197" y2="41"/>
+<line x1="210" y1="28" x2="223" y2="28"/>
+<line x1="236" y1="28" x2="249" y2="28"/>
+<line x1="249" y1="28" x2="262" y2="28"/>
+<line x1="275" y1="28" x2="275" y2="41"/>
+<line x1="288" y1="28" x2="301" y2="28"/>
+<line x1="288" y1="28" x2="288" y2="41"/>
+<line x1="301" y1="28" x2="314" y2="28"/>
+<line x1="314" y1="28" x2="327" y2="28"/>
+<line x1="340" y1="28" x2="353" y2="28"/>
+<line x1="340" y1="28" x2="340" y2="41"/>
+<line x1="353" y1="28" x2="353" y2="41"/>
+<line x1="366" y1="28" x2="366" y2="41"/>
+<line x1="2" y1="41" x2="2" y2="54"/>
+<line x1="15" y1="41" x2="28" y2="41"/>
+<line x1="28" y1="41" x2="41" y2="41"/>
+<line x1="41" y1="41" x2="54" y2="41"/>
+<line x1="41" y1="41" x2="41" y2="54"/>
+<line x1="54" y1="41" x2="54" y2="54"/>
+<line x1="80" y1="41" x2="93" y2="41"/>
+<line x1="80" y1="41" x2="80" y2="54"/>
+<line x1="106" y1="41" x2="119" y2="41"/>
+<line x1="106" y1="41" x2="106" y2="54"/>
+<line x1="119" y1="41" x2="132" y2="41"/>
+<line x1="132" y1="41" x2="145" y2="41"/>
+<line x1="145" y1="41" x2="158" y2="41"/>
+<line x1="145" y1="41" x2="145" y2="54"/>
+<line x1="171" y1="41" x2="171" y2="54"/>
+<line x1="184" y1="41" x2="197" y2="41"/>
+<line x1="197" y1="41" x2="210" y2="41"/>
+<line x1="210" y1="41" x2="223" y2="41"/>
+<line x1="223" y1="41" x2="236" y2="41"/>
+<line x1="223" y1="41" x2="223" y2="54"/>
+<line x1="236" y1="41" x2="249" y2="41"/>
+<line x1="249" y1="41" x2="262" y2="41"/>
+<line x1="262" y1="41" x2="275" y2="41"/>
+<line x1="275" y1="41" x2="275" y2="54"/>
+<line x1="288" y1="41" x2="288" y2="54"/>
+<line x1="301" y1="41" x2="314" y2="41"/>
+<line x1="314" y1="41" x2="327" y2="41"/>
+<line x1="327" y1="41" x2="340" y2="41"/>
+<line x1="340" y1="41" x2="340" y2="54"/>
+<line x1="2" y1="54" x2="2" y2="67"/>
+<line x1="15" y1="54" x2="28" y2="54"/>
+<line x1="28" y1="54" x2="28" y2="67"/>
+<line x1="41" y1="54" x2="41" y2="67"/>
+<line x1="54" y1="54" x2="67" y2="54"/>
+<line x1="54" y1="54" x2="54" y2="67"/>
+<line x1="67" y1="54" x2="80" y2="54"/>
+<line x1="93" y1="54" x2="93" y2="67"/>
+<line x1="106" y1="54" x2="106" y2="67"/>
+<line x1="119" y1="54" x2="132" y2="54"/>
+<line x1="119" y1="54" x2="119" y2="67"/>
+<line x1="132" y1="54" x2="132" y2="67"/>
+<line x1="158" y1="54" x2="171" y2="54"/>
+<line x1="158" y1="54" x2="158" y2="67"/>
+<line x1="171" y1="54" x2="184" y2="54"/>
+<line x1="184" y1="54" x2="197" y2="54"/>
+<line x1="197" y1="54" x2="210" y2="54"/>
+<line x1="223" y1="54" x2="223" y2="67"/>
+<line x1="236" y1="54" x2="249" y2="54"/>
+<line x1="249" y1="54" x2="262" y2="54"/>
+<line x1="262" y1="54" x2="262" y2="67"/>
+<line x1="275" y1="54" x2="275" y2="67"/>
+<line x1="288" y1="54" x2="301" y2="54"/>
+<line x1="288" y1="54" x2="288" y2="67"/>
+<line x1="301" y1="54" x2="314" y2="54"/>
+<line x1="314" y1="54" x2="327" y2="54"/>
+<line x1="327" y1="54" x2="327" y2="67"/>
+<line x1="340" y1="54" x2="353" y2="54"/>
+<line x1="353" y1="54" x2="366" y2="54"/>
+<line x1="353" y1="54" x2="353" y2="67"/>
+<line x1="366" y1="54" x2="366" y2="67"/>
+<line x1="2" y1="67" x2="15" y2="67"/>
+<line x1="2" y1="67" x2="2" y2="80"/>
+<line x1="28" y1="67" x2="28" y2="80"/>
+<line x1="54" y1="67" x2="54" y2="80"/>
+<line x1="67" y1="67" x2="80" y2="67"/>
+<line x1="67" y1="67" x2="67" y2="80"/>
+<line x1="93" y1="67" x2="93" y2="80"/>
+<line x1="106" y1="67" x2="106" y2="80"/>
+<line x1="132" y1="67" x2="145" y2="67"/>
+<line x1="145" y1="67" x2="158" y2="67"/>
+<line x1="145" y1="67" x2="145" y2="80"/>
+<line x1="171" y1="67" x2="184" y2="67"/>
+<line x1="184" y1="67" x2="197" y2="67"/>
+<line x1="184" y1="67" x2="184" y2="80"/>
+<line x1="197" y1="67" x2="210" y2="67"/>
+<line x1="197" y1="67" x2="197" y2="80"/>
+<line x1="210" y1="67" x2="223" y2="67"/>
+<line x1="223" y1="67" x2="236" y2="67"/>
+<line x1="236" y1="67" x2="249" y2="67"/>
+<line x1="236" y1="67" x2="236" y2="80"/>
+<line x1="262" y1="67" x2="262" y2="80"/>
+<line x1="275" y1="67" x2="275" y2="80"/>
+<line x1="301" y1="67" x2="314" y2="67"/>
+<line x1="301" y1="67" x2="301" y2="80"/>
+<line x1="314" y1="67" x2="314" y2="80"/>
+<line x1="327" y1="67" x2="340" y2="67"/>
+<line x1="327" y1="67" x2="327" y2="80"/>
+<line x1="353" y1="67" x2="353" y2="80"/>
+<line x1="366" y1="67" x2="366" y2="80"/>
+<line x1="2" y1="80" x2="2" y2="93"/>
+<line x1="15" y1="80" x2="28" y2="80"/>
+<line x1="15" y1="80" x2="15" y2="93"/>
+<line x1="28" y1="80" x2="41" y2="80"/>
+<line x1="54" y1="80" x2="54" y2="93"/>
+<line x1="67" y1="80" x2="67" y2="93"/>
+<line x1="80" y1="80" x2="93" y2="80"/>
+<line x1="93" y1="80" x2="106" y2="80"/>
+<line x1="106" y1="80" x2="119" y2="80"/>
+<line x1="119" y1="80" x2="132" y2="80"/>
+<line x1="132" y1="80" x2="132" y2="93"/>
+<line x1="145" y1="80" x2="158" y2="80"/>
+<line x1="158" y1="80" x2="171" y2="80"/>
+<line x1="184" y1="80" x2="184" y2="93"/>
+<line x1="210" y1="80" x2="210" y2="93"/>
+<line x1="223" y1="80" x2="223" y2="93"/>
+<line x1="236" y1="80" x2="236" y2="93"/>
+<line x1="249" y1="80" x2="262" y2="80"/>
+<line x1="262" y1="80" x2="262" y2="93"/>
+<line x1="275" y1="80" x2="288" y2="80"/>
+<line x1="288" y1="80" x2="301" y2="80"/>
+<line x1="314" y1="80" x2="314" y2="93"/>
+<line x1="327" y1="80" x2="327" y2="93"/>
+<line x1="340" y1="80" x2="353" y2="80"/>
+<line x1="340" y1="80" x2="340" y2="93"/>
+<line x1="2" y1="93" x2="2" y2="106"/>
+<line x1="15" y1="93" x2="28" y2="93"/>
+<line x1="28" y1="93" x2="41" y2="93"/>
+<line x1="41" y1="93" x2="54" y2="93"/>
+<line x1="41" y1="93" x2="41" y2="106"/>
+<line x1="67" y1="93" x2="80" y2="93"/>
+<line x1="67" y1="93" x2="67" y2="106"/>
+<line x1="80" y1="93" x2="93" y2="93"/>
+<line x1="93" y1="93" x2="93" y2="106"/>
+<line x1="106" y1="93" x2="119" y2="93"/>
+<line x1="119" y1="93" x2="132" y2="93"/>
+<line x1="132" y1="93" x2="145" y2="93"/>
+<line x1="145" y1="93" x2="158" y2="93"/>
+<line x1="158" y1="93" x2="171" y2="93"/>
+<line x1="171" y1="93" x2="184" y2="93"/>
+<line x1="184" y1="93" x2="184" y2="106"/>
+<line x1="197" y1="93" x2="210" y2="93"/>
+<line x1="197" y1="93" x2="197" y2="106"/>
+<line x1="210" y1="93" x2="210" y2="106"/>
+<line x1="223" y1="93" x2="223" y2="106"/>
+<line x1="236" y1="93" x2="249" y2="93"/>
+<line x1="249" y1="93" x2="249" y2="106"/>
+<line x1="262" y1="93" x2="275" y2="93"/>
+<line x1="275" y1="93" x2="288" y2="93"/>
+<line x1="288" y1="93" x2="301" y2="93"/>
+<line x1="288" y1="93" x2="288" y2="106"/>
+<line x1="314" y1="93" x2="314" y2="106"/>
+<line x1="327" y1="93" x2="327" y2="106"/>
+<line x1="340" y1="93" x2="340" y2="106"/>
+<line x1="353" y1="93" x2="366" y2="93"/>
+<line x1="366" y1="93" x2="379" y2="93"/>
+<line x1="366" y1="93" x2="366" y2="106"/>
+<line x1="2" y1="106" x2="2" y2="119"/>
+<line x1="15" y1="106" x2="28" y2="106"/>
+<line x1="28" y1="106" x2="28" y2="119"/>
+<line x1="54" y1="106" x2="67" y2="106"/>
+<line x1="54" y1="106" x2="54" y2="119"/>
+<line x1="67" y1="106" x2="80" y2="106"/>
+<line x1="93" y1="106" x2="106" y2="106"/>
+<line x1="106" y1="106" x2="119" y2="106"/>
+<line x1="119" y1="106" x2="119" y2="119"/>
+<line x1="132" y1="106" x2="145" y2="106"/>
+<line x1="145" y1="106" x2="158" y2="106"/>
+<line x1="158" y1="106" x2="171" y2="106"/>
+<line x1="171" y1="106" x2="184" y2="106"/>
+<line x1="184" y1="106" x2="184" y2="119"/>
+<line x1="197" y1="106" x2="197" y2="119"/>
+<line x1="210" y1="106" x2="210" y2="119"/>
+<line x1="223" y1="106" x2="236" y2="106"/>
+<line x1="236" y1="106" x2="249" y2="106"/>
+<line x1="249" y1="106" x2="262" y2="106"/>
+<line x1="262" y1="106" x2="275" y2="106"/>
+<line x1="275" y1="106" x2="275" y2="119"/>
+<line x1="288" y1="106" x2="288" y2="119"/>
+<line x1="301" y1="106" x2="301" y2="119"/>
+<line x1="314" y1="106" x2="314" y2="119"/>
+<line x1="340" y1="106" x2="353" y2="106"/>
+<line x1="340" y1="106" x2="340" y2="119"/>
+<line x1="353" y1="106" x2="353" y2="119"/>
+<line x1="366" y1="106" x2="366" y2="119"/>
+<line x1="2" y1="119" x2="15" y2="119"/>
+<line x1="2" y1="119" x2="2" y2="132"/>
+<line x1="15" y1="119" x2="15" y2="132"/>
+<line x1="28" y1="119" x2="41" y2="119"/>
+<line x1="28" y1="119" x2="28" y2="132"/>
+<line x1="41" y1="119" x2="54" y2="119"/>
+<line x1="54" y1="119" x2="67" y2="119"/>
+<line x1="67" y1="119" x2="67" y2="132"/>
+<line x1="80" y1="119" x2="93" y2="119"/>
+<line x1="80" y1="119" x2="80" y2="132"/>
+<line x1="93" y1="119" x2="106" y2="119"/>
+<line x1="106" y1="119" x2="106" y2="132"/>
+<line x1="119" y1="119" x2="132" y2="119"/>
+<line x1="119" y1="119" x2="119" y2="132"/>
+<line x1="132" y1="119" x2="145" y2="119"/>
+<line x1="145" y1="119" x2="158" y2="119"/>
+<line x1="158" y1="119" x2="171" y2="119"/>
+<line x1="171" y1="119" x2="171" y2="132"/>
+<line x1="210" y1="119" x2="223" y2="119"/>
+<line x1="223" y1="119" x2="236" y2="119"/>
+<line x1="223" y1="119" x2="223" y2="132"/>
+<line x1="236" y1="119" x2="249" y2="119"/>
+<line x1="236" y1="119" x2="236" y2="132"/>
+<line x1="262" y1="119" x2="275" y2="119"/>
+<line x1="262" y1="119" x2="262" y2="132"/>
+<line x1="288" y1="119" x2="288" y2="132"/>
+<line x1="301" y1="119" x2="314" y2="119"/>
+<line x1="314" y1="119" x2="327" y2="119"/>
+<line x1="314" y1="119" x2="314" y2="132"/>
+<line x1="327" y1="119" x2="340" y2="119"/>
+<line x1="353" y1="119" x2="353" y2="132"/>
+<line x1="366" y1="119" x2="366" y2="132"/>
+<line x1="2" y1="132" x2="2" y2="145"/>
+<line x1="15" y1="132" x2="15" y2="145"/>
+<line x1="28" y1="132" x2="41" y2="132"/>
+<line x1="28" y1="132" x2="28" y2="145"/>
+<line x1="54" y1="132" x2="54" y2="145"/>
+<line x1="80" y1="132" x2="80" y2="145"/>
+<line x1="93" y1="132" x2="93" y2="145"/>
+<line x1="119" y1="132" x2="119" y2="145"/>
+<line x1="132" y1="132" x2="145" y2="132"/>
+<line x1="145" y1="132" x2="158" y2="132"/>
+<line x1="158" y1="132" x2="158" y2="145"/>
+<line x1="171" y1="132" x2="184" y2="132"/>
+<line x1="171" y1="132" x2="171" y2="145"/>
+<line x1="184" y1="132" x2="197" y2="132"/>
+<line x1="197" y1="132" x2="210" y2="132"/>
+<line x1="197" y1="132" x2="197" y2="145"/>
+<line x1="236" y1="132" x2="236" y2="145"/>
+<line x1="249" y1="132" x2="262" y2="132"/>
+<line x1="275" y1="132" x2="288" y2="132"/>
+<line x1="275" y1="132" x2="275" y2="145"/>
+<line x1="288" y1="132" x2="301" y2="132"/>
+<line x1="301" y1="132" x2="301" y2="145"/>
+<line x1="314" y1="132" x2="314" y2="145"/>
+<line x1="327" y1="132" x2="340" y2="132"/>
+<line x1="327" y1="132" x2="327" y2="145"/>
+<line x1="353" y1="132" x2="353" y2="145"/>
+<line x1="2" y1="145" x2="2" y2="158"/>
+<line x1="28" y1="145" x2="28" y2="158"/>
+<line x1="41" y1="145" x2="54" y2="145"/>
+<line x1="41" y1="145" x2="41" y2="158"/>
+<line x1="54" y1="145" x2="67" y2="145"/>
+<line x1="67" y1="145" x2="80" y2="145"/>
+<line x1="80" y1="145" x2="80" y2="158"/>
+<line x1="93" y1="145" x2="106" y2="145"/>
+<line x1="106" y1="145" x2="119" y2="145"/>
+<line x1="119" y1="145" x2="132" y2="145"/>
+<line x1="119" y1="145" x2="119" y2="158"/>
+<line x1="132" y1="145" x2="145" y2="145"/>
+<line x1="158" y1="145" x2="158" y2="158"/>
+<line x1="184" y1="145" x2="184" y2="158"/>
+<line x1="197" y1="145" x2="210" y2="145"/>
+<line x1="210" y1="145" x2="223" y2="145"/>
+<line x1="210" y1="145" x2="210" y2="158"/>
+<line x1="236" y1="145" x2="249" y2="145"/>
+<line x1="236" y1="145" x2="236" y2="158"/>
+<line x1="249" y1="145" x2="262" y2="145"/>
+<line x1="262" y1="145" x2="275" y2="145"/>
+<line x1="288" y1="145" x2="301" y2="145"/>
+<line x1="301" y1="145" x2="301" y2="158"/>
+<line x1="327" y1="145" x2="327" y2="158"/>
+<line x1="340" y1="145" x2="353" y2="145"/>
+<line x1="353" y1="145" x2="366" y2="145"/>
+<line x1="366" y1="145" x2="366" y2="158"/>
+<line x1="2" y1="158" x2="2" y2="171"/>
+<line x1="15" y1="158" x2="28" y2="158"/>
+<line x1="15" y1="158" x2="15" y2="171"/>
+<line x1="41" y1="158" x2="41" y2="171"/>
+<line x1="54" y1="158" x2="67" y2="158"/>
+<line x1="67" y1="158" x2="67" y2="171"/>
+<line x1="80" y1="158" x2="93" y2="158"/>
+<line x1="93" y1="158" x2="106" y2="158"/>
+<line x1="106" y1="158" x2="119" y2="158"/>
+<line x1="132" y1="158" x2="145" y2="158"/>
+<line x1="132" y1="158" x2="132" y2="171"/>
+<line x1="145" y1="158" x2="158" y2="158"/>
+<line x1="158" y1="158" x2="171" y2="158"/>
+<line x1="171" y1="158" x2="184" y2="158"/>
+<line x1="184" y1="158" x2="197" y2="158"/>
+<line x1="197" y1="158" x2="197" y2="171"/>
+<line x1="210" y1="158" x2="223" y2="158"/>
+<line x1="223" y1="158" x2="223" y2="171"/>
+<line x1="236" y1="158" x2="249" y2="158"/>
+<line x1="249" y1="158" x2="262" y2="158"/>
+<line x1="249" y1="158" x2="249" y2="171"/>
+<line x1="262" y1="158" x2="275" y2="158"/>
+<line x1="275" y1="158" x2="275" y2="171"/>
+<line x1="288" y1="158" x2="288" y2="171"/>
+<line x1="301" y1="158" x2="314" y2="158"/>
+<line x1="314" y1="158" x2="327" y2="158"/>
+<line x1="314" y1="158" x2="314" y2="171"/>
+<line x1="327" y1="158" x2="340" y2="158"/>
+<line x1="340" y1="158" x2="353" y2="158"/>
+<line x1="366" y1="158" x2="366" y2="171"/>
+<line x1="2" y1="171" x2="2" y2="184"/>
+<line x1="15" y1="171" x2="28" y2="171"/>
+<line x1="41" y1="171" x2="54" y2="171"/>
+<line x1="54" y1="171" x2="54" y2="184"/>
+<line x1="67" y1="171" x2="80" y2="171"/>
+<line x1="80" y1="171" x2="93" y2="171"/>
+<line x1="93" y1="171" x2="106" y2="171"/>
+<line x1="106" y1="171" x2="119" y2="171"/>
+<line x1="119" y1="171" x2="132" y2="171"/>
+<line x1="119" y1="171" x2="119" y2="184"/>
+<line x1="132" y1="171" x2="145" y2="171"/>
+<line x1="158" y1="171" x2="171" y2="171"/>
+<line x1="158" y1="171" x2="158" y2="184"/>
+<line x1="171" y1="171" x2="171" y2="184"/>
+<line x1="184" y1="171" x2="197" y2="171"/>
+<line x1="184" y1="171" x2="184" y2="184"/>
+<line x1="197" y1="171" x2="210" y2="171"/>
+<line x1="223" y1="171" x2="236" y2="171"/>
+<line x1="223" y1="171" x2="223" y2="184"/>
+<line x1="262" y1="171" x2="262" y2="184"/>
+<line x1="275" y1="171" x2="275" y2="184"/>
+<line x1="288" y1="171" x2="288" y2="184"/>
+<line x1="301" y1="171" x2="314" y2="171"/>
+<line x1="301" y1="171" x2="301" y2="184"/>
+<line x1="327" y1="171" x2="340" y2="171"/>
+<line x1="327" y1="171" x2="327" y2="184"/>
+<line x1="340" y1="171" x2="353" y2="171"/>
+<line x1="353" y1="171" x2="353" y2="184"/>
+<line x1="366" y1="171" x2="366" y2="184"/>
+<line x1="2" y1="184" x2="15" y2="184"/>
+<line x1="2" y1="184" x2="2" y2="197"/>
+<line x1="15" y1="184" x2="28" y2="184"/>
+<line x1="28" y1="184" x2="41" y2="184"/>
+<line x1="41" y1="184" x2="41" y2="197"/>
+<line x1="54" y1="184" x2="67" y2="184"/>
+<line x1="67" y1="184" x2="80" y2="184"/>
+<line x1="80" y1="184" x2="93" y2="184"/>
+<line x1="93" y1="184" x2="106" y2="184"/>
+<line x1="93" y1="184" x2="93" y2="197"/>
+<line x1="106" y1="184" x2="106" y2="197"/>
+<line x1="119" y1="184" x2="119" y2="197"/>
+<line x1="132" y1="184" x2="132" y2="197"/>
+<line x1="145" y1="184" x2="158" y2="184"/>
+<line x1="145" y1="184" x2="145" y2="197"/>
+<line x1="184" y1="184" x2="184" y2="197"/>
+<line x1="197" y1="184" x2="210" y2="184"/>
+<line x1="197" y1="184" x2="197" y2="197"/>
+<line x1="210" y1="184" x2="223" y2="184"/>
+<line x1="223" y1="184" x2="236" y2="184"/>
+<line x1="236" y1="184" x2="249" y2="184"/>
+<line x1="249" y1="184" x2="262" y2="184"/>
+<line x1="249" y1="184" x2="249" y2="197"/>
+<line x1="275" y1="184" x2="288" y2="184"/>
+<line x1="301" y1="184" x2="301" y2="197"/>
+<line x1="314" y1="184" x2="327" y2="184"/>
+<line x1="314" y1="184" x2="314" y2="197"/>
+<line x1="340" y1="184" x2="340" y2="197"/>
+<line x1="353" y1="184" x2="366" y2="184"/>
+<line x1="2" y1="197" x2="2" y2="210"/>
+<line x1="15" y1="197" x2="28" y2="197"/>
+<line x1="28" y1="197" x2="28" y2="210"/>
+<line x1="41" y1="197" x2="54" y2="197"/>
+<line x1="54" y1="197" x2="67" y2="197"/>
+<line x1="67" y1="197" x2="80" y2="197"/>
+<line x1="67" y1="197" x2="67" y2="210"/>
+<line x1="93" y1="197" x2="93" y2="210"/>
+<line x1="106" y1="197" x2="106" y2="210"/>
+<line x1="119" y1="197" x2="132" y2="197"/>
+<line x1="132" y1="197" x2="132" y2="210"/>
+<line x1="145" y1="197" x2="158" y2="197"/>
+<line x1="158" y1="197" x2="171" y2="197"/>
+<line x1="158" y1="197" x2="158" y2="210"/>
+<line x1="171" y1="197" x2="184" y2="197"/>
+<line x1="210" y1="197" x2="223" y2="197"/>
+<line x1="210" y1="197" x2="210" y2="210"/>
+<line x1="223" y1="197" x2="236" y2="197"/>
+<line x1="249" y1="197" x2="262" y2="197"/>
+<line x1="262" y1="197" x2="275" y2="197"/>
+<line x1="275" y1="197" x2="288" y2="197"/>
+<line x1="288" y1="197" x2="301" y2="197"/>
+<line x1="301" y1="197" x2="301" y2="210"/>
+<line x1="314" y1="197" x2="314" y2="210"/>
+<line x1="327" y1="197" x2="340" y2="197"/>
+<line x1="340" y1="197" x2="353" y2="197"/>
+<line x1="353" y1="197" x2="366" y2="197"/>
+<line x1="353" y1="197" x2="353" y2="210"/>
+<line x1="366" y1="197" x2="379" y2="197"/>
+<line x1="2" y1="210" x2="2" y2="223"/>
+<line x1="15" y1="210" x2="28" y2="210"/>
+<line x1="15" y1="210" x2="15" y2="223"/>
+<line x1="28" y1="210" x2="41" y2="210"/>
+<line x1="54" y1="210" x2="54" y2="223"/>
+<line x1="67" y1="210" x2="67" y2="223"/>
+<line x1="80" y1="210" x2="93" y2="210"/>
+<line x1="80" y1="210" x2="80" y2="223"/>
+<line x1="106" y1="210" x2="119" y2="210"/>
+<line x1="119" y1="210" x2="119" y2="223"/>
+<line x1="132" y1="210" x2="145" y2="210"/>
+<line x1="145" y1="210" x2="145" y2="223"/>
+<line x1="171" y1="210" x2="184" y2="210"/>
+<line x1="171" y1="210" x2="171" y2="223"/>
+<line x1="184" y1="210" x2="197" y2="210"/>
+<line x1="197" y1="210" x2="210" y2="210"/>
+<line x1="210" y1="210" x2="223" y2="210"/>
+<line x1="223" y1="210" x2="236" y2="210"/>
+<line x1="236" y1="210" x2="249" y2="210"/>
+<line x1="249" y1="210" x2="262" y2="210"/>
+<line x1="262" y1="210" x2="275" y2="210"/>
+<line x1="275" y1="210" x2="288" y2="210"/>
+<line x1="275" y1="210" x2="275" y2="223"/>
+<line x1="314" y1="210" x2="327" y2="210"/>
+<line x1="327" y1="210" x2="340" y2="210"/>
+<line x1="340" y1="210" x2="340" y2="223"/>
+<line x1="366" y1="210" x2="366" y2="223"/>
+<line x1="2" y1="223" x2="15" y2="223"/>
+<line x1="2" y1="223" x2="2" y2="236"/>
+<line x1="28" y1="223" x2="41" y2="223"/>
+<line x1="28" y1="223" x2="28" y2="236"/>
+<line x1="41" y1="223" x2="54" y2="223"/>
+<line x1="54" y1="223" x2="67" y2="223"/>
+<line x1="67" y1="223" x2="67" y2="236"/>
+<line x1="80" y1="223" x2="93" y2="223"/>
+<line x1="106" y1="223" x2="106" y2="236"/>
+<line x1="119" y1="223" x2="132" y2="223"/>
+<line x1="119" y1="223" x2="119" y2="236"/>
+<line x1="132" y1="223" x2="132" y2="236"/>
+<line x1="145" y1="223" x2="158" y2="223"/>
+<line x1="158" y1="223" x2="171" y2="223"/>
+<line x1="184" y1="223" x2="197" y2="223"/>
+<line x1="184" y1="223" x2="184" y2="236"/>
+<line x1="197" y1="223" x2="210" y2="223"/>
+<line x1="210" y1="223" x2="223" y2="223"/>
+<line x1="223" y1="223" x2="236" y2="223"/>
+<line x1="223" y1="223" x2="223" y2="236"/>
+<line x1="236" y1="223" x2="249" y2="223"/>
+<line x1="249" y1="223" x2="262" y2="223"/>
+<line x1="249" y1="223" x2="249" y2="236"/>
+<line x1="275" y1="223" x2="275" y2="236"/>
+<line x1="288" y1="223" x2="301" y2="223"/>
+<line x1="288" y1="223" x2="288" y2="236"/>
+<line x1="301" y1="223" x2="314" y2="223"/>
+<line x1="314" y1="223" x2="314" y2="236"/>
+<line x1="327" y1="223" x2="340" y2="223"/>
+<line x1="327" y1="223" x2="327" y2="236"/>
+<line x1="340" y1="223" x2="353" y2="223"/>
+<line x1="353" y1="223" x2="366" y2="223"/>
+<line x1="353" y1="223" x2="353" y2="236"/>
+<line x1="2" y1="236" x2="2" y2="249"/>
+<line x1="15" y1="236" x2="28" y2="236"/>
+<line x1="41" y1="236" x2="54" y2="236"/>
+<line x1="54" y1="236" x2="54" y2="249"/>
+<line x1="67" y1="236" x2="80" y2="236"/>
+<line x1="80" y1="236" x2="93" y2="236"/>
+<line x1="93" y1="236" x2="106" y2="236"/>
+<line x1="132" y1="236" x2="145" y2="236"/>
+<line x1="145" y1="236" x2="158" y2="236"/>
+<line x1="158" y1="236" x2="171" y2="236"/>
+<line x1="171" y1="236" x2="184" y2="236"/>
+<line x1="197" y1="236" x2="210" y2="236"/>
+<line x1="197" y1="236" x2="197" y2="249"/>
+<line x1="236" y1="236" x2="236" y2="249"/>
+<line x1="249" y1="236" x2="249" y2="249"/>
+<line x1="262" y1="236" x2="275" y2="236"/>
+<line x1="275" y1="236" x2="288" y2="236"/>
+<line x1="301" y1="236" x2="301" y2="249"/>
+<line x1="314" y1="236" x2="327" y2="236"/>
+<line x1="340" y1="236" x2="340" y2="249"/>
+<line x1="366" y1="236" x2="379" y2="236"/>
+<line x1="2" y1="249" x2="379" y2="249"/>
+<line x1="379" y1="2" x2="379" y2="249"/>
+<circle cx="8.5" cy="8.5" r="5.46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+<text x="8.5" y="8.5" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">E</text>
+<circle cx="47.5" cy="125.5" r="5.46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+<text x="47.5" y="125.5" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">1</text>
+<circle cx="242.5" cy="34.5" r="5.46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+<text x="242.5" y="34.5" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">2</text>
+<circle cx="112.5" cy="216.5" r="5.46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+<text x="112.5" y="216.5" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">3</text>
+<circle cx="372.5" cy="242.5" r="5.46" fill="#fff" stroke="#111" stroke-width="1.4"/>
+<text x="372.5" y="242.5" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="800" fill="#111" stroke="none" text-anchor="middle" dominant-baseline="central">S</text>
+</svg></div>
+
+  <div class="pie"><div class="folio" style="margin-left:auto">Soluciones · no fotocopiar para el grupo</div></div>
+</section>
+
+</body></html>
