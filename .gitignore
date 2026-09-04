@@ -5,3 +5,7 @@ __pycache__/
 **/__pycache__/
 *.bak
 *.log
+
+# PDFs generados (se regeneran con sitio/pdfs.py)
+hojas/*.pdf
+*.pdf
