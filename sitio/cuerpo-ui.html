@@ -1,48 +1,142 @@
-<header>
-  <div class="env hd">
-    <div class="fecha" id="fecha">—</div>
-    <h1 class="saludo" id="saludo">Hola, <em>Mafer</em></h1>
-    <p class="sub-h">Todas tus hojas listas para imprimir. Marca las que ya hayas aplicado para no repetirlas.</p>
-    <div class="cuenta">
-      <div><b id="c-act">50</b><span>hojas listas</span></div>
-      <div class="hecho"><b id="c-usadas">0</b><span>ya aplicadas</span></div>
-    </div>
+<div class="fondo" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<!-- 💜 corazoncito secreto -->
+<button class="corazon-btn" id="corazon" type="button" aria-label="Un mensaje especial" title="Un mensaje para ti"><span>💜</span></button>
+<div class="carta-overlay" id="carta-overlay" aria-hidden="true">
+  <div class="carta" role="dialog" aria-modal="true" aria-labelledby="carta-titulo">
+    <img class="carta-dino" src="img/nailong2.png" alt="" onerror="this.remove()">
+    <span class="icono-corazon">💜</span>
+    <h2 id="carta-titulo">Oye, Mafer…</h2>
+    <p id="carta-msg"></p>
+    <p id="carta-extra" style="font-size:13.5px;color:var(--tinta-3)"></p>
+    <div class="firma">— Con amor, tu novio 💜</div>
+    <button class="cerrar-carta" id="cerrar-carta" type="button">Ya lo sé 🥰</button>
   </div>
+</div>
+
+<header class="env">
+  <nav class="nav" aria-label="Principal">
+    <a class="marca" href="#top" id="top">
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 7l2-3h12l2 3"/><path d="M10 11h4"/></svg></span>
+      El cajón de Mafer <small>· secundaria</small>
+    </a>
+    <div class="links">
+      <a href="#actividades">Actividades</a>
+      <a href="#para-ti">Para ti</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-txt">
+      <div class="fecha" id="fecha">—</div>
+      <h1 class="saludo" id="saludo">Hola, <em>Mafer</em></h1>
+      <p class="sub-h">Todas tus hojas listas para imprimir. Marca las que ya hayas aplicado para no repetirlas.</p>
+      <div class="cuenta">
+        <div><b id="c-act">50</b><span>hojas listas</span></div>
+        <div class="hecho"><b id="c-usadas">0</b><span>ya aplicadas</span></div>
+      </div>
+    </div>
+    <div class="hero-arte" aria-hidden="true">
+      <!-- si existe img/nailong1.png se muestra en lugar del dinosaurito dibujado -->
+      <img class="h-foto" src="img/nailong1.png" alt="" onload="this.parentNode.classList.add('con-foto')" onerror="this.remove()">
+      <svg viewBox="-92 0 412 270">
+        <defs>
+          <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6E5DC6"/><stop offset=".6" stop-color="#9A7BE0"/><stop offset="1" stop-color="#E99AB8"/></linearGradient>
+          <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5BF"/><stop offset="1" stop-color="#F4A98A"/></linearGradient>
+        </defs>
+        <circle class="h-sol" cx="232" cy="70" r="46" fill="url(#hg2)" opacity=".85"/>
+        <g class="h-hoja h-h3"><rect x="70" y="62" width="150" height="180" rx="14" fill="#fff" opacity=".6" transform="rotate(-12 145 152)"/></g>
+        <g class="h-hoja h-h2"><rect x="80" y="54" width="150" height="180" rx="14" fill="#fff" opacity=".8" transform="rotate(7 155 144)"/></g>
+        <g class="h-hoja h-h1">
+          <rect x="84" y="46" width="150" height="184" rx="14" fill="#fff"/>
+          <rect x="104" y="70" width="70" height="10" rx="5" fill="url(#hg1)"/>
+          <rect x="104" y="94" width="110" height="7" rx="3.5" fill="#E6E0F8"/>
+          <rect x="104" y="110" width="96" height="7" rx="3.5" fill="#E6E0F8"/>
+          <rect x="104" y="126" width="104" height="7" rx="3.5" fill="#E6E0F8"/>
+          <g fill="none" stroke="#9A7BE0" stroke-width="2">
+            <rect x="104" y="148" width="22" height="22" rx="5"/><rect x="132" y="148" width="22" height="22" rx="5"/>
+            <rect x="160" y="148" width="22" height="22" rx="5"/><rect x="188" y="148" width="22" height="22" rx="5"/>
+          </g>
+          <path class="h-check" d="M108 159l6 6 10-12" fill="none" stroke="#4E9277" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="104" y="188" width="60" height="7" rx="3.5" fill="#FCE4D8"/>
+        </g>
+        <g class="h-lapiz" transform="rotate(38 262 170)">
+          <rect x="250" y="110" width="20" height="96" rx="4" fill="url(#hg1)"/>
+          <rect x="250" y="110" width="20" height="14" rx="4" fill="#EE9FC0"/>
+          <path d="M250 206h20l-10 20z" fill="#FFE3D3"/><path d="M256 218h8l-4 8z" fill="#2E2B5F"/>
+        </g>
+        <text class="h-est" x="40" y="60" font-size="22">✨</text>
+        <text class="h-est" x="276" y="232" font-size="18">💜</text>
+        <text class="h-est" x="30" y="214" font-size="18">⭐</text>
+
+        <!-- dinosaurito saludando (dibujo original) -->
+        <g class="h-dino">
+          <g transform="translate(-6 252)">
+            <path d="M-36 -26 C-70 -22 -86 -6 -84 2 C-66 0 -48 -6 -30 -8 Z" fill="#FFD34E" stroke="#E9A62A" stroke-width="2.5" stroke-linejoin="round"/>
+            <ellipse cx="-20" cy="-3" rx="17" ry="8" fill="#F2B93A"/>
+            <ellipse cx="20" cy="-3" rx="17" ry="8" fill="#F2B93A"/>
+            <ellipse cx="0" cy="-44" rx="46" ry="44" fill="#FFD34E" stroke="#E9A62A" stroke-width="2.5"/>
+            <ellipse cx="0" cy="-38" rx="30" ry="30" fill="#FFF3C9"/>
+            <path d="M-10 -48 h20 M-10 -38 h20 M-10 -28 h20" stroke="#F4DC9A" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cx="-44" cy="-50" rx="9" ry="15" transform="rotate(25 -44 -50)" fill="#FFD34E" stroke="#E9A62A" stroke-width="2.5"/>
+            <circle cx="-12" cy="-141" r="7" fill="#F49A4A"/><circle cx="2" cy="-145" r="8" fill="#F49A4A"/><circle cx="16" cy="-140" r="7" fill="#F49A4A"/>
+            <circle cx="0" cy="-104" r="40" fill="#FFD34E" stroke="#E9A62A" stroke-width="2.5"/>
+            <ellipse cx="-14" cy="-108" rx="6" ry="8" fill="#2E2B5F"/><ellipse cx="14" cy="-108" rx="6" ry="8" fill="#2E2B5F"/>
+            <circle cx="-12" cy="-111" r="2.2" fill="#fff"/><circle cx="16" cy="-111" r="2.2" fill="#fff"/>
+            <ellipse cx="-25" cy="-92" rx="7" ry="4.5" fill="#F7A6B4" opacity=".8"/><ellipse cx="25" cy="-92" rx="7" ry="4.5" fill="#F7A6B4" opacity=".8"/>
+            <path d="M-9 -92 Q0 -82 9 -92" fill="#E8667A" stroke="#2E2B5F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="-4" cy="-122" r="1.6" fill="#E9A62A"/><circle cx="4" cy="-124" r="1.6" fill="#E9A62A"/>
+            <g class="h-mano">
+              <rect x="34" y="-104" width="18" height="46" rx="9" transform="rotate(28 43 -60)" fill="#FFD34E" stroke="#E9A62A" stroke-width="2.5"/>
+              <circle cx="58" cy="-98" r="3" fill="#E9A62A"/><circle cx="62" cy="-92" r="3" fill="#E9A62A"/>
+            </g>
+          </g>
+        </g>
+        <g class="h-globo" transform="translate(-14 -34)">
+          <rect x="-58" y="40" width="112" height="34" rx="17" fill="#fff" stroke="#E6E0F8" stroke-width="2"/>
+          <path d="M-4 73 l8 12 l6 -12z" fill="#fff"/>
+          <text x="-2" y="62" text-anchor="middle" font-family="Quicksand,sans-serif" font-weight="700" font-size="15" fill="#6E5DC6">¡Hola, Mafer!</text>
+        </g>
+      </svg>
+    </div>
+  </section>
 </header>
 
-<main class="env">
-  <div class="barra grados" role="group" aria-label="Filtrar por grado">
-    <span class="lab">Grado</span>
-    <button class="chip gr" data-g="todos" aria-pressed="true" type="button">Todos</button>
-    <button class="chip gr" data-g="1" aria-pressed="false" type="button">1º de secundaria</button>
-    <button class="chip gr" data-g="2" aria-pressed="false" type="button">2º de secundaria</button>
-    <button class="chip gr" data-g="3" aria-pressed="false" type="button">3º de secundaria</button>
-  </div>
+<main class="env" id="actividades">
+  <div class="filtros">
+    <div class="barra grados" role="group" aria-label="Filtrar por grado">
+      <span class="lab">Grado</span>
+      <button class="chip gr" data-g="todos" aria-pressed="true" type="button">Todos</button>
+      <button class="chip gr" data-g="1" aria-pressed="false" type="button">1º de secundaria</button>
+      <button class="chip gr" data-g="2" aria-pressed="false" type="button">2º de secundaria</button>
+      <button class="chip gr" data-g="3" aria-pressed="false" type="button">3º de secundaria</button>
+    </div>
 
-  <div class="barra" role="group" aria-label="Filtros">
-    <span class="lab">Ver</span>
-    <button class="chip" data-f="todo" aria-pressed="true" type="button">Todas</button>
-    <button class="chip" data-f="pendiente" aria-pressed="false" type="button">Sin aplicar</button>
-    <button class="chip" data-f="g-pasa" aria-pressed="false" type="button">Pasatiempos</button>
-    <button class="chip" data-f="g-dib" aria-pressed="false" type="button">Dibujo y diseño</button>
-    <button class="chip" data-f="g-esc" aria-pressed="false" type="button">Escritura</button>
-    <button class="chip" data-f="Matemáticas" aria-pressed="false" type="button">Matemáticas</button>
-    <button class="chip" data-f="Español" aria-pressed="false" type="button">Español</button>
-    <input class="busca" id="busca" type="search" placeholder="Buscar…" aria-label="Buscar actividad">
+    <div class="barra" role="group" aria-label="Filtros">
+      <span class="lab">Ver</span>
+      <button class="chip" data-f="todo" aria-pressed="true" type="button">Todas</button>
+      <button class="chip" data-f="pendiente" aria-pressed="false" type="button">Sin aplicar</button>
+      <button class="chip" data-f="g-pasa" aria-pressed="false" type="button">Pasatiempos</button>
+      <button class="chip" data-f="g-dib" aria-pressed="false" type="button">Dibujo y diseño</button>
+      <button class="chip" data-f="g-esc" aria-pressed="false" type="button">Escritura</button>
+      <button class="chip" data-f="Matemáticas" aria-pressed="false" type="button">Matemáticas</button>
+      <button class="chip" data-f="Español" aria-pressed="false" type="button">Español</button>
+      <input class="busca" id="busca" type="search" placeholder="Buscar una actividad…" aria-label="Buscar actividad">
+    </div>
   </div>
 
   <div id="grid"></div>
   <div class="vacio" id="vacio" hidden>No hay nada con ese filtro. Quita alguno y vuelve a intentar.</div>
 
-  <div class="seccion">Para ti, no para el grupo</div>
+  <div class="seccion" id="para-ti">Para ti, no para el grupo</div>
   <div class="grid" id="grid-apoyo"></div>
 </main>
 
-<footer class="env">
+<footer class="env"><div class="pie">
   Cincuenta actividades individuales para secundaria, divididas por grado: 1º, 2º y 3º. Ninguna necesita celular, equipos ni material extra:
   lápiz, colores si hay, y la hoja. Cada una cabe en una cara y está pensada para fotocopiarse en blanco y negro.
   Las marcas de «ya la apliqué» se guardan solo en este navegador.
-</footer>
+</div></footer>
 
 <section class="visor" id="visor" aria-label="Hoja para imprimir">
   <div class="vbar"><div class="env">
