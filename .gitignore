@@ -6,6 +6,6 @@ __pycache__/
 *.bak
 *.log
 
-# PDFs generados (se regeneran con sitio/pdfs.py)
-hojas/*.pdf
+# PDFs sueltos ignorados, salvo hojas/ (el sitio los enlaza para imprimir)
 *.pdf
+!hojas/*.pdf
